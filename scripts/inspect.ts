@@ -7,6 +7,7 @@ import {
   PDFOptionList,
   PDFButton,
   PDFSignature,
+  PDFName,
 } from "pdf-lib";
 
 const FORM_PATH = "fixtures/blank-form.pdf";
@@ -42,10 +43,18 @@ for (const field of fields) {
     lines.push(`  MaxLength: ${maxLength ?? "(none)"}`);
     lines.push(`  Combed: ${field.isCombed()}`);
   } else if (field instanceof PDFCheckBox) {
-    const onValue = field.acroField.getOnValue();
-    const onValueStr = onValue ? onValue.decodeText() : "Yes";
-    lines.push(`  Value: ${field.isChecked() ? onValueStr : "Off"}`);
-    lines.push(`  Options: ${JSON.stringify([onValueStr])}`);
+    // acroField.getOnValue() only inspects the field's first widget. Some
+    // fields in this form use one PDFCheckBox with multiple widgets - each
+    // widget its own on-value - to implement what is effectively a radio
+    // group (e.g. Q8.WorkIs1: "FT" / "PT" / "Seasonal" / "Casual"). Reading
+    // getOnValue() alone would silently report only the first of these.
+    const options = field.acroField
+      .getWidgets()
+      .map((widget) => widget.getOnValue())
+      .filter((onValue): onValue is PDFName => onValue !== undefined)
+      .map((onValue) => onValue.decodeText());
+    lines.push(`  Value: ${field.acroField.getValue().decodeText()}`);
+    lines.push(`  Options: ${JSON.stringify(options)}`);
   } else if (field instanceof PDFRadioGroup) {
     const selected = field.getSelected();
     lines.push(`  Value: ${JSON.stringify(selected ?? null)}`);

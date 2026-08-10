@@ -57,7 +57,7 @@ Field: Q2.SecondName
 Field: Q4
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q5.CRN.1
   Type: PDFTextField
@@ -114,12 +114,12 @@ Field: Q4GoToQ8
 Field: Q8Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q8.PersonWorking1
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q8.ABN.0_2
   Type: PDFTextField
@@ -172,12 +172,12 @@ Field: Q8.ABN.3_1
 Field: Q8.WorkIs1
   Type: PDFCheckBox
   Value: Off
-  Options: ["FT"]
+  Options: ["FT","PT","Seasonal","Casual"]
 
 Field: Q8.UsualWage1
   Type: PDFCheckBox
   Value: Off
-  Options: ["Yes"]
+  Options: ["Yes","No"]
 
 Field: Q8.PersonnelNo1
   Type: PDFTextField
@@ -206,7 +206,7 @@ Field: Q8.EmployerName2
 Field: Q8.PersonWorking2
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q8.Address1_2
   Type: PDFTextField
@@ -235,7 +235,7 @@ Field: Q8.Postcode_2
 Field: Q8.WorkIs2
   Type: PDFCheckBox
   Value: Off
-  Options: ["FT"]
+  Options: ["FT","PT","Seasonal","Casual"]
 
 Field: Q8.PersonnelNo2
   Type: PDFTextField
@@ -252,7 +252,7 @@ Field: Q8.HoursWorked2
 Field: Q8.UsualWage2
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q8.EmployerName1
   Type: PDFTextField
@@ -305,17 +305,17 @@ Field: Q8.WorkPhoneNo1
 Field: Q9
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q10
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q11
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ11
   Type: PDFTextField
@@ -336,7 +336,7 @@ Field: DummyCalcQ12
 Field: Q12
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ8
   Type: PDFTextField
@@ -351,7 +351,7 @@ Field: Q8GoToQ10
 Field: Q13Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q13.ABN.0_2
   Type: PDFTextField
@@ -404,7 +404,7 @@ Field: Q13.ABN.3_1
 Field: Q13.PersonWorking1
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q13.EmployerName2
   Type: PDFTextField
@@ -415,7 +415,7 @@ Field: Q13.EmployerName2
 Field: Q13.PersonWorking2
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q13.EmployerName1
   Type: PDFTextField
@@ -432,12 +432,12 @@ Field: DummyCalcQ14
 Field: Q14Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q14.LeaveEntitlementFor1
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q14.ABN.0_1
   Type: PDFTextField
@@ -532,7 +532,7 @@ Field: Q14.NoWorkingDays2
 Field: Q14.LeaveEntitlementFor2
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q14.EmployerName2
   Type: PDFTextField
@@ -591,12 +591,12 @@ Field: Q14.DatePaid_Payable.2.Y
 Field: Q15
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q16
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ10
   Type: PDFTextField
@@ -611,7 +611,7 @@ Field: Q10GoToQ12
 Field: Q17
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ17
   Type: PDFTextField
@@ -622,7 +622,7 @@ Field: DummyCalcQ17
 Field: Q18
   Type: PDFCheckBox
   Value: Off
-  Options: ["Yes"]
+  Options: ["Yes","No"]
 
 Field: DummyCalcQ18
   Type: PDFTextField
@@ -637,17 +637,17 @@ Field: Q18GoToQ20
 Field: Q19
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q20
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q21
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ19
   Type: PDFTextField
@@ -658,12 +658,12 @@ Field: DummyCalcQ19
 Field: Q24
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q27
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ13
   Type: PDFTextField
@@ -880,7 +880,7 @@ Field: Q6029
 Field: Q58Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ58
   Type: PDFTextField
@@ -987,7 +987,7 @@ Field: Q58.DateCommenced.2.Y
 Field: Q59Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ59
   Type: PDFTextField
@@ -1070,12 +1070,12 @@ Field: Q59.PartnerShare_2
 Field: Q56
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q57Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ57
   Type: PDFTextField
@@ -1146,7 +1146,7 @@ Field: Q57.PartnerShare_2
 Field: Q55Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ55
   Type: PDFTextField
@@ -1161,7 +1161,7 @@ Field: Q55GoToQ57
 Field: Q54Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ54
   Type: PDFTextField
@@ -1172,7 +1172,7 @@ Field: DummyCalcQ54
 Field: Q54.SDT_1
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q54.Given_2
   Type: PDFTextField
@@ -1201,7 +1201,7 @@ Field: Q54.PartnerShare_2
 Field: Q54.SDT_2
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q54.Given_3
   Type: PDFTextField
@@ -1236,7 +1236,7 @@ Field: Q54.PartnerShare_3
 Field: Q54.SDT_3
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q54.Given_1
   Type: PDFTextField
@@ -1331,7 +1331,7 @@ Field: Q54.DateGiven.3.Y
 Field: Q53Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ53
   Type: PDFTextField
@@ -1342,7 +1342,7 @@ Field: DummyCalcQ53
 Field: Q52Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ52
   Type: PDFTextField
@@ -1449,7 +1449,7 @@ Field: Q52.DateLent.2.Y
 Field: Q51Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ51
   Type: PDFTextField
@@ -1568,7 +1568,7 @@ Field: Q51.PartnerShare_3
 Field: Q50Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ50
   Type: PDFTextField
@@ -1639,7 +1639,7 @@ Field: Q50.PartnerShare_2
 Field: Q49Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ49
   Type: PDFTextField
@@ -1746,7 +1746,7 @@ Field: Q49.PartnerShare_2
 Field: Q48Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ48
   Type: PDFTextField
@@ -1865,7 +1865,7 @@ Field: Q48.PartnerShare_3
 Field: Q47Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ47
   Type: PDFTextField
@@ -1996,7 +1996,7 @@ Field: Q47.PartnerShare_4
 Field: Q46Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ46
   Type: PDFTextField
@@ -2025,7 +2025,7 @@ Field: Q46.ProductRN_1
 Field: Q46.Ownedby_1
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q46.ProductProvider_2
   Type: PDFTextField
@@ -2048,7 +2048,7 @@ Field: Q46.ProductRN_2
 Field: Q46.Ownedby_2
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q46.DateJoin.1.D
   Type: PDFTextField
@@ -2089,7 +2089,7 @@ Field: Q46.DateJoin.2.Y
 Field: Q45Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ45
   Type: PDFTextField
@@ -2124,7 +2124,7 @@ Field: Q45.MValue_1
 Field: Q45.Ownedby_1
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q45.ManagerName_2
   Type: PDFTextField
@@ -2153,7 +2153,7 @@ Field: Q45.MValue_2
 Field: Q45.Ownedby_2
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q45.DateJoin.1.D
   Type: PDFTextField
@@ -2200,7 +2200,7 @@ Field: Q44
 Field: Q43
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ43
   Type: PDFTextField
@@ -2215,17 +2215,17 @@ Field: Q43GoToQ45
 Field: Q42
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q41
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q38Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ38
   Type: PDFTextField
@@ -2236,7 +2236,7 @@ Field: DummyCalcQ38
 Field: Q40
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ40
   Type: PDFTextField
@@ -2251,7 +2251,7 @@ Field: Q40GoToQ42
 Field: Q39
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ39
   Type: PDFTextField
@@ -2362,7 +2362,7 @@ Field: Q38.Make_1
 Field: Q37Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ37
   Type: PDFTextField
@@ -2691,7 +2691,7 @@ Field: Q35.PartnerShare_6
 Field: Q34
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ34
   Type: PDFTextField
@@ -2720,7 +2720,7 @@ Field: Q34_Details.Amount_1
 Field: Q34_Details.RecPayment_1
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Your partner"]
 
 Field: Q34_Details.LumpSumType_2
   Type: PDFTextField
@@ -2743,7 +2743,7 @@ Field: Q34_Details.Amount_2
 Field: Q34_Details.RecPayment_2
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Your partner"]
 
 Field: Q34_Details.DatePaid.1.D
   Type: PDFTextField
@@ -2784,12 +2784,12 @@ Field: Q34_Details.DatePaid.2.Y
 Field: Q33
   Type: PDFCheckBox
   Value: Off
-  Options: ["Yes"]
+  Options: ["Yes","No"]
 
 Field: Q32
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ32
   Type: PDFTextField
@@ -2908,7 +2908,7 @@ Field: Q32_Details.DateStart.2.Y
 Field: Q31Q
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ31
   Type: PDFTextField
@@ -2937,7 +2937,7 @@ Field: Q31.Who1
 Field: Q31.PaidTo1
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q31.PaymentType2
   Type: PDFTextField
@@ -2960,7 +2960,7 @@ Field: Q31.Who2
 Field: Q31.PaidTo2
   Type: PDFCheckBox
   Value: Off
-  Options: ["You"]
+  Options: ["You","Partner"]
 
 Field: Q31.DateCommenced.1.D
   Type: PDFTextField
@@ -3007,7 +3007,7 @@ Field: DummyCalcQ24
 Field: Q23
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ23
   Type: PDFTextField
@@ -3022,12 +3022,12 @@ Field: Q23GoToQ28
 Field: Q26
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q25
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q24GoToQ26
   Type: PDFButton
@@ -3036,7 +3036,7 @@ Field: Q24GoToQ26
 Field: Q28
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: DummyCalcQ28
   Type: PDFTextField
@@ -3051,17 +3051,17 @@ Field: Q28GoToQ30
 Field: Q29
   Type: PDFCheckBox
   Value: Off
-  Options: ["Yes"]
+  Options: ["Yes","No"]
 
 Field: Q30
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q22
   Type: PDFCheckBox
   Value: Off
-  Options: ["No"]
+  Options: ["No","Yes"]
 
 Field: Q17GoToQ23
   Type: PDFButton
