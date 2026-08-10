@@ -1,0 +1,16 @@
+{
+  "name": "pdf_filler_mwe",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@cantoo/pdf-lib": "^2.8.1",
+    "pdf-lib": "^1.17.1"
+  }
+}
