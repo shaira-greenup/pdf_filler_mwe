@@ -42,7 +42,7 @@ for (const field of fields) {
     lines.push(`  MaxLength: ${maxLength ?? "(none)"}`);
     lines.push(`  Combed: ${field.isCombed()}`);
   } else if (field instanceof PDFCheckBox) {
-    const onValue = (field as any).acroField.getOnValue();
+    const onValue = field.acroField.getOnValue();
     const onValueStr = onValue ? onValue.decodeText() : "Yes";
     lines.push(`  Value: ${field.isChecked() ? onValueStr : "Off"}`);
     lines.push(`  Options: ${JSON.stringify([onValueStr])}`);

@@ -1,0 +1,3247 @@
+SHA-256: 3018dedf7562892ee40d1a93d0124ad50de5cbb23fb65733a21d7f7b23d8c55f
+Has XFA: false
+Field count: 565
+
+Field: Sign
+  Type: PDFTextField
+  Value: "On completion of this form,\rprint and sign by hand"
+  MaxLength: (none)
+  Combed: false
+
+Field: Clear
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: 1_CRN.0
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: 1_CRN.1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: 1_CRN.2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: 1_CRN.3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 1
+  Combed: true
+
+Field: Q2.FamilyName
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q2.FirstName
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q2.SecondName
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q4
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q5.CRN.1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q5.CRN.0
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q5.CRN.2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q5.CRN.3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 1
+  Combed: true
+
+Field: Q6.FamilyName
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q6.FirstName
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q6.SecondName
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: DummyCalcQ4
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q4GoToQ8
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q8Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q8.PersonWorking1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q8.ABN.0_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q8.ABN.1_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q8.ABN.2_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q8.ABN.3_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q8.ABN.0_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q8.ABN.1_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q8.ABN.2_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q8.ABN.3_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q8.WorkIs1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["FT"]
+
+Field: Q8.UsualWage1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q8.PersonnelNo1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.HoursWorked1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.GrossAmt1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.EmployerName2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.PersonWorking2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q8.Address1_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.Address2_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.Address3_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.Postcode_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q8.WorkIs2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["FT"]
+
+Field: Q8.PersonnelNo2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.HoursWorked2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.UsualWage2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q8.EmployerName1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.Address1_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.Address2_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.Address3_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.Postcode_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q8.GrossAmt2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8.WorkPhoneNo2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q8.WorkPhoneNo1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q9
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q10
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q11
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ11
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q12GoToQ16
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: DummyCalcQ12
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q12
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ8
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8GoToQ10
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q13Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q13.ABN.0_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q13.ABN.1_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q13.ABN.2_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q13.ABN.3_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q13.ABN.0_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q13.ABN.1_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q13.ABN.2_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q13.ABN.3_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q13.PersonWorking1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q13.EmployerName2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q13.PersonWorking2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q13.EmployerName1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: DummyCalcQ14
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q14.LeaveEntitlementFor1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q14.ABN.0_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q14.ABN.1_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q14.ABN.2_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q14.ABN.3_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q14.ABN.0_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q14.ABN.1_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q14.ABN.2_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q14.ABN.3_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q14.PaymentType1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14.PaymentAmt1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14.NoWorkingDays1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14.EmployerName1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14.PaymentType2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14.PaymentAmt2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14.NoWorkingDays2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14.LeaveEntitlementFor2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q14.EmployerName2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14.PhoneNo1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q14.PhoneNo2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q14.DatePaid_Payable.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q14.DatePaid_Payable.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q14.DatePaid_Payable.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q14.DatePaid_Payable.2.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q14.DatePaid_Payable.2.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q14.DatePaid_Payable.2.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q15
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q16
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ10
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q10GoToQ12
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q17
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ17
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q18
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: DummyCalcQ18
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q18GoToQ20
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q19
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q20
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q21
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ19
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q24
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q27
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ13
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q11GoToQ16a
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q11GoToQ16b
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: DummyCalcQ20
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: DummyCalcQ21
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q20GoToQ22
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q21GoToQ23a
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q21GoToQ23b
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q53.Name
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q36.Amount
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q36.Balance
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q36.YourShare
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q601
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q602
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q603
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q604
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q605
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q606
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q607
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q608
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q609
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6010
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6011
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6012
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6013
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6014
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6015
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6016
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6017
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6018
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6019
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6020
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6021
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6022
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6023
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6024
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6025
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6026
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6027
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6028
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6030
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q6029
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q58Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ58
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q58.Type_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q58.WhoPays_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q58.Amount_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q58.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q58.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q58.Type_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q58.WhoPays_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q58.Amount_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q58.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q58.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q58.DateCommenced.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q58.DateCommenced.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q58.DateCommenced.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q58.DateCommenced.2.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q58.DateCommenced.2.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q58.DateCommenced.2.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q59Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ59
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q59.Asset_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q59.CurrentValue_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q59.AmtOwed_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q59.Currency_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q59.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: Q59.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: Q59.Asset_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q59.CurrentValue_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q59.AmtOwed_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q59.Currency_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q59.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: Q59.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: Q56
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q57Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ57
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q57.InsuranceCoName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q57.PolicyNo_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q57.SurrenderValue_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q57.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q57.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q57.InsuranceCoName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q57.PolicyNo_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q57.SurrenderValue_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q57.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q57.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q55Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ55
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55GoToQ57
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q54Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ54
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.SDT_1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q54.Given_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.Worth_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q54.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q54.SDT_2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q54.Given_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.Worth_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.AmountReceived_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.YourShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q54.PartnerShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q54.SDT_3
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q54.Given_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.Worth_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.AmountReceived_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q54.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q54.AmountReceived_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q54.DateGiven.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q54.DateGiven.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q54.DateGiven.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q54.DateGiven.2.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q54.DateGiven.2.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q54.DateGiven.2.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q54.DateGiven.3.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q54.DateGiven.3.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q54.DateGiven.3.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q53Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ53
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q52Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ52
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q52.WhoTo_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q52.Amount_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q52.Balance_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q52.You_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: Q52.Partner_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: Q52.WhoTo_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q52.Amount_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q52.Balance_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q52.You_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: Q52.Partner_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: Q52.DateLent.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q52.DateLent.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q52.DateLent.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q52.DateLent.2.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q52.DateLent.2.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q52.DateLent.2.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q51Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ51
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.CompanyName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.Type_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.CurrentInvested_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.Currency_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q51.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q51.CompanyName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.Type_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.CurrentInvested_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.Currency_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q51.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q51.CompanyName_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.Type_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.CurrentInvested_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.Currency_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51.YourShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q51.PartnerShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q50Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ50
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q50.CompanyName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q50.Portfolio_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q50.APIRCode_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q50.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q50.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q50.CompanyName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q50.Portfolio_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q50.APIRCode_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q50.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q50.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q49Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ49
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.CompanyName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.NameOfProduct_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.NoOfUnits_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.APIRCode_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.MValue_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.Currency_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q49.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q49.CompanyName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.NameOfProduct_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.NoOfUnits_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.APIRCode_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.MValue_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.Currency_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q49.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q49.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q48Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ48
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.CompanyName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.TypeOfShares_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.NoOfShares_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.MValue_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q48.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q48.CompanyName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.TypeOfShares_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.NoOfShares_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.MValue_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q48.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q48.CompanyName_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.TypeOfShares_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.NoOfShares_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.MValue_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q48.YourShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q48.PartnerShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q47Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ47
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.CompanyName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.NoOfShares_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.Country_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q47.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q47.CompanyName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.NoOfShares_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.Country_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q47.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 1
+  Combed: false
+
+Field: Q47.CompanyName_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.NoOfShares_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.Country_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.YourShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q47.PartnerShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q47.CompanyName_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.NoOfShares_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.Country_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q47.YourShare_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q47.PartnerShare_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q46Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ46
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q46.ProductProvider_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q46.Type_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q46.ProductRN_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q46.Ownedby_1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q46.ProductProvider_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q46.Type_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q46.ProductRN_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q46.Ownedby_2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q46.DateJoin.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q46.DateJoin.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q46.DateJoin.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q46.DateJoin.2.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q46.DateJoin.2.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q46.DateJoin.2.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q45Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ45
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q45.ManagerName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q45.FundName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q45.ProductRN_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q45.MValue_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q45.Ownedby_1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q45.ManagerName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q45.FundName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q45.ProductRN_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q45.MValue_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q45.Ownedby_2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q45.DateJoin.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q45.DateJoin.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q45.DateJoin.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q45.DateJoin.2.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q45.DateJoin.2.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q45.DateJoin.2.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q44
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q43
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ43
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q43GoToQ45
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q42
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q41
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q38Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ38
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q40
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ40
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q40GoToQ42
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q39
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ39
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q39GoToQ43
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q38.AssetTYpe_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38.Model_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38.Year_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q38.MValue_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38.AmtOwed_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q38.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q38.AssetTYpe_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38.Make_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38.Model_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38.Year_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q38.MValue_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38.AmtOwed_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q38.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q38.Make_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ37
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.AssetType_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.Make_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.Model_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.Year_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q37.MValue_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.LoanBalance_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q37.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q37.AssetType_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.Make_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.Model_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.Year_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q37.MValue_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.LoanBalance_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q37.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q37.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q36PartnerShare
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.BankName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.Currency_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Bal_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.AccNo_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.BankName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.Currency_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Bal_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.AccNo_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.BankName_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.AccNo_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Bal_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Currency_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.YourShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.PartnerShare_3
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.BankName_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.AccNo_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Bal_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Currency_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.YourShare_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.PartnerShare_4
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.BankName_5
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.AccNo_5
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Bal_5
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Currency_5
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.YourShare_5
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.PartnerShare_5
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.BankName_6
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.AccNo_6
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Bal_6
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.Currency_6
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q35.YourShare_6
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q35.PartnerShare_6
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q34
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ34
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q34_Details.LumpSumType_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q34_Details.PaidBy_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q34_Details.Amount_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q34_Details.RecPayment_1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q34_Details.LumpSumType_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q34_Details.PaidBy_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q34_Details.Amount_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q34_Details.RecPayment_2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q34_Details.DatePaid.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q34_Details.DatePaid.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q34_Details.DatePaid.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q34_Details.DatePaid.2.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q34_Details.DatePaid.2.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q34_Details.DatePaid.2.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q33
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q32
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ32
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q32_Details.Name_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q32_Details.Relationship_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q32_Details.NoOfMeals_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q32_Details.Amount_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q32_Details.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q32_Details.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q32_Details.Name_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q32_Details.Relationship_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q32_Details.NoOfMeals_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q32_Details.Amount_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q32_Details.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q32_Details.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q32_Details.DateStart.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q32_Details.DateStart.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q32_Details.DateStart.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q32_Details.DateStart.2.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q32_Details.DateStart.2.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q32_Details.DateStart.2.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q31Q
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ31
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q31.PaymentType1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q31.Country1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q31.Who1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q31.PaidTo1
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q31.PaymentType2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q31.Country2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q31.Who2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q31.PaidTo2
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["You"]
+
+Field: Q31.DateCommenced.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q31.DateCommenced.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q31.DateCommenced.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q31.DateCommenced.2.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q31.DateCommenced.2.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q31.DateCommenced.2.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: DummyCalcQ24
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q23
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ23
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q23GoToQ28
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q26
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q25
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q24GoToQ26
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q28
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: DummyCalcQ28
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q28GoToQ30
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q29
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q30
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q22
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["No"]
+
+Field: Q17GoToQ23
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q19GoToQ23
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q55.CompanyName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55.ProductName_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55.Price_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55.Value_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55.YourShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q55.PartnerShare_1
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q55.CompanyName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55.ProductName_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55.Price_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55.Value_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55.YourShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q55.PartnerShare_2
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q61
+  Type: PDFTextField
+  Value: null
+  MaxLength: 1
+  Combed: false
+
+Field: SepForm
+  Type: PDFCheckBox
+  Value: Off
+  Options: ["Yes"]
+
+Field: DummyCalcQ25
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q25GoToQ28
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: DummyCalcQ26
+  Type: PDFTextField
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q26GoToQ28
+  Type: PDFButton
+  Value: (none, push button)
+
+Field: Q3.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q3.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q3.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q7.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q7.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q7.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: SignDate.0.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: SignDate.0.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: SignDate.0.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: SignDate.1.D
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: SignDate.1.M
+  Type: PDFTextField
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: SignDate.1.Y
+  Type: PDFTextField
+  Value: null
+  MaxLength: 4
+  Combed: true
