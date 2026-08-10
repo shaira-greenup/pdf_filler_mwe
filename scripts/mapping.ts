@@ -24,7 +24,7 @@ function unhide(field: PDFCheckBox): void {
 // pdf-lib's PDFCheckBox.check() and acroField.setValue() only ever recognize
 // the *first* widget's on-value, so selecting any other widget's value has
 // to bypass that guard directly.
-function selectCheckboxOption(form: PDFForm, fieldName: string, onValue: string): void {
+export function selectCheckboxOption(form: PDFForm, fieldName: string, onValue: string): void {
   const field = form.getCheckBox(fieldName);
   const onValueName = PDFName.of(onValue);
   const widgets = field.acroField.getWidgets();

@@ -1,26 +1,14 @@
 import { PDFDocument } from "pdf-lib";
 import { FormDataSchema } from "./schema";
 import { applyFormData, readFormData } from "./mapping";
+import { assertTemplateHash } from "./template";
 
 const FORM_PATH = "fixtures/blank-form.pdf";
 const OUT_PATH = "out/filled.pdf";
 const DATA_PATH = "fixtures/sample-data.json";
-const EXPECTED_SHA256 =
-  "3018dedf7562892ee40d1a93d0124ad50de5cbb23fb65733a21d7f7b23d8c55f";
 
 const bytes = new Uint8Array(await Bun.file(FORM_PATH).arrayBuffer());
-
-const hasher = new Bun.CryptoHasher("sha256");
-hasher.update(bytes);
-const actualSha256 = hasher.digest("hex");
-if (actualSha256 !== EXPECTED_SHA256) {
-  throw new Error(
-    `Template hash mismatch for ${FORM_PATH}.\n` +
-      `  expected: ${EXPECTED_SHA256}\n` +
-      `  actual:   ${actualSha256}\n` +
-      `The form has changed since fixtures/fields.txt was generated. Re-run scripts/inspect.ts.`,
-  );
-}
+assertTemplateHash(bytes, FORM_PATH);
 
 const rawData = await Bun.file(DATA_PATH).json();
 const data = FormDataSchema.parse(rawData);
