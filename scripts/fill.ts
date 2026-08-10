@@ -1,4 +1,22 @@
-import { PDFDocument, PDFTextField, PDFCheckBox, PDFName, PDFForm } from "pdf-lib";
+import { PDFDocument, PDFTextField, PDFCheckBox, PDFName, PDFForm, PDFNumber } from "pdf-lib";
+
+// PDF annotation flags (PDF spec, Table 165): bit 2 (value 2) is Hidden.
+const ANNOTATION_FLAG_HIDDEN = 2;
+
+// This form gates entire sections behind a lead question (e.g. Q8Q: "Is
+// anyone employed?"). Every widget in a gated section has the Hidden
+// annotation flag set directly in the blank template - a static, spec-level
+// rendering directive, not something only the form's own JavaScript can
+// toggle. pdf-lib never runs that JavaScript, so satisfying a gate's value
+// (e.g. setting Q8Q to "Yes") does not by itself reveal the section: we have
+// to clear Hidden ourselves on exactly the fields we're filling.
+function unhide(field: PDFCheckBox | PDFTextField): void {
+  for (const widget of field.acroField.getWidgets()) {
+    const current = widget.dict.lookup(PDFName.of("F"));
+    const flags = current instanceof PDFNumber ? current.asNumber() : 0;
+    widget.dict.set(PDFName.of("F"), PDFNumber.of(flags & ~ANNOTATION_FLAG_HIDDEN));
+  }
+}
 
 // Some checkbox fields in this form use one field with multiple widgets,
 // each carrying a different on-value, to implement what is effectively a
@@ -82,6 +100,14 @@ try {
 
 selectCheckboxOption(form, "Q8.WorkIs2", "Seasonal");
 
+// Q8.PersonWorking1/WorkIs1/UsualWage1/WorkIs2 are all gated behind Q8Q
+// ("Is anyone employed?"). We're filling them, so the gate's real answer is
+// "Yes" - not "No" (Q8Q's widget[0], what a plain .check() would select).
+selectCheckboxOption(form, "Q8Q", "Yes");
+for (const name of ["Q8.PersonWorking1", "Q8.WorkIs1", "Q8.UsualWage1", "Q8.WorkIs2"]) {
+  unhide(form.getCheckBox(name));
+}
+
 form.updateFieldAppearances();
 const outBytes = await pdf.save();
 await Bun.write(OUT_PATH, outBytes);
@@ -109,18 +135,38 @@ for (const name of checkedBoxes) {
   }
 }
 
-{
-  // isChecked() is widget[0]-biased and would be wrong here - read the
-  // field's actual /V value directly instead (see selectCheckboxOption).
-  const field = verifyForm.getField("Q8.WorkIs2");
+// isChecked() is widget[0]-biased and would be wrong for these - read the
+// field's actual /V value directly instead (see selectCheckboxOption).
+function verifyCheckboxValue(name: string, expected: string): void {
+  const field = verifyForm.getField(name);
   if (!(field instanceof PDFCheckBox)) {
-    throw new Error(`Q8.WorkIs2: expected PDFCheckBox, got ${field.constructor.name}`);
+    throw new Error(`${name}: expected PDFCheckBox, got ${field.constructor.name}`);
   }
   const actual = field.acroField.getValue().decodeText();
-  if (actual !== "Seasonal") {
-    throw new Error(`Q8.WorkIs2: expected "Seasonal", got ${JSON.stringify(actual)}`);
+  if (actual !== expected) {
+    throw new Error(`${name}: expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+  }
+}
+verifyCheckboxValue("Q8.WorkIs2", "Seasonal");
+verifyCheckboxValue("Q8Q", "Yes");
+
+for (const name of ["Q8.PersonWorking1", "Q8.WorkIs1", "Q8.UsualWage1", "Q8.WorkIs2"]) {
+  const field = verifyForm.getField(name);
+  if (!(field instanceof PDFCheckBox)) {
+    throw new Error(`${name}: expected PDFCheckBox, got ${field.constructor.name}`);
+  }
+  const stillHidden = field.acroField.getWidgets().some((widget) => {
+    const flags = widget.dict.lookup(PDFName.of("F"));
+    const flagsNum = flags instanceof PDFNumber ? flags.asNumber() : 0;
+    return (flagsNum & ANNOTATION_FLAG_HIDDEN) !== 0;
+  });
+  if (stillHidden) {
+    throw new Error(`${name}: expected Hidden flag cleared, but a widget is still hidden`);
   }
 }
 
 console.log(`Wrote ${OUT_PATH}`);
-console.log(`Verified ${Object.keys(textValues).length} text field(s), ${checkedBoxes.length} checkbox(es), and Q8.WorkIs2 = "Seasonal".`);
+console.log(
+  `Verified ${Object.keys(textValues).length} text field(s), ${checkedBoxes.length} checkbox(es), ` +
+    `Q8Q = "Yes", Q8.WorkIs2 = "Seasonal", and 4 previously-hidden widget(s) unhidden.`,
+);

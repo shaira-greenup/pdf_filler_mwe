@@ -8,7 +8,11 @@ import {
   PDFButton,
   PDFSignature,
   PDFName,
+  PDFNumber,
 } from "pdf-lib";
+
+// PDF annotation flags (PDF spec, Table 165): bit 2 (value 2) is Hidden.
+const ANNOTATION_FLAG_HIDDEN = 2;
 
 const FORM_PATH = "fixtures/blank-form.pdf";
 const OUT_PATH = "fixtures/fields.txt";
@@ -35,6 +39,17 @@ for (const field of fields) {
   const type = field.constructor.name;
   lines.push(`Field: ${name}`);
   lines.push(`  Type: ${type}`);
+
+  // The Hidden annotation flag is a static, spec-level rendering directive on
+  // each widget - not something only JavaScript can toggle. A field can be
+  // present and correctly valued yet invisible in every viewer because of
+  // this flag (e.g. a section gated behind a "Do you have X?" checkbox).
+  const hidden = field.acroField.getWidgets().map((widget) => {
+    const flags = widget.dict.lookup(PDFName.of("F"));
+    const flagsNum = flags instanceof PDFNumber ? flags.asNumber() : 0;
+    return (flagsNum & ANNOTATION_FLAG_HIDDEN) !== 0;
+  });
+  lines.push(`  Hidden: ${JSON.stringify(hidden)}`);
 
   if (field instanceof PDFTextField) {
     const value = field.getText();
