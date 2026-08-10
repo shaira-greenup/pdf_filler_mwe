@@ -1,0 +1,12 @@
+{
+  "familyName": "Nguyen",
+  "firstName": "Alex",
+  "secondName": "Morgan",
+  "clientReferenceNumber": "1234567890",
+  "question4": false,
+  "employment": {
+    "personWorking": "You",
+    "workType": "Casual",
+    "usualWage": true
+  }
+}
