@@ -84,7 +84,7 @@ section — it is the canonical "real form", already decrypted.
   It's a workstation tool, used by hand, only when refreshing the fixture from a
   new upstream source.
 - **When it resurfaces:** if the issuing organization republishes the form
-  (CLAUDE.md hard rule #8's hash check is designed to catch this), the new
+  (CLAUDE.md hard rule #10's hash check is designed to catch this), the new
   source file may again be encrypted. Re-run:
 
   ```
