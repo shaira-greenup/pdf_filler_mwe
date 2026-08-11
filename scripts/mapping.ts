@@ -1,8 +1,8 @@
-import { PDFForm, PDFCheckBox, PDFName, PDFNumber } from "pdf-lib";
+import { PDFForm, PDFField, PDFCheckBox, PDFName, PDFNumber } from "pdf-lib";
 import type { FormData } from "./schema";
 
 // PDF annotation flags (PDF spec, Table 165): bit 2 (value 2) is Hidden.
-const ANNOTATION_FLAG_HIDDEN = 2;
+export const ANNOTATION_FLAG_HIDDEN = 2;
 
 // This form gates entire sections behind a lead question (e.g. Q8Q: "Is
 // anyone employed?"). Every widget in a gated section has the Hidden
@@ -10,7 +10,8 @@ const ANNOTATION_FLAG_HIDDEN = 2;
 // rendering directive, not something only the form's own JavaScript can
 // toggle. pdf-lib never runs that JavaScript, so satisfying a gate's value
 // does not by itself reveal the section: we have to clear Hidden ourselves.
-function unhide(field: PDFCheckBox): void {
+// Any field type can be gated this way, not just checkboxes.
+export function unhide(field: PDFField): void {
   for (const widget of field.acroField.getWidgets()) {
     const current = widget.dict.lookup(PDFName.of("F"));
     const flags = current instanceof PDFNumber ? current.asNumber() : 0;
@@ -54,6 +55,21 @@ const CRN_SEGMENTS = [
   { field: "1_CRN.1", start: 3, end: 6 },
   { field: "1_CRN.2", start: 6, end: 9 },
   { field: "1_CRN.3", start: 9, end: 10 },
+];
+
+// Every real PDF field name this module manages directly. fill.ts uses this
+// to reject `otherFields` entries that collide with a field already covered
+// by the business schema - a field should have exactly one source of truth.
+export const MAPPED_FIELD_NAMES: readonly string[] = [
+  "Q2.FamilyName",
+  "Q2.FirstName",
+  "Q2.SecondName",
+  ...CRN_SEGMENTS.map((s) => s.field),
+  "Q4",
+  "Q8Q",
+  "Q8.PersonWorking1",
+  "Q8.WorkIs1",
+  "Q8.UsualWage1",
 ];
 
 export function applyFormData(form: PDFForm, data: FormData): void {

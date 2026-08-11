@@ -1,6 +1,7 @@
 import { PDFDocument } from "pdf-lib";
 import { FormDataSchema } from "./schema";
-import { applyFormData, readFormData } from "./mapping";
+import { applyFormData, readFormData, MAPPED_FIELD_NAMES } from "./mapping";
+import { buildGenericSchema, applyGenericData, readGenericData } from "./genericFields";
 import { assertTemplateHash } from "./template";
 
 const FORM_PATH = "fixtures/blank-form.pdf";
@@ -17,6 +18,21 @@ const pdf = await PDFDocument.load(bytes, { ignoreEncryption: true });
 const form = pdf.getForm();
 
 applyFormData(form, data);
+
+if (data.otherFields) {
+  const collisions = Object.keys(data.otherFields).filter((name) => MAPPED_FIELD_NAMES.includes(name));
+  if (collisions.length > 0) {
+    throw new Error(
+      `otherFields: ${JSON.stringify(collisions)} already have a single source of truth in the ` +
+        `business schema - remove them from otherFields instead of setting them twice.`,
+    );
+  }
+  // Real per-field type checking (real export values, MaxLength) happens
+  // here, once the PDF's actual structure is known - schema.ts's
+  // otherFields is only loosely typed as Record<string, string>.
+  buildGenericSchema(form).parse(data.otherFields);
+  applyGenericData(form, data.otherFields);
+}
 
 form.updateFieldAppearances();
 const outBytes = await pdf.save();
@@ -51,6 +67,14 @@ if (data.employment) {
   assertEqual("employment.usualWage", data.employment.usualWage, readBack.employment.usualWage);
 } else if (readBack.employment) {
   throw new Error(`employment: expected absent, got ${JSON.stringify(readBack.employment)}`);
+}
+
+if (data.otherFields) {
+  const names = Object.keys(data.otherFields);
+  const genericReadBack = readGenericData(verifyForm, names);
+  for (const name of names) {
+    assertEqual(`otherFields.${name}`, data.otherFields[name], genericReadBack[name]);
+  }
 }
 
 console.log(`Wrote ${OUT_PATH}`);
