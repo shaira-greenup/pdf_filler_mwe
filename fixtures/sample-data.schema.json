@@ -1,0 +1,2085 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "familyName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "firstName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "secondName": {
+      "type": "string"
+    },
+    "clientReferenceNumber": {
+      "type": "string",
+      "pattern": "^\\d{10}$"
+    },
+    "question4": {
+      "type": "boolean"
+    },
+    "employment": {
+      "type": "object",
+      "properties": {
+        "personWorking": {
+          "type": "string",
+          "enum": [
+            "You",
+            "Partner"
+          ]
+        },
+        "workType": {
+          "type": "string",
+          "enum": [
+            "FT",
+            "PT",
+            "Seasonal",
+            "Casual"
+          ]
+        },
+        "usualWage": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "personWorking",
+        "workType",
+        "usualWage"
+      ],
+      "additionalProperties": false
+    },
+    "Sign": {
+      "type": "string"
+    },
+    "Q5.CRN.1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q5.CRN.0": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q5.CRN.2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q5.CRN.3": {
+      "type": "string",
+      "maxLength": 1
+    },
+    "Q6.FamilyName": {
+      "type": "string"
+    },
+    "Q6.FirstName": {
+      "type": "string"
+    },
+    "Q6.SecondName": {
+      "type": "string"
+    },
+    "Q8.ABN.0_2": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q8.ABN.1_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q8.ABN.2_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q8.ABN.3_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q8.ABN.0_1": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q8.ABN.1_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q8.ABN.2_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q8.ABN.3_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q8.PersonnelNo1": {
+      "type": "string"
+    },
+    "Q8.HoursWorked1": {
+      "type": "string"
+    },
+    "Q8.GrossAmt1": {
+      "type": "string"
+    },
+    "Q8.EmployerName2": {
+      "type": "string"
+    },
+    "Q8.PersonWorking2": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q8.Address1_2": {
+      "type": "string"
+    },
+    "Q8.Address2_2": {
+      "type": "string"
+    },
+    "Q8.Address3_2": {
+      "type": "string"
+    },
+    "Q8.Postcode_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q8.WorkIs2": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT",
+        "Seasonal",
+        "Casual"
+      ]
+    },
+    "Q8.PersonnelNo2": {
+      "type": "string"
+    },
+    "Q8.HoursWorked2": {
+      "type": "string"
+    },
+    "Q8.UsualWage2": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q8.EmployerName1": {
+      "type": "string"
+    },
+    "Q8.Address1_1": {
+      "type": "string"
+    },
+    "Q8.Address2_1": {
+      "type": "string"
+    },
+    "Q8.Address3_1": {
+      "type": "string"
+    },
+    "Q8.Postcode_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q8.GrossAmt2": {
+      "type": "string"
+    },
+    "Q8.WorkPhoneNo2": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q8.WorkPhoneNo1": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q9": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q10": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q11": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q12": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q13Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q13.ABN.0_2": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q13.ABN.1_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q13.ABN.2_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q13.ABN.3_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q13.ABN.0_1": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q13.ABN.1_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q13.ABN.2_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q13.ABN.3_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q13.PersonWorking1": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q13.EmployerName2": {
+      "type": "string"
+    },
+    "Q13.PersonWorking2": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q13.EmployerName1": {
+      "type": "string"
+    },
+    "Q14Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q14.LeaveEntitlementFor1": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q14.ABN.0_1": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q14.ABN.1_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q14.ABN.2_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q14.ABN.3_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q14.ABN.0_2": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q14.ABN.1_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q14.ABN.2_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q14.ABN.3_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q14.PaymentType1": {
+      "type": "string"
+    },
+    "Q14.PaymentAmt1": {
+      "type": "string"
+    },
+    "Q14.NoWorkingDays1": {
+      "type": "string"
+    },
+    "Q14.EmployerName1": {
+      "type": "string"
+    },
+    "Q14.PaymentType2": {
+      "type": "string"
+    },
+    "Q14.PaymentAmt2": {
+      "type": "string"
+    },
+    "Q14.NoWorkingDays2": {
+      "type": "string"
+    },
+    "Q14.LeaveEntitlementFor2": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q14.EmployerName2": {
+      "type": "string"
+    },
+    "Q14.PhoneNo1": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q14.PhoneNo2": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q14.DatePaid_Payable.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q14.DatePaid_Payable.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q14.DatePaid_Payable.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q14.DatePaid_Payable.2.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q14.DatePaid_Payable.2.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q14.DatePaid_Payable.2.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q15": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q16": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q17": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q18": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No"
+      ]
+    },
+    "Q19": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q20": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q21": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q24": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q27": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q53.Name": {
+      "type": "string"
+    },
+    "Q36.Amount": {
+      "type": "string"
+    },
+    "Q36.Balance": {
+      "type": "string"
+    },
+    "Q36.YourShare": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q601": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q602": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q603": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q604": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q605": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q606": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q607": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q608": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q609": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6010": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6011": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6012": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6013": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6014": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6015": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6016": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6017": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6018": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6019": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6020": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6021": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6022": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6023": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6024": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6025": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6026": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6027": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6028": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6030": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q6029": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q58Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q58.Type_1": {
+      "type": "string"
+    },
+    "Q58.WhoPays_1": {
+      "type": "string"
+    },
+    "Q58.Amount_1": {
+      "type": "string"
+    },
+    "Q58.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q58.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q58.Type_2": {
+      "type": "string"
+    },
+    "Q58.WhoPays_2": {
+      "type": "string"
+    },
+    "Q58.Amount_2": {
+      "type": "string"
+    },
+    "Q58.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q58.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q58.DateCommenced.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q58.DateCommenced.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q58.DateCommenced.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q58.DateCommenced.2.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q58.DateCommenced.2.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q58.DateCommenced.2.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q59Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q59.Asset_1": {
+      "type": "string"
+    },
+    "Q59.CurrentValue_1": {
+      "type": "string"
+    },
+    "Q59.AmtOwed_1": {
+      "type": "string"
+    },
+    "Q59.Currency_1": {
+      "type": "string"
+    },
+    "Q59.YourShare_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q59.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q59.Asset_2": {
+      "type": "string"
+    },
+    "Q59.CurrentValue_2": {
+      "type": "string"
+    },
+    "Q59.AmtOwed_2": {
+      "type": "string"
+    },
+    "Q59.Currency_2": {
+      "type": "string"
+    },
+    "Q59.YourShare_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q59.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q56": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q57Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q57.InsuranceCoName_1": {
+      "type": "string"
+    },
+    "Q57.PolicyNo_1": {
+      "type": "string"
+    },
+    "Q57.SurrenderValue_1": {
+      "type": "string"
+    },
+    "Q57.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q57.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q57.InsuranceCoName_2": {
+      "type": "string"
+    },
+    "Q57.PolicyNo_2": {
+      "type": "string"
+    },
+    "Q57.SurrenderValue_2": {
+      "type": "string"
+    },
+    "Q57.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q57.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q55Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q54Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q54.SDT_1": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q54.Given_2": {
+      "type": "string"
+    },
+    "Q54.Worth_2": {
+      "type": "string"
+    },
+    "Q54.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q54.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q54.SDT_2": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q54.Given_3": {
+      "type": "string"
+    },
+    "Q54.Worth_3": {
+      "type": "string"
+    },
+    "Q54.AmountReceived_2": {
+      "type": "string"
+    },
+    "Q54.YourShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q54.PartnerShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q54.SDT_3": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q54.Given_1": {
+      "type": "string"
+    },
+    "Q54.Worth_1": {
+      "type": "string"
+    },
+    "Q54.AmountReceived_1": {
+      "type": "string"
+    },
+    "Q54.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q54.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q54.AmountReceived_3": {
+      "type": "string"
+    },
+    "Q54.DateGiven.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q54.DateGiven.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q54.DateGiven.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q54.DateGiven.2.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q54.DateGiven.2.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q54.DateGiven.2.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q54.DateGiven.3.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q54.DateGiven.3.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q54.DateGiven.3.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q53Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q52Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q52.WhoTo_1": {
+      "type": "string"
+    },
+    "Q52.Amount_1": {
+      "type": "string"
+    },
+    "Q52.Balance_1": {
+      "type": "string"
+    },
+    "Q52.You_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q52.Partner_1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q52.WhoTo_2": {
+      "type": "string"
+    },
+    "Q52.Amount_2": {
+      "type": "string"
+    },
+    "Q52.Balance_2": {
+      "type": "string"
+    },
+    "Q52.You_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q52.Partner_2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q52.DateLent.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q52.DateLent.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q52.DateLent.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q52.DateLent.2.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q52.DateLent.2.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q52.DateLent.2.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q51Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q51.CompanyName_1": {
+      "type": "string"
+    },
+    "Q51.Type_1": {
+      "type": "string"
+    },
+    "Q51.CurrentInvested_1": {
+      "type": "string"
+    },
+    "Q51.Currency_1": {
+      "type": "string"
+    },
+    "Q51.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q51.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q51.CompanyName_2": {
+      "type": "string"
+    },
+    "Q51.Type_2": {
+      "type": "string"
+    },
+    "Q51.CurrentInvested_2": {
+      "type": "string"
+    },
+    "Q51.Currency_2": {
+      "type": "string"
+    },
+    "Q51.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q51.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q51.CompanyName_3": {
+      "type": "string"
+    },
+    "Q51.Type_3": {
+      "type": "string"
+    },
+    "Q51.CurrentInvested_3": {
+      "type": "string"
+    },
+    "Q51.Currency_3": {
+      "type": "string"
+    },
+    "Q51.YourShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q51.PartnerShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q50Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q50.CompanyName_1": {
+      "type": "string"
+    },
+    "Q50.Portfolio_1": {
+      "type": "string"
+    },
+    "Q50.APIRCode_1": {
+      "type": "string"
+    },
+    "Q50.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q50.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q50.CompanyName_2": {
+      "type": "string"
+    },
+    "Q50.Portfolio_2": {
+      "type": "string"
+    },
+    "Q50.APIRCode_2": {
+      "type": "string"
+    },
+    "Q50.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q50.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q49Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q49.CompanyName_1": {
+      "type": "string"
+    },
+    "Q49.NameOfProduct_1": {
+      "type": "string"
+    },
+    "Q49.NoOfUnits_1": {
+      "type": "string"
+    },
+    "Q49.APIRCode_1": {
+      "type": "string"
+    },
+    "Q49.MValue_1": {
+      "type": "string"
+    },
+    "Q49.Currency_1": {
+      "type": "string"
+    },
+    "Q49.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q49.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q49.CompanyName_2": {
+      "type": "string"
+    },
+    "Q49.NameOfProduct_2": {
+      "type": "string"
+    },
+    "Q49.NoOfUnits_2": {
+      "type": "string"
+    },
+    "Q49.APIRCode_2": {
+      "type": "string"
+    },
+    "Q49.MValue_2": {
+      "type": "string"
+    },
+    "Q49.Currency_2": {
+      "type": "string"
+    },
+    "Q49.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q49.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q48Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q48.CompanyName_1": {
+      "type": "string"
+    },
+    "Q48.TypeOfShares_1": {
+      "type": "string"
+    },
+    "Q48.NoOfShares_1": {
+      "type": "string"
+    },
+    "Q48.MValue_1": {
+      "type": "string"
+    },
+    "Q48.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q48.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q48.CompanyName_2": {
+      "type": "string"
+    },
+    "Q48.TypeOfShares_2": {
+      "type": "string"
+    },
+    "Q48.NoOfShares_2": {
+      "type": "string"
+    },
+    "Q48.MValue_2": {
+      "type": "string"
+    },
+    "Q48.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q48.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q48.CompanyName_3": {
+      "type": "string"
+    },
+    "Q48.TypeOfShares_3": {
+      "type": "string"
+    },
+    "Q48.NoOfShares_3": {
+      "type": "string"
+    },
+    "Q48.MValue_3": {
+      "type": "string"
+    },
+    "Q48.YourShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q48.PartnerShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q47Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q47.CompanyName_1": {
+      "type": "string"
+    },
+    "Q47.NoOfShares_1": {
+      "type": "string"
+    },
+    "Q47.Country_1": {
+      "type": "string"
+    },
+    "Q47.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q47.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q47.CompanyName_2": {
+      "type": "string"
+    },
+    "Q47.NoOfShares_2": {
+      "type": "string"
+    },
+    "Q47.Country_2": {
+      "type": "string"
+    },
+    "Q47.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q47.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 1
+    },
+    "Q47.CompanyName_3": {
+      "type": "string"
+    },
+    "Q47.NoOfShares_3": {
+      "type": "string"
+    },
+    "Q47.Country_3": {
+      "type": "string"
+    },
+    "Q47.YourShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q47.PartnerShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q47.CompanyName_4": {
+      "type": "string"
+    },
+    "Q47.NoOfShares_4": {
+      "type": "string"
+    },
+    "Q47.Country_4": {
+      "type": "string"
+    },
+    "Q47.YourShare_4": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q47.PartnerShare_4": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q46Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q46.ProductProvider_1": {
+      "type": "string"
+    },
+    "Q46.Type_1": {
+      "type": "string"
+    },
+    "Q46.ProductRN_1": {
+      "type": "string"
+    },
+    "Q46.Ownedby_1": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q46.ProductProvider_2": {
+      "type": "string"
+    },
+    "Q46.Type_2": {
+      "type": "string"
+    },
+    "Q46.ProductRN_2": {
+      "type": "string"
+    },
+    "Q46.Ownedby_2": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q46.DateJoin.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q46.DateJoin.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q46.DateJoin.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q46.DateJoin.2.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q46.DateJoin.2.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q46.DateJoin.2.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q45Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q45.ManagerName_1": {
+      "type": "string"
+    },
+    "Q45.FundName_1": {
+      "type": "string"
+    },
+    "Q45.ProductRN_1": {
+      "type": "string"
+    },
+    "Q45.MValue_1": {
+      "type": "string"
+    },
+    "Q45.Ownedby_1": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q45.ManagerName_2": {
+      "type": "string"
+    },
+    "Q45.FundName_2": {
+      "type": "string"
+    },
+    "Q45.ProductRN_2": {
+      "type": "string"
+    },
+    "Q45.MValue_2": {
+      "type": "string"
+    },
+    "Q45.Ownedby_2": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q45.DateJoin.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q45.DateJoin.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q45.DateJoin.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q45.DateJoin.2.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q45.DateJoin.2.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q45.DateJoin.2.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q44": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q43": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q42": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q41": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q38Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q40": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q39": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q38.AssetTYpe_1": {
+      "type": "string"
+    },
+    "Q38.Model_1": {
+      "type": "string"
+    },
+    "Q38.Year_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q38.MValue_1": {
+      "type": "string"
+    },
+    "Q38.AmtOwed_1": {
+      "type": "string"
+    },
+    "Q38.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q38.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q38.AssetTYpe_2": {
+      "type": "string"
+    },
+    "Q38.Make_2": {
+      "type": "string"
+    },
+    "Q38.Model_2": {
+      "type": "string"
+    },
+    "Q38.Year_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q38.MValue_2": {
+      "type": "string"
+    },
+    "Q38.AmtOwed_2": {
+      "type": "string"
+    },
+    "Q38.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q38.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q38.Make_1": {
+      "type": "string"
+    },
+    "Q37Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q37.AssetType_1": {
+      "type": "string"
+    },
+    "Q37.Make_1": {
+      "type": "string"
+    },
+    "Q37.Model_1": {
+      "type": "string"
+    },
+    "Q37.Year_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q37.MValue_1": {
+      "type": "string"
+    },
+    "Q37.LoanBalance_1": {
+      "type": "string"
+    },
+    "Q37.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q37.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q37.AssetType_2": {
+      "type": "string"
+    },
+    "Q37.Make_2": {
+      "type": "string"
+    },
+    "Q37.Model_2": {
+      "type": "string"
+    },
+    "Q37.Year_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q37.MValue_2": {
+      "type": "string"
+    },
+    "Q37.LoanBalance_2": {
+      "type": "string"
+    },
+    "Q37.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q37.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q36PartnerShare": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.BankName_1": {
+      "type": "string"
+    },
+    "Q35.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.Currency_2": {
+      "type": "string"
+    },
+    "Q35.Bal_2": {
+      "type": "string"
+    },
+    "Q35.AccNo_2": {
+      "type": "string"
+    },
+    "Q35.BankName_2": {
+      "type": "string"
+    },
+    "Q35.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.Currency_1": {
+      "type": "string"
+    },
+    "Q35.Bal_1": {
+      "type": "string"
+    },
+    "Q35.AccNo_1": {
+      "type": "string"
+    },
+    "Q35.BankName_3": {
+      "type": "string"
+    },
+    "Q35.AccNo_3": {
+      "type": "string"
+    },
+    "Q35.Bal_3": {
+      "type": "string"
+    },
+    "Q35.Currency_3": {
+      "type": "string"
+    },
+    "Q35.YourShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.PartnerShare_3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.BankName_4": {
+      "type": "string"
+    },
+    "Q35.AccNo_4": {
+      "type": "string"
+    },
+    "Q35.Bal_4": {
+      "type": "string"
+    },
+    "Q35.Currency_4": {
+      "type": "string"
+    },
+    "Q35.YourShare_4": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.PartnerShare_4": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.BankName_5": {
+      "type": "string"
+    },
+    "Q35.AccNo_5": {
+      "type": "string"
+    },
+    "Q35.Bal_5": {
+      "type": "string"
+    },
+    "Q35.Currency_5": {
+      "type": "string"
+    },
+    "Q35.YourShare_5": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.PartnerShare_5": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.BankName_6": {
+      "type": "string"
+    },
+    "Q35.AccNo_6": {
+      "type": "string"
+    },
+    "Q35.Bal_6": {
+      "type": "string"
+    },
+    "Q35.Currency_6": {
+      "type": "string"
+    },
+    "Q35.YourShare_6": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q35.PartnerShare_6": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q34": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q34_Details.LumpSumType_1": {
+      "type": "string"
+    },
+    "Q34_Details.PaidBy_1": {
+      "type": "string"
+    },
+    "Q34_Details.Amount_1": {
+      "type": "string"
+    },
+    "Q34_Details.RecPayment_1": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Your partner"
+      ]
+    },
+    "Q34_Details.LumpSumType_2": {
+      "type": "string"
+    },
+    "Q34_Details.PaidBy_2": {
+      "type": "string"
+    },
+    "Q34_Details.Amount_2": {
+      "type": "string"
+    },
+    "Q34_Details.RecPayment_2": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Your partner"
+      ]
+    },
+    "Q34_Details.DatePaid.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q34_Details.DatePaid.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q34_Details.DatePaid.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q34_Details.DatePaid.2.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q34_Details.DatePaid.2.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q34_Details.DatePaid.2.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q33": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No"
+      ]
+    },
+    "Q32": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q32_Details.Name_1": {
+      "type": "string"
+    },
+    "Q32_Details.Relationship_1": {
+      "type": "string"
+    },
+    "Q32_Details.NoOfMeals_1": {
+      "type": "string"
+    },
+    "Q32_Details.Amount_1": {
+      "type": "string"
+    },
+    "Q32_Details.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q32_Details.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q32_Details.Name_2": {
+      "type": "string"
+    },
+    "Q32_Details.Relationship_2": {
+      "type": "string"
+    },
+    "Q32_Details.NoOfMeals_2": {
+      "type": "string"
+    },
+    "Q32_Details.Amount_2": {
+      "type": "string"
+    },
+    "Q32_Details.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q32_Details.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q32_Details.DateStart.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q32_Details.DateStart.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q32_Details.DateStart.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q32_Details.DateStart.2.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q32_Details.DateStart.2.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q32_Details.DateStart.2.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q31Q": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q31.PaymentType1": {
+      "type": "string"
+    },
+    "Q31.Country1": {
+      "type": "string"
+    },
+    "Q31.Who1": {
+      "type": "string"
+    },
+    "Q31.PaidTo1": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q31.PaymentType2": {
+      "type": "string"
+    },
+    "Q31.Country2": {
+      "type": "string"
+    },
+    "Q31.Who2": {
+      "type": "string"
+    },
+    "Q31.PaidTo2": {
+      "type": "string",
+      "enum": [
+        "You",
+        "Partner"
+      ]
+    },
+    "Q31.DateCommenced.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q31.DateCommenced.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q31.DateCommenced.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q31.DateCommenced.2.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q31.DateCommenced.2.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q31.DateCommenced.2.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q23": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q26": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q25": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q28": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q29": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No"
+      ]
+    },
+    "Q30": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q22": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q55.CompanyName_1": {
+      "type": "string"
+    },
+    "Q55.ProductName_1": {
+      "type": "string"
+    },
+    "Q55.Price_1": {
+      "type": "string"
+    },
+    "Q55.Value_1": {
+      "type": "string"
+    },
+    "Q55.YourShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q55.PartnerShare_1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q55.CompanyName_2": {
+      "type": "string"
+    },
+    "Q55.ProductName_2": {
+      "type": "string"
+    },
+    "Q55.Price_2": {
+      "type": "string"
+    },
+    "Q55.Value_2": {
+      "type": "string"
+    },
+    "Q55.YourShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q55.PartnerShare_2": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q61": {
+      "type": "string",
+      "maxLength": 1
+    },
+    "SepForm": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q3.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q3.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q3.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q7.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q7.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q7.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "SignDate.0.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "SignDate.0.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "SignDate.0.Y": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "SignDate.1.D": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "SignDate.1.M": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "SignDate.1.Y": {
+      "type": "string",
+      "maxLength": 4
+    }
+  },
+  "required": [
+    "familyName",
+    "firstName",
+    "clientReferenceNumber",
+    "question4"
+  ],
+  "additionalProperties": false
+}
