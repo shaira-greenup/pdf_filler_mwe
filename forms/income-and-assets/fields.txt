@@ -12,11 +12,14 @@ Field: Sign
 Field: Clear
   Type: PDFButton
   Hidden: [false]
+  Tooltip: "Clear button"
   Value: (none, push button)
 
 Field: 1_CRN.0
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your Centrelink Reference Number (if known)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"3_CRN.1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -24,6 +27,8 @@ Field: 1_CRN.0
 Field: 1_CRN.1
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your Centrelink Reference Number (if known)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"3_CRN.2\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -31,6 +36,8 @@ Field: 1_CRN.1
 Field: 1_CRN.2
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your Centrelink Reference Number (if known)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"3_CRN.3\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -38,6 +45,8 @@ Field: 1_CRN.2
 Field: 1_CRN.3
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your Centrelink Reference Number (if known)"
+  Keystroke action: "if(event.change.match(/[0-9]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\revent.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: 1
   Combed: true
@@ -45,6 +54,7 @@ Field: 1_CRN.3
 Field: Q2.FamilyName
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Family name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -52,6 +62,7 @@ Field: Q2.FamilyName
 Field: Q2.FirstName
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "First given name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -59,6 +70,7 @@ Field: Q2.FirstName
 Field: Q2.SecondName
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Second given name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -72,6 +84,8 @@ Field: Q4
 Field: Q5.CRN.1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner’s Centrelink Reference Number (if known)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: 3
   Combed: true
@@ -79,6 +93,8 @@ Field: Q5.CRN.1
 Field: Q5.CRN.0
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner’s Centrelink Reference Number (if known)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: 3
   Combed: true
@@ -86,6 +102,8 @@ Field: Q5.CRN.0
 Field: Q5.CRN.2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner’s Centrelink Reference Number (if known)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: 3
   Combed: true
@@ -93,6 +111,8 @@ Field: Q5.CRN.2
 Field: Q5.CRN.3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner’s Centrelink Reference Number (if known)"
+  Keystroke action: "if(event.change.match(/[0-9]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\revent.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: 1
   Combed: true
@@ -100,6 +120,7 @@ Field: Q5.CRN.3
 Field: Q6.FamilyName
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Family name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -107,6 +128,7 @@ Field: Q6.FamilyName
 Field: Q6.FirstName
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "First given name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -114,6 +136,7 @@ Field: Q6.FirstName
 Field: Q6.SecondName
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Second given name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -139,12 +162,15 @@ Field: Q8Q
 Field: Q8.PersonWorking1
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Person working for this employer"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q8.ABN.0_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.1_1\");"
   Value: null
   MaxLength: 2
   Combed: true
@@ -152,6 +178,8 @@ Field: Q8.ABN.0_2
 Field: Q8.ABN.1_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.2_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -159,6 +187,8 @@ Field: Q8.ABN.1_2
 Field: Q8.ABN.2_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.3_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -166,6 +196,8 @@ Field: Q8.ABN.2_2
 Field: Q8.ABN.3_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r"
   Value: null
   MaxLength: 3
   Combed: true
@@ -173,6 +205,8 @@ Field: Q8.ABN.3_2
 Field: Q8.ABN.0_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.1_1\");"
   Value: null
   MaxLength: 2
   Combed: true
@@ -180,6 +214,8 @@ Field: Q8.ABN.0_1
 Field: Q8.ABN.1_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.2_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -187,6 +223,8 @@ Field: Q8.ABN.1_1
 Field: Q8.ABN.2_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.3_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -194,6 +232,8 @@ Field: Q8.ABN.2_1
 Field: Q8.ABN.3_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r"
   Value: null
   MaxLength: 3
   Combed: true
@@ -201,18 +241,22 @@ Field: Q8.ABN.3_1
 Field: Q8.WorkIs1
   Type: PDFCheckBox
   Hidden: [true,true,true,true]
+  Tooltip: "is this work: full-time, part-time, Seasonal, Casual"
   Value: Off
   Options: ["FT","PT","Seasonal","Casual"]
 
 Field: Q8.UsualWage1
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Do you receive the same amount each pay day?"
   Value: Off
   Options: ["Yes","No"]
 
 Field: Q8.PersonnelNo1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Personnel, service or clock-card number"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -220,6 +264,9 @@ Field: Q8.PersonnelNo1
 Field: Q8.HoursWorked1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Hours worked per fortnight"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -227,6 +274,9 @@ Field: Q8.HoursWorked1
 Field: Q8.GrossAmt1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Gross amount earned per fortnight (before tax and other deductions)"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -234,6 +284,7 @@ Field: Q8.GrossAmt1
 Field: Q8.EmployerName2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Employer's name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -241,12 +292,14 @@ Field: Q8.EmployerName2
 Field: Q8.PersonWorking2
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Person working for this employer"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q8.Address1_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Address line 1"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -254,6 +307,7 @@ Field: Q8.Address1_2
 Field: Q8.Address2_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Address line 2"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -261,6 +315,7 @@ Field: Q8.Address2_2
 Field: Q8.Address3_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Address line 3"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -268,6 +323,8 @@ Field: Q8.Address3_2
 Field: Q8.Postcode_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Address postcode"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: 4
   Combed: false
@@ -275,12 +332,15 @@ Field: Q8.Postcode_2
 Field: Q8.WorkIs2
   Type: PDFCheckBox
   Hidden: [true,true,true,true]
+  Tooltip: "is this work: full-time, part-time, Seasonal, Casual"
   Value: Off
   Options: ["FT","PT","Seasonal","Casual"]
 
 Field: Q8.PersonnelNo2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Personnel, service or clock-card number"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -288,6 +348,9 @@ Field: Q8.PersonnelNo2
 Field: Q8.HoursWorked2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Hours worked per fortnight"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -295,12 +358,14 @@ Field: Q8.HoursWorked2
 Field: Q8.UsualWage2
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Do you receive the same amount each pay day?"
   Value: Off
   Options: ["No","Yes"]
 
 Field: Q8.EmployerName1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Employer’s name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -308,6 +373,7 @@ Field: Q8.EmployerName1
 Field: Q8.Address1_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Address line 1"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -315,6 +381,7 @@ Field: Q8.Address1_1
 Field: Q8.Address2_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Address line 2"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -322,6 +389,7 @@ Field: Q8.Address2_1
 Field: Q8.Address3_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Address line 3"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -329,6 +397,8 @@ Field: Q8.Address3_1
 Field: Q8.Postcode_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Address postcode"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: 4
   Combed: false
@@ -336,6 +406,9 @@ Field: Q8.Postcode_1
 Field: Q8.GrossAmt2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Gross amount earned per fortnight (before tax and other deductions)"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -343,6 +416,8 @@ Field: Q8.GrossAmt2
 Field: Q8.WorkPhoneNo2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
   Value: null
   MaxLength: 10
   Combed: true
@@ -350,6 +425,8 @@ Field: Q8.WorkPhoneNo2
 Field: Q8.WorkPhoneNo1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
   Value: null
   MaxLength: 10
   Combed: true
@@ -418,6 +495,8 @@ Field: Q13Q
 Field: Q13.ABN.0_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.1_1\");"
   Value: null
   MaxLength: 2
   Combed: true
@@ -425,6 +504,8 @@ Field: Q13.ABN.0_2
 Field: Q13.ABN.1_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.2_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -432,6 +513,8 @@ Field: Q13.ABN.1_2
 Field: Q13.ABN.2_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.3_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -439,6 +522,8 @@ Field: Q13.ABN.2_2
 Field: Q13.ABN.3_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r"
   Value: null
   MaxLength: 3
   Combed: true
@@ -446,6 +531,8 @@ Field: Q13.ABN.3_2
 Field: Q13.ABN.0_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.1_1\");"
   Value: null
   MaxLength: 2
   Combed: true
@@ -453,6 +540,8 @@ Field: Q13.ABN.0_1
 Field: Q13.ABN.1_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.2_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -460,6 +549,8 @@ Field: Q13.ABN.1_1
 Field: Q13.ABN.2_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.3_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -467,6 +558,8 @@ Field: Q13.ABN.2_1
 Field: Q13.ABN.3_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r"
   Value: null
   MaxLength: 3
   Combed: true
@@ -474,12 +567,14 @@ Field: Q13.ABN.3_1
 Field: Q13.PersonWorking1
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Who works for this employer?"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q13.EmployerName2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Employer or business name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -487,12 +582,14 @@ Field: Q13.EmployerName2
 Field: Q13.PersonWorking2
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Who works for this employer?"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q13.EmployerName1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Employer or business name"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -513,12 +610,15 @@ Field: Q14Q
 Field: Q14.LeaveEntitlementFor1
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Leave entitlement for"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q14.ABN.0_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.1_1\");"
   Value: null
   MaxLength: 2
   Combed: true
@@ -526,6 +626,8 @@ Field: Q14.ABN.0_1
 Field: Q14.ABN.1_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.2_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -533,6 +635,8 @@ Field: Q14.ABN.1_1
 Field: Q14.ABN.2_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.3_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -540,6 +644,8 @@ Field: Q14.ABN.2_1
 Field: Q14.ABN.3_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r"
   Value: null
   MaxLength: 3
   Combed: true
@@ -547,6 +653,8 @@ Field: Q14.ABN.3_1
 Field: Q14.ABN.0_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.1_1\");"
   Value: null
   MaxLength: 2
   Combed: true
@@ -554,6 +662,8 @@ Field: Q14.ABN.0_2
 Field: Q14.ABN.1_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.2_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -561,6 +671,8 @@ Field: Q14.ABN.1_2
 Field: Q14.ABN.2_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q29_Details.ABN.3_1\");"
   Value: null
   MaxLength: 3
   Combed: true
@@ -568,6 +680,8 @@ Field: Q14.ABN.2_2
 Field: Q14.ABN.3_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Australian Business Number (ABN)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r"
   Value: null
   MaxLength: 3
   Combed: true
@@ -575,6 +689,7 @@ Field: Q14.ABN.3_2
 Field: Q14.PaymentType1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of leave entitlement payment"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -582,6 +697,9 @@ Field: Q14.PaymentType1
 Field: Q14.PaymentAmt1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount (before tax and other deductions)"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -589,6 +707,9 @@ Field: Q14.PaymentAmt1
 Field: Q14.NoWorkingDays1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of working days covered by the payment"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -596,6 +717,7 @@ Field: Q14.NoWorkingDays1
 Field: Q14.EmployerName1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of business"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -603,6 +725,7 @@ Field: Q14.EmployerName1
 Field: Q14.PaymentType2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of leave entitlement payment"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -610,6 +733,9 @@ Field: Q14.PaymentType2
 Field: Q14.PaymentAmt2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount (before tax and other deductions)"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -617,6 +743,9 @@ Field: Q14.PaymentAmt2
 Field: Q14.NoWorkingDays2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of working days covered by the payment"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -624,12 +753,14 @@ Field: Q14.NoWorkingDays2
 Field: Q14.LeaveEntitlementFor2
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Leave entitlement for"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q14.EmployerName2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of business"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -637,6 +768,8 @@ Field: Q14.EmployerName2
 Field: Q14.PhoneNo1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
   Value: null
   MaxLength: 10
   Combed: true
@@ -644,6 +777,8 @@ Field: Q14.PhoneNo1
 Field: Q14.PhoneNo2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
   Value: null
   MaxLength: 10
   Combed: true
@@ -651,6 +786,9 @@ Field: Q14.PhoneNo2
 Field: Q14.DatePaid_Payable.1.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -658,6 +796,9 @@ Field: Q14.DatePaid_Payable.1.D
 Field: Q14.DatePaid_Payable.1.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -665,6 +806,9 @@ Field: Q14.DatePaid_Payable.1.M
 Field: Q14.DatePaid_Payable.1.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -672,6 +816,9 @@ Field: Q14.DatePaid_Payable.1.Y
 Field: Q14.DatePaid_Payable.2.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -679,6 +826,9 @@ Field: Q14.DatePaid_Payable.2.D
 Field: Q14.DatePaid_Payable.2.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -686,6 +836,9 @@ Field: Q14.DatePaid_Payable.2.M
 Field: Q14.DatePaid_Payable.2.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -831,6 +984,7 @@ Field: Q21GoToQ23b
 Field: Q53.Name
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of the organisation agreement entered into with"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -838,6 +992,9 @@ Field: Q53.Name
 Field: Q36.Amount
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -845,6 +1002,9 @@ Field: Q36.Amount
 Field: Q36.Balance
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Balance of loan(s) taken to purchase"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -852,6 +1012,9 @@ Field: Q36.Balance
 Field: Q36.YourShare
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1052,6 +1215,7 @@ Field: DummyCalcQ58
 Field: Q58.Type_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of payment"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1059,6 +1223,7 @@ Field: Q58.Type_1
 Field: Q58.WhoPays_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Who pays it?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1066,6 +1231,9 @@ Field: Q58.WhoPays_1
 Field: Q58.Amount_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount per fortnight"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1073,6 +1241,9 @@ Field: Q58.Amount_1
 Field: Q58.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1080,6 +1251,9 @@ Field: Q58.YourShare_1
 Field: Q58.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1087,6 +1261,7 @@ Field: Q58.PartnerShare_1
 Field: Q58.Type_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of payment"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1094,6 +1269,7 @@ Field: Q58.Type_2
 Field: Q58.WhoPays_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Who pays it?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1101,6 +1277,9 @@ Field: Q58.WhoPays_2
 Field: Q58.Amount_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount per fortnight"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1108,6 +1287,9 @@ Field: Q58.Amount_2
 Field: Q58.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1115,6 +1297,9 @@ Field: Q58.YourShare_2
 Field: Q58.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1122,6 +1307,9 @@ Field: Q58.PartnerShare_2
 Field: Q58.DateCommenced.1.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1129,6 +1317,9 @@ Field: Q58.DateCommenced.1.D
 Field: Q58.DateCommenced.1.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1136,6 +1327,9 @@ Field: Q58.DateCommenced.1.M
 Field: Q58.DateCommenced.1.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -1143,6 +1337,9 @@ Field: Q58.DateCommenced.1.Y
 Field: Q58.DateCommenced.2.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1150,6 +1347,9 @@ Field: Q58.DateCommenced.2.D
 Field: Q58.DateCommenced.2.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1157,6 +1357,9 @@ Field: Q58.DateCommenced.2.M
 Field: Q58.DateCommenced.2.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -1177,6 +1380,7 @@ Field: DummyCalcQ59
 Field: Q59.Asset_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Description of asset"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1184,6 +1388,9 @@ Field: Q59.Asset_1
 Field: Q59.CurrentValue_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1191,6 +1398,9 @@ Field: Q59.CurrentValue_1
 Field: Q59.AmtOwed_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Balance of loan(s) taken to purchase"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1198,6 +1408,8 @@ Field: Q59.AmtOwed_1
 Field: Q59.Currency_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1205,6 +1417,9 @@ Field: Q59.Currency_1
 Field: Q59.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 3
   Combed: false
@@ -1212,6 +1427,9 @@ Field: Q59.YourShare_1
 Field: Q59.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 3
   Combed: false
@@ -1219,6 +1437,7 @@ Field: Q59.PartnerShare_1
 Field: Q59.Asset_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Description of asset"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1226,6 +1445,9 @@ Field: Q59.Asset_2
 Field: Q59.CurrentValue_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1233,6 +1455,9 @@ Field: Q59.CurrentValue_2
 Field: Q59.AmtOwed_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Balance of loan(s) taken to purchase"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1240,6 +1465,8 @@ Field: Q59.AmtOwed_2
 Field: Q59.Currency_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1247,6 +1474,9 @@ Field: Q59.Currency_2
 Field: Q59.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 3
   Combed: false
@@ -1254,6 +1484,9 @@ Field: Q59.YourShare_2
 Field: Q59.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 3
   Combed: false
@@ -1280,6 +1513,7 @@ Field: DummyCalcQ57
 Field: Q57.InsuranceCoName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of insurance company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1287,6 +1521,8 @@ Field: Q57.InsuranceCoName_1
 Field: Q57.PolicyNo_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Policy number"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1294,6 +1530,9 @@ Field: Q57.PolicyNo_1
 Field: Q57.SurrenderValue_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Surrender value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1301,6 +1540,9 @@ Field: Q57.SurrenderValue_1
 Field: Q57.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1308,6 +1550,9 @@ Field: Q57.YourShare_1
 Field: Q57.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1315,6 +1560,7 @@ Field: Q57.PartnerShare_1
 Field: Q57.InsuranceCoName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of insurance company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1322,6 +1568,8 @@ Field: Q57.InsuranceCoName_2
 Field: Q57.PolicyNo_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Policy number"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1329,6 +1577,9 @@ Field: Q57.PolicyNo_2
 Field: Q57.SurrenderValue_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Surrender value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1336,6 +1587,9 @@ Field: Q57.SurrenderValue_2
 Field: Q57.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1343,6 +1597,9 @@ Field: Q57.YourShare_2
 Field: Q57.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1381,12 +1638,14 @@ Field: DummyCalcQ54
 Field: Q54.SDT_1
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Was this gift to a Special Disability Trust (SDT)?"
   Value: Off
   Options: ["No","Yes"]
 
 Field: Q54.Given_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "What you gave away or sold for less than its market value (e.g. money, car, second home, land, farm)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1394,6 +1653,9 @@ Field: Q54.Given_2
 Field: Q54.Worth_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "What it was worth"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1401,6 +1663,9 @@ Field: Q54.Worth_2
 Field: Q54.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1408,6 +1673,9 @@ Field: Q54.YourShare_2
 Field: Q54.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1415,12 +1683,14 @@ Field: Q54.PartnerShare_2
 Field: Q54.SDT_2
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Was this gift to a Special Disability Trust (SDT)?"
   Value: Off
   Options: ["No","Yes"]
 
 Field: Q54.Given_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "What you gave away or sold for less than its market value (e.g. money, car, second home, land, farm)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1428,6 +1698,9 @@ Field: Q54.Given_3
 Field: Q54.Worth_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "What it was worth"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1435,6 +1708,9 @@ Field: Q54.Worth_3
 Field: Q54.AmountReceived_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "What you got for it"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1442,6 +1718,9 @@ Field: Q54.AmountReceived_2
 Field: Q54.YourShare_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1449,6 +1728,9 @@ Field: Q54.YourShare_3
 Field: Q54.PartnerShare_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1456,12 +1738,14 @@ Field: Q54.PartnerShare_3
 Field: Q54.SDT_3
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Was this gift to a Special Disability Trust (SDT)?"
   Value: Off
   Options: ["No","Yes"]
 
 Field: Q54.Given_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "What you gave away or sold for less than its market value (e.g. money, car, second home, land, farm)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1469,6 +1753,9 @@ Field: Q54.Given_1
 Field: Q54.Worth_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "What it was worth"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1476,6 +1763,9 @@ Field: Q54.Worth_1
 Field: Q54.AmountReceived_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "What you got for it"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1483,6 +1773,9 @@ Field: Q54.AmountReceived_1
 Field: Q54.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1490,6 +1783,9 @@ Field: Q54.YourShare_1
 Field: Q54.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1497,6 +1793,9 @@ Field: Q54.PartnerShare_1
 Field: Q54.AmountReceived_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "What you got for it"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1504,6 +1803,9 @@ Field: Q54.AmountReceived_3
 Field: Q54.DateGiven.1.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1511,6 +1813,9 @@ Field: Q54.DateGiven.1.D
 Field: Q54.DateGiven.1.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1518,6 +1823,9 @@ Field: Q54.DateGiven.1.M
 Field: Q54.DateGiven.1.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -1525,6 +1833,9 @@ Field: Q54.DateGiven.1.Y
 Field: Q54.DateGiven.2.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1532,6 +1843,9 @@ Field: Q54.DateGiven.2.D
 Field: Q54.DateGiven.2.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1539,6 +1853,9 @@ Field: Q54.DateGiven.2.M
 Field: Q54.DateGiven.2.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -1546,6 +1863,9 @@ Field: Q54.DateGiven.2.Y
 Field: Q54.DateGiven.3.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1553,6 +1873,9 @@ Field: Q54.DateGiven.3.D
 Field: Q54.DateGiven.3.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1560,6 +1883,9 @@ Field: Q54.DateGiven.3.M
 Field: Q54.DateGiven.3.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -1593,6 +1919,7 @@ Field: DummyCalcQ52
 Field: Q52.WhoTo_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Who did you lend the money to?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1600,6 +1927,9 @@ Field: Q52.WhoTo_1
 Field: Q52.Amount_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount lent"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1607,6 +1937,9 @@ Field: Q52.Amount_1
 Field: Q52.Balance_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current balance on loan"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1614,6 +1947,9 @@ Field: Q52.Balance_1
 Field: Q52.You_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Lent by you"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 3
   Combed: false
@@ -1621,6 +1957,9 @@ Field: Q52.You_1
 Field: Q52.Partner_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Lent by your partner"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 3
   Combed: false
@@ -1628,6 +1967,7 @@ Field: Q52.Partner_1
 Field: Q52.WhoTo_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Who did you lend the money to?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1635,6 +1975,9 @@ Field: Q52.WhoTo_2
 Field: Q52.Amount_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount lent"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1642,6 +1985,9 @@ Field: Q52.Amount_2
 Field: Q52.Balance_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current balance on loan"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1649,6 +1995,9 @@ Field: Q52.Balance_2
 Field: Q52.You_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Lent by you"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 3
   Combed: false
@@ -1656,6 +2005,9 @@ Field: Q52.You_2
 Field: Q52.Partner_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Lent by your partner"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 3
   Combed: false
@@ -1663,6 +2015,9 @@ Field: Q52.Partner_2
 Field: Q52.DateLent.1.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1670,6 +2025,9 @@ Field: Q52.DateLent.1.D
 Field: Q52.DateLent.1.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1677,6 +2035,9 @@ Field: Q52.DateLent.1.M
 Field: Q52.DateLent.1.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -1684,6 +2045,9 @@ Field: Q52.DateLent.1.Y
 Field: Q52.DateLent.2.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1691,6 +2055,9 @@ Field: Q52.DateLent.2.D
 Field: Q52.DateLent.2.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -1698,6 +2065,9 @@ Field: Q52.DateLent.2.M
 Field: Q52.DateLent.2.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -1718,6 +2088,7 @@ Field: DummyCalcQ51
 Field: Q51.CompanyName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1725,6 +2096,7 @@ Field: Q51.CompanyName_1
 Field: Q51.Type_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of investment"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1732,6 +2104,9 @@ Field: Q51.Type_1
 Field: Q51.CurrentInvested_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current amount invested"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1739,6 +2114,8 @@ Field: Q51.CurrentInvested_1
 Field: Q51.Currency_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1746,6 +2123,9 @@ Field: Q51.Currency_1
 Field: Q51.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1753,6 +2133,9 @@ Field: Q51.YourShare_1
 Field: Q51.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1760,6 +2143,7 @@ Field: Q51.PartnerShare_1
 Field: Q51.CompanyName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1767,6 +2151,7 @@ Field: Q51.CompanyName_2
 Field: Q51.Type_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of investment"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1774,6 +2159,9 @@ Field: Q51.Type_2
 Field: Q51.CurrentInvested_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current amount invested"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1781,6 +2169,8 @@ Field: Q51.CurrentInvested_2
 Field: Q51.Currency_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1788,6 +2178,9 @@ Field: Q51.Currency_2
 Field: Q51.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1795,6 +2188,9 @@ Field: Q51.YourShare_2
 Field: Q51.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1802,6 +2198,7 @@ Field: Q51.PartnerShare_2
 Field: Q51.CompanyName_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1809,6 +2206,7 @@ Field: Q51.CompanyName_3
 Field: Q51.Type_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of investment"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1816,6 +2214,9 @@ Field: Q51.Type_3
 Field: Q51.CurrentInvested_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current amount invested"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1823,6 +2224,8 @@ Field: Q51.CurrentInvested_3
 Field: Q51.Currency_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1830,6 +2233,9 @@ Field: Q51.Currency_3
 Field: Q51.YourShare_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1837,6 +2243,9 @@ Field: Q51.YourShare_3
 Field: Q51.PartnerShare_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1857,6 +2266,7 @@ Field: DummyCalcQ50
 Field: Q50.CompanyName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of margin loan company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1864,6 +2274,9 @@ Field: Q50.CompanyName_1
 Field: Q50.Portfolio_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current portfolio value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1871,6 +2284,8 @@ Field: Q50.Portfolio_1
 Field: Q50.APIRCode_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "APIR code (if known)"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1878,6 +2293,9 @@ Field: Q50.APIRCode_1
 Field: Q50.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1885,6 +2303,9 @@ Field: Q50.YourShare_1
 Field: Q50.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1892,6 +2313,7 @@ Field: Q50.PartnerShare_1
 Field: Q50.CompanyName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of margin loan company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1899,6 +2321,9 @@ Field: Q50.CompanyName_2
 Field: Q50.Portfolio_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current portfolio value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1906,6 +2331,8 @@ Field: Q50.Portfolio_2
 Field: Q50.APIRCode_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "APIR code (if known)"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1913,6 +2340,9 @@ Field: Q50.APIRCode_2
 Field: Q50.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1920,6 +2350,9 @@ Field: Q50.YourShare_2
 Field: Q50.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1940,6 +2373,7 @@ Field: DummyCalcQ49
 Field: Q49.CompanyName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1947,6 +2381,7 @@ Field: Q49.CompanyName_1
 Field: Q49.NameOfProduct_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of product and product option"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1954,6 +2389,9 @@ Field: Q49.NameOfProduct_1
 Field: Q49.NoOfUnits_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of units held (if applicable)"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1961,6 +2399,8 @@ Field: Q49.NoOfUnits_1
 Field: Q49.APIRCode_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "APIR code (if known)"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1968,6 +2408,9 @@ Field: Q49.APIRCode_1
 Field: Q49.MValue_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Value of the investment"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1975,6 +2418,8 @@ Field: Q49.MValue_1
 Field: Q49.Currency_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1982,6 +2427,9 @@ Field: Q49.Currency_1
 Field: Q49.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1989,6 +2437,9 @@ Field: Q49.YourShare_1
 Field: Q49.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -1996,6 +2447,7 @@ Field: Q49.PartnerShare_1
 Field: Q49.CompanyName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2003,6 +2455,7 @@ Field: Q49.CompanyName_2
 Field: Q49.NameOfProduct_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of product and product option"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2010,6 +2463,9 @@ Field: Q49.NameOfProduct_2
 Field: Q49.NoOfUnits_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of units held (if applicable)"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2017,6 +2473,8 @@ Field: Q49.NoOfUnits_2
 Field: Q49.APIRCode_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "APIR code (if known)"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2024,6 +2482,9 @@ Field: Q49.APIRCode_2
 Field: Q49.MValue_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Value of the investment"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2031,6 +2492,8 @@ Field: Q49.MValue_2
 Field: Q49.Currency_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2038,6 +2501,9 @@ Field: Q49.Currency_2
 Field: Q49.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2045,6 +2511,9 @@ Field: Q49.YourShare_2
 Field: Q49.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2065,6 +2534,7 @@ Field: DummyCalcQ48
 Field: Q48.CompanyName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of public company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2072,6 +2542,7 @@ Field: Q48.CompanyName_1
 Field: Q48.TypeOfShares_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of shares"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2079,6 +2550,9 @@ Field: Q48.TypeOfShares_1
 Field: Q48.NoOfShares_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of shares"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2086,6 +2560,9 @@ Field: Q48.NoOfShares_1
 Field: Q48.MValue_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2093,6 +2570,9 @@ Field: Q48.MValue_1
 Field: Q48.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2100,6 +2580,9 @@ Field: Q48.YourShare_1
 Field: Q48.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2107,6 +2590,7 @@ Field: Q48.PartnerShare_1
 Field: Q48.CompanyName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of public company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2114,6 +2598,7 @@ Field: Q48.CompanyName_2
 Field: Q48.TypeOfShares_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of shares"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2121,6 +2606,9 @@ Field: Q48.TypeOfShares_2
 Field: Q48.NoOfShares_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of shares"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2128,6 +2616,9 @@ Field: Q48.NoOfShares_2
 Field: Q48.MValue_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2135,6 +2626,9 @@ Field: Q48.MValue_2
 Field: Q48.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2142,6 +2636,9 @@ Field: Q48.YourShare_2
 Field: Q48.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2149,6 +2646,7 @@ Field: Q48.PartnerShare_2
 Field: Q48.CompanyName_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of public company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2156,6 +2654,7 @@ Field: Q48.CompanyName_3
 Field: Q48.TypeOfShares_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of shares"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2163,6 +2662,9 @@ Field: Q48.TypeOfShares_3
 Field: Q48.NoOfShares_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of shares"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2170,6 +2672,9 @@ Field: Q48.NoOfShares_3
 Field: Q48.MValue_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2177,6 +2682,9 @@ Field: Q48.MValue_3
 Field: Q48.YourShare_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2184,6 +2692,9 @@ Field: Q48.YourShare_3
 Field: Q48.PartnerShare_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2204,6 +2715,7 @@ Field: DummyCalcQ47
 Field: Q47.CompanyName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of public company or ASX code"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2211,6 +2723,9 @@ Field: Q47.CompanyName_1
 Field: Q47.NoOfShares_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of shares"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2218,6 +2733,7 @@ Field: Q47.NoOfShares_1
 Field: Q47.Country_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Country if not Australia"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2225,6 +2741,9 @@ Field: Q47.Country_1
 Field: Q47.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2232,6 +2751,9 @@ Field: Q47.YourShare_1
 Field: Q47.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2239,6 +2761,7 @@ Field: Q47.PartnerShare_1
 Field: Q47.CompanyName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of public company or ASX code"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2246,6 +2769,9 @@ Field: Q47.CompanyName_2
 Field: Q47.NoOfShares_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of shares"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2253,6 +2779,7 @@ Field: Q47.NoOfShares_2
 Field: Q47.Country_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Country if not Australia"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2260,6 +2787,9 @@ Field: Q47.Country_2
 Field: Q47.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2267,6 +2797,9 @@ Field: Q47.YourShare_2
 Field: Q47.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 1
   Combed: false
@@ -2274,6 +2807,7 @@ Field: Q47.PartnerShare_2
 Field: Q47.CompanyName_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of public company or ASX code"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2281,6 +2815,9 @@ Field: Q47.CompanyName_3
 Field: Q47.NoOfShares_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of shares"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2288,6 +2825,7 @@ Field: Q47.NoOfShares_3
 Field: Q47.Country_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Country if not Australia"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2295,6 +2833,9 @@ Field: Q47.Country_3
 Field: Q47.YourShare_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2302,6 +2843,9 @@ Field: Q47.YourShare_3
 Field: Q47.PartnerShare_3
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2309,6 +2853,7 @@ Field: Q47.PartnerShare_3
 Field: Q47.CompanyName_4
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of public company or ASX code"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2316,6 +2861,9 @@ Field: Q47.CompanyName_4
 Field: Q47.NoOfShares_4
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of shares"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2323,6 +2871,7 @@ Field: Q47.NoOfShares_4
 Field: Q47.Country_4
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Country if not Australia"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2330,6 +2879,9 @@ Field: Q47.Country_4
 Field: Q47.YourShare_4
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2337,6 +2889,9 @@ Field: Q47.YourShare_4
 Field: Q47.PartnerShare_4
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2357,6 +2912,7 @@ Field: DummyCalcQ46
 Field: Q46.ProductProvider_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of product provider/SMSF/SAF"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2364,6 +2920,7 @@ Field: Q46.ProductProvider_1
 Field: Q46.Type_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of income stream"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2371,6 +2928,7 @@ Field: Q46.Type_1
 Field: Q46.ProductRN_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Product reference number"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2378,12 +2936,14 @@ Field: Q46.ProductRN_1
 Field: Q46.Ownedby_1
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Owned by"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q46.ProductProvider_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of product provider/SMSF/SAF"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2391,6 +2951,7 @@ Field: Q46.ProductProvider_2
 Field: Q46.Type_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of income stream"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2398,6 +2959,7 @@ Field: Q46.Type_2
 Field: Q46.ProductRN_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Product reference number"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2405,12 +2967,16 @@ Field: Q46.ProductRN_2
 Field: Q46.Ownedby_2
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Owned by"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q46.DateJoin.1.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -2418,6 +2984,9 @@ Field: Q46.DateJoin.1.D
 Field: Q46.DateJoin.1.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -2425,6 +2994,9 @@ Field: Q46.DateJoin.1.M
 Field: Q46.DateJoin.1.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -2432,6 +3004,9 @@ Field: Q46.DateJoin.1.Y
 Field: Q46.DateJoin.2.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -2439,6 +3014,9 @@ Field: Q46.DateJoin.2.D
 Field: Q46.DateJoin.2.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -2446,6 +3024,9 @@ Field: Q46.DateJoin.2.M
 Field: Q46.DateJoin.2.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -2466,6 +3047,7 @@ Field: DummyCalcQ45
 Field: Q45.ManagerName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of institution/fund manager or SPIN code"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2473,6 +3055,7 @@ Field: Q45.ManagerName_1
 Field: Q45.FundName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of fund"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2480,6 +3063,7 @@ Field: Q45.FundName_1
 Field: Q45.ProductRN_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Product reference number"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2487,6 +3071,9 @@ Field: Q45.ProductRN_1
 Field: Q45.MValue_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2494,12 +3081,14 @@ Field: Q45.MValue_1
 Field: Q45.Ownedby_1
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Owned by"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q45.ManagerName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of institution/fund manager or SPIN code"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2507,6 +3096,7 @@ Field: Q45.ManagerName_2
 Field: Q45.FundName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of fund"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2514,6 +3104,7 @@ Field: Q45.FundName_2
 Field: Q45.ProductRN_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Product reference number"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2521,6 +3112,9 @@ Field: Q45.ProductRN_2
 Field: Q45.MValue_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2528,12 +3122,16 @@ Field: Q45.MValue_2
 Field: Q45.Ownedby_2
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Owned by"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q45.DateJoin.1.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -2541,6 +3139,9 @@ Field: Q45.DateJoin.1.D
 Field: Q45.DateJoin.1.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -2548,6 +3149,9 @@ Field: Q45.DateJoin.1.M
 Field: Q45.DateJoin.1.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -2555,6 +3159,9 @@ Field: Q45.DateJoin.1.Y
 Field: Q45.DateJoin.2.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -2562,6 +3169,9 @@ Field: Q45.DateJoin.2.D
 Field: Q45.DateJoin.2.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -2569,6 +3179,9 @@ Field: Q45.DateJoin.2.M
 Field: Q45.DateJoin.2.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -2576,6 +3189,8 @@ Field: Q45.DateJoin.2.Y
 Field: Q44
   Type: PDFTextField
   Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2662,6 +3277,7 @@ Field: Q39GoToQ43
 Field: Q38.AssetTYpe_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of asset (e.g. boat)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2669,6 +3285,7 @@ Field: Q38.AssetTYpe_1
 Field: Q38.Model_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Model (e.g. Coastrunner)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2676,6 +3293,8 @@ Field: Q38.Model_1
 Field: Q38.Year_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Year"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
   Value: null
   MaxLength: 4
   Combed: true
@@ -2683,6 +3302,9 @@ Field: Q38.Year_1
 Field: Q38.MValue_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2690,6 +3312,9 @@ Field: Q38.MValue_1
 Field: Q38.AmtOwed_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Balance of loan(s) taken to purchase"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2697,6 +3322,9 @@ Field: Q38.AmtOwed_1
 Field: Q38.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2704,6 +3332,9 @@ Field: Q38.YourShare_1
 Field: Q38.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2711,6 +3342,7 @@ Field: Q38.PartnerShare_1
 Field: Q38.AssetTYpe_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of asset (e.g. caravan)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2718,6 +3350,7 @@ Field: Q38.AssetTYpe_2
 Field: Q38.Make_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Make (e.g. Jayco)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2725,6 +3358,7 @@ Field: Q38.Make_2
 Field: Q38.Model_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Model (e.g. Heritage)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2732,6 +3366,8 @@ Field: Q38.Model_2
 Field: Q38.Year_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Year"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
   Value: null
   MaxLength: 4
   Combed: true
@@ -2739,6 +3375,9 @@ Field: Q38.Year_2
 Field: Q38.MValue_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2746,6 +3385,9 @@ Field: Q38.MValue_2
 Field: Q38.AmtOwed_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Balance of loan(s) taken to purchase"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2753,6 +3395,9 @@ Field: Q38.AmtOwed_2
 Field: Q38.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2760,6 +3405,9 @@ Field: Q38.YourShare_2
 Field: Q38.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2767,6 +3415,7 @@ Field: Q38.PartnerShare_2
 Field: Q38.Make_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Make (e.g. Quintrex)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2787,6 +3436,7 @@ Field: DummyCalcQ37
 Field: Q37.AssetType_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of asset (e.g. car)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2794,6 +3444,7 @@ Field: Q37.AssetType_1
 Field: Q37.Make_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Make (e.g. Ford)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2801,6 +3452,7 @@ Field: Q37.Make_1
 Field: Q37.Model_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Model (e.g. Focus)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2808,6 +3460,8 @@ Field: Q37.Model_1
 Field: Q37.Year_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Year"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
   Value: null
   MaxLength: 4
   Combed: true
@@ -2815,6 +3469,9 @@ Field: Q37.Year_1
 Field: Q37.MValue_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2822,6 +3479,9 @@ Field: Q37.MValue_1
 Field: Q37.LoanBalance_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Balance of loan(s) taken to purchase"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2829,6 +3489,9 @@ Field: Q37.LoanBalance_1
 Field: Q37.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2836,6 +3499,9 @@ Field: Q37.YourShare_1
 Field: Q37.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2843,6 +3509,7 @@ Field: Q37.PartnerShare_1
 Field: Q37.AssetType_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of asset (e.g. car)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2850,6 +3517,7 @@ Field: Q37.AssetType_2
 Field: Q37.Make_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Make (e.g. Holden)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2857,6 +3525,7 @@ Field: Q37.Make_2
 Field: Q37.Model_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Model (e.g. Astra)"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2864,6 +3533,8 @@ Field: Q37.Model_2
 Field: Q37.Year_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Year"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
   Value: null
   MaxLength: 4
   Combed: true
@@ -2871,6 +3542,9 @@ Field: Q37.Year_2
 Field: Q37.MValue_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current market value"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2878,6 +3552,9 @@ Field: Q37.MValue_2
 Field: Q37.LoanBalance_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Balance of loan(s) taken to purchase"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2885,6 +3562,9 @@ Field: Q37.LoanBalance_2
 Field: Q37.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2892,6 +3572,9 @@ Field: Q37.YourShare_2
 Field: Q37.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2899,6 +3582,9 @@ Field: Q37.PartnerShare_2
 Field: Q36PartnerShare
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2906,6 +3592,7 @@ Field: Q36PartnerShare
 Field: Q35.BankName_1
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Name of bank, building society or credit union"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2913,6 +3600,9 @@ Field: Q35.BankName_1
 Field: Q35.YourShare_2
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2920,6 +3610,9 @@ Field: Q35.YourShare_2
 Field: Q35.PartnerShare_2
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2927,6 +3620,8 @@ Field: Q35.PartnerShare_2
 Field: Q35.Currency_2
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2934,6 +3629,9 @@ Field: Q35.Currency_2
 Field: Q35.Bal_2
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Balance of account"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2941,6 +3639,8 @@ Field: Q35.Bal_2
 Field: Q35.AccNo_2
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Account number (this may not be your card number)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2948,6 +3648,7 @@ Field: Q35.AccNo_2
 Field: Q35.BankName_2
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Name of bank, building society or credit union"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2955,6 +3656,9 @@ Field: Q35.BankName_2
 Field: Q35.YourShare_1
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2962,6 +3666,9 @@ Field: Q35.YourShare_1
 Field: Q35.PartnerShare_1
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -2969,6 +3676,8 @@ Field: Q35.PartnerShare_1
 Field: Q35.Currency_1
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2976,6 +3685,9 @@ Field: Q35.Currency_1
 Field: Q35.Bal_1
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Balance of account"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2983,6 +3695,8 @@ Field: Q35.Bal_1
 Field: Q35.AccNo_1
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Account number (this may not be your card number)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2990,6 +3704,7 @@ Field: Q35.AccNo_1
 Field: Q35.BankName_3
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Name of bank, building society or credit union"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2997,6 +3712,8 @@ Field: Q35.BankName_3
 Field: Q35.AccNo_3
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Account number (this may not be your card number)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3004,6 +3721,9 @@ Field: Q35.AccNo_3
 Field: Q35.Bal_3
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Balance of account"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3011,6 +3731,8 @@ Field: Q35.Bal_3
 Field: Q35.Currency_3
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3018,6 +3740,9 @@ Field: Q35.Currency_3
 Field: Q35.YourShare_3
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3025,6 +3750,9 @@ Field: Q35.YourShare_3
 Field: Q35.PartnerShare_3
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3032,6 +3760,7 @@ Field: Q35.PartnerShare_3
 Field: Q35.BankName_4
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Name of bank, building society or credit union"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3039,6 +3768,8 @@ Field: Q35.BankName_4
 Field: Q35.AccNo_4
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Account number (this may not be your card number)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3046,6 +3777,9 @@ Field: Q35.AccNo_4
 Field: Q35.Bal_4
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Balance of account"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3053,6 +3787,8 @@ Field: Q35.Bal_4
 Field: Q35.Currency_4
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3060,6 +3796,9 @@ Field: Q35.Currency_4
 Field: Q35.YourShare_4
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3067,6 +3806,9 @@ Field: Q35.YourShare_4
 Field: Q35.PartnerShare_4
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3074,6 +3816,7 @@ Field: Q35.PartnerShare_4
 Field: Q35.BankName_5
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Name of bank, building society or credit union"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3081,6 +3824,8 @@ Field: Q35.BankName_5
 Field: Q35.AccNo_5
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Account number (this may not be your card number)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3088,6 +3833,9 @@ Field: Q35.AccNo_5
 Field: Q35.Bal_5
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Balance of account"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3095,6 +3843,8 @@ Field: Q35.Bal_5
 Field: Q35.Currency_5
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3102,6 +3852,9 @@ Field: Q35.Currency_5
 Field: Q35.YourShare_5
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3109,6 +3862,9 @@ Field: Q35.YourShare_5
 Field: Q35.PartnerShare_5
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3116,6 +3872,7 @@ Field: Q35.PartnerShare_5
 Field: Q35.BankName_6
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Name of bank, building society or credit union"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3123,6 +3880,8 @@ Field: Q35.BankName_6
 Field: Q35.AccNo_6
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Account number (this may not be your card number)"
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3130,6 +3889,9 @@ Field: Q35.AccNo_6
 Field: Q35.Bal_6
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Balance of account"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3137,6 +3899,8 @@ Field: Q35.Bal_6
 Field: Q35.Currency_6
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Currency if not AUD"
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3144,6 +3908,9 @@ Field: Q35.Currency_6
 Field: Q35.YourShare_6
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3151,6 +3918,9 @@ Field: Q35.YourShare_6
 Field: Q35.PartnerShare_6
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3171,6 +3941,7 @@ Field: DummyCalcQ34
 Field: Q34_Details.LumpSumType_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of lump sum"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3178,6 +3949,7 @@ Field: Q34_Details.LumpSumType_1
 Field: Q34_Details.PaidBy_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Who paid it?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3185,6 +3957,9 @@ Field: Q34_Details.PaidBy_1
 Field: Q34_Details.Amount_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount paid"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3192,12 +3967,14 @@ Field: Q34_Details.Amount_1
 Field: Q34_Details.RecPayment_1
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Who received this lump sum payment?"
   Value: Off
   Options: ["You","Your partner"]
 
 Field: Q34_Details.LumpSumType_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of lump sum"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3205,6 +3982,7 @@ Field: Q34_Details.LumpSumType_2
 Field: Q34_Details.PaidBy_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Who paid it?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3212,6 +3990,9 @@ Field: Q34_Details.PaidBy_2
 Field: Q34_Details.Amount_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount paid"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3219,12 +4000,16 @@ Field: Q34_Details.Amount_2
 Field: Q34_Details.RecPayment_2
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Who received this lump sum payment?"
   Value: Off
   Options: ["You","Your partner"]
 
 Field: Q34_Details.DatePaid.1.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3232,6 +4017,9 @@ Field: Q34_Details.DatePaid.1.D
 Field: Q34_Details.DatePaid.1.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3239,6 +4027,9 @@ Field: Q34_Details.DatePaid.1.M
 Field: Q34_Details.DatePaid.1.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -3246,6 +4037,9 @@ Field: Q34_Details.DatePaid.1.Y
 Field: Q34_Details.DatePaid.2.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3253,6 +4047,9 @@ Field: Q34_Details.DatePaid.2.D
 Field: Q34_Details.DatePaid.2.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3260,6 +4057,9 @@ Field: Q34_Details.DatePaid.2.M
 Field: Q34_Details.DatePaid.2.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -3286,6 +4086,7 @@ Field: DummyCalcQ32
 Field: Q32_Details.Name_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of person"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3293,6 +4094,7 @@ Field: Q32_Details.Name_1
 Field: Q32_Details.Relationship_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Relationship to you"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3300,6 +4102,9 @@ Field: Q32_Details.Relationship_1
 Field: Q32_Details.NoOfMeals_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of meals you provide each day"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3307,6 +4112,9 @@ Field: Q32_Details.NoOfMeals_1
 Field: Q32_Details.Amount_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount paid per fortnight"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3314,6 +4122,9 @@ Field: Q32_Details.Amount_1
 Field: Q32_Details.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3321,6 +4132,9 @@ Field: Q32_Details.YourShare_1
 Field: Q32_Details.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3328,6 +4142,7 @@ Field: Q32_Details.PartnerShare_1
 Field: Q32_Details.Name_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of person"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3335,6 +4150,7 @@ Field: Q32_Details.Name_2
 Field: Q32_Details.Relationship_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Relationship to you"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3342,6 +4158,9 @@ Field: Q32_Details.Relationship_2
 Field: Q32_Details.NoOfMeals_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Number of meals you provide each day"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3349,6 +4168,9 @@ Field: Q32_Details.NoOfMeals_2
 Field: Q32_Details.Amount_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Amount paid per fortnight"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3356,6 +4178,9 @@ Field: Q32_Details.Amount_2
 Field: Q32_Details.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3363,6 +4188,9 @@ Field: Q32_Details.YourShare_2
 Field: Q32_Details.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3370,6 +4198,9 @@ Field: Q32_Details.PartnerShare_2
 Field: Q32_Details.DateStart.1.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3377,6 +4208,9 @@ Field: Q32_Details.DateStart.1.D
 Field: Q32_Details.DateStart.1.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3384,6 +4218,9 @@ Field: Q32_Details.DateStart.1.M
 Field: Q32_Details.DateStart.1.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -3391,6 +4228,9 @@ Field: Q32_Details.DateStart.1.Y
 Field: Q32_Details.DateStart.2.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3398,6 +4238,9 @@ Field: Q32_Details.DateStart.2.D
 Field: Q32_Details.DateStart.2.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3405,6 +4248,9 @@ Field: Q32_Details.DateStart.2.M
 Field: Q32_Details.DateStart.2.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -3425,6 +4271,7 @@ Field: DummyCalcQ31
 Field: Q31.PaymentType1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of payment"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3432,6 +4279,7 @@ Field: Q31.PaymentType1
 Field: Q31.Country1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Country which pays it?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3439,6 +4287,7 @@ Field: Q31.Country1
 Field: Q31.Who1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Who pays it?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3446,12 +4295,14 @@ Field: Q31.Who1
 Field: Q31.PaidTo1
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Paid to"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q31.PaymentType2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Type of payment"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3459,6 +4310,7 @@ Field: Q31.PaymentType2
 Field: Q31.Country2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Country which pays it?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3466,6 +4318,7 @@ Field: Q31.Country2
 Field: Q31.Who2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Who pays it?"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3473,12 +4326,16 @@ Field: Q31.Who2
 Field: Q31.PaidTo2
   Type: PDFCheckBox
   Hidden: [true,true]
+  Tooltip: "Paid to"
   Value: Off
   Options: ["You","Partner"]
 
 Field: Q31.DateCommenced.1.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3486,6 +4343,9 @@ Field: Q31.DateCommenced.1.D
 Field: Q31.DateCommenced.1.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3493,6 +4353,9 @@ Field: Q31.DateCommenced.1.M
 Field: Q31.DateCommenced.1.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -3500,6 +4363,9 @@ Field: Q31.DateCommenced.1.Y
 Field: Q31.DateCommenced.2.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3507,6 +4373,9 @@ Field: Q31.DateCommenced.2.D
 Field: Q31.DateCommenced.2.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3514,6 +4383,9 @@ Field: Q31.DateCommenced.2.M
 Field: Q31.DateCommenced.2.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -3609,6 +4481,7 @@ Field: Q19GoToQ23
 Field: Q55.CompanyName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3616,6 +4489,7 @@ Field: Q55.CompanyName_1
 Field: Q55.ProductName_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of product"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3623,6 +4497,9 @@ Field: Q55.ProductName_1
 Field: Q55.Price_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Purchase price including instalments but not interest"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3630,6 +4507,9 @@ Field: Q55.Price_1
 Field: Q55.Value_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current value as per latest statement"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3637,6 +4517,9 @@ Field: Q55.Value_1
 Field: Q55.YourShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3644,6 +4527,9 @@ Field: Q55.YourShare_1
 Field: Q55.PartnerShare_1
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3651,6 +4537,7 @@ Field: Q55.PartnerShare_1
 Field: Q55.CompanyName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of company"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3658,6 +4545,7 @@ Field: Q55.CompanyName_2
 Field: Q55.ProductName_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Name of product"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3665,6 +4553,9 @@ Field: Q55.ProductName_2
 Field: Q55.Price_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Purchase price including instalments but not interest"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3672,6 +4563,9 @@ Field: Q55.Price_2
 Field: Q55.Value_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Current value as per latest statement"
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3679,6 +4573,9 @@ Field: Q55.Value_2
 Field: Q55.YourShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Your share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3686,6 +4583,9 @@ Field: Q55.YourShare_2
 Field: Q55.PartnerShare_2
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Partner's share"
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
   Value: null
   MaxLength: 4
   Combed: false
@@ -3700,6 +4600,7 @@ Field: Q61
 Field: SepForm
   Type: PDFCheckBox
   Hidden: [false]
+  Tooltip: "check for a separate form used."
   Value: Off
   Options: ["Yes"]
 
@@ -3730,6 +4631,9 @@ Field: Q26GoToQ28
 Field: Q3.D
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3737,6 +4641,9 @@ Field: Q3.D
 Field: Q3.M
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3744,6 +4651,9 @@ Field: Q3.M
 Field: Q3.Y
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -3751,6 +4661,9 @@ Field: Q3.Y
 Field: Q7.D
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3758,6 +4671,9 @@ Field: Q7.D
 Field: Q7.M
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3765,6 +4681,9 @@ Field: Q7.M
 Field: Q7.Y
   Type: PDFTextField
   Hidden: [true]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -3772,6 +4691,9 @@ Field: Q7.Y
 Field: SignDate.0.D
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3779,6 +4701,9 @@ Field: SignDate.0.D
 Field: SignDate.0.M
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3786,6 +4711,9 @@ Field: SignDate.0.M
 Field: SignDate.0.Y
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true
@@ -3793,6 +4721,9 @@ Field: SignDate.0.Y
 Field: SignDate.1.D
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Enter a valid 2 digit day less than or equal to 31."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3800,6 +4731,9 @@ Field: SignDate.1.D
 Field: SignDate.1.M
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Enter a valid 2 digit month less than or equal to 12."
+  Format action: "// RegExp input (99) for format\rvar re = /^(\\d{2})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 2
   Combed: true
@@ -3807,6 +4741,9 @@ Field: SignDate.1.M
 Field: SignDate.1.Y
   Type: PDFTextField
   Hidden: [false]
+  Tooltip: "Enter a valid 4 digit year."
+  Format action: "// RegExp input (9999) for format\rvar re = /^(\\d{4})$/\r"
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}\r"
   Value: null
   MaxLength: 4
   Combed: true

@@ -8,11 +8,23 @@ import {
   PDFSignature,
   PDFName,
   PDFNumber,
+  PDFString,
+  PDFHexString,
+  type PDFField,
 } from "pdf-lib";
 import type { FormPaths } from "./formPaths";
 import { loadForm } from "./loadForm";
 import { sha256Hex } from "./hash";
-import { ANNOTATION_FLAG_HIDDEN } from "../genericFields";
+import { ANNOTATION_FLAG_HIDDEN, getActionJS } from "../genericFields";
+
+// /TU is the field's tooltip/alternate name - the human-readable label
+// Acrobat shows, which often carries a format hint (e.g. "(DD MM YYYY)")
+// that isn't visible anywhere else in pdf-lib's own field API.
+function getTooltip(field: PDFField): string | undefined {
+  const tu = field.acroField.dict.lookup(PDFName.of("TU"));
+  if (tu instanceof PDFString || tu instanceof PDFHexString) return tu.decodeText();
+  return undefined;
+}
 
 export async function writeFieldsTxt(paths: FormPaths): Promise<{ fieldCount: number }> {
   const { bytes, form } = await loadForm(paths.pdfPath);
@@ -40,6 +52,13 @@ export async function writeFieldsTxt(paths: FormPaths): Promise<{ fieldCount: nu
       return (flagsNum & ANNOTATION_FLAG_HIDDEN) !== 0;
     });
     lines.push(`  Hidden: ${JSON.stringify(hidden)}`);
+
+    const tooltip = getTooltip(field);
+    if (tooltip !== undefined) lines.push(`  Tooltip: ${JSON.stringify(tooltip)}`);
+    const formatJS = getActionJS(field, "F");
+    if (formatJS !== undefined) lines.push(`  Format action: ${JSON.stringify(formatJS)}`);
+    const keystrokeJS = getActionJS(field, "K");
+    if (keystrokeJS !== undefined) lines.push(`  Keystroke action: ${JSON.stringify(keystrokeJS)}`);
 
     if (field instanceof PDFTextField) {
       const value = field.getText();

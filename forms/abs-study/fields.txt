@@ -1,0 +1,3585 @@
+SHA-256: 4bcdb216ddeb63c105cbf7c44e6757192548443dcf4c9be453110519c765db82
+Has XFA: false
+Field count: 518
+
+Field: Instructions
+  Type: PDFButton
+  Hidden: [false]
+  Value: (none, push button)
+
+Field: Q1
+  Type: PDFCheckBox
+  Hidden: [false,false,false]
+  Value: Off
+  Options: ["No","Abo","TI"]
+
+Field: Q2
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ2
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q2Details.Country
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q2Details.Date
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: CRN.0
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\r"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: CRN.1
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q37_CRN.2\");"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: CRN.2
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\rgoNext(this,event,\"Q39_CRN.3\");"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: CRN.3
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "if(event.change.match(/[0-9]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\revent.change = util.printx(\">*\", event.change) ;"
+  Value: null
+  MaxLength: 1
+  Combed: true
+
+Field: Title1
+  Type: PDFCheckBox
+  Hidden: [false,false,false,false,false]
+  Value: Off
+  Options: ["Mr","Mrs","Miss","Ms","Mx"]
+
+Field: TitleOther1
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "Title = this.getField(\"Title1\");\r\rif (event.change != \"\" && Title.value \r!= \"Off\") {\r    Title.value = \"Off\";\r}"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q4FamilyName
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q4FirstName
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q4SecondName
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8_Address1
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8_Address2
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8_Address3
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q8_Postcode
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q9_Address1
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q9_Address2
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q9_Address3
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q9_Postcode
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q10_Address1
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q10_Address2
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q10_Address3
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q10_Postcode
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q11.Phone.2.Mobile
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Enter 10 digit number with no spaces. "
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q11.Phone.1.Home
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q11.Phone.3.Semester
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q11.Phone.4.Work
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q11.Phone.5.Alternative
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q11.Email_1
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q7
+  Type: PDFCheckBox
+  Hidden: [false,false,false]
+  Value: Off
+  Options: ["Male","Female","NB"]
+
+Field: Q6
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ6
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q6Details.OtherName1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q6Details.OtherNameType1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q6Details.OtherName2
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q6Details.OtherNameType2
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: DummyCalcQ12
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q12_Date.0
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q12_Date.1
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q12_Date.2
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q12_Date.3
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q12_Date.4
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q12_Date.5
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q12GoToQ14.0
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q12GoToQ14.1
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q12GoToQ14.2
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q12GoToQ14.3
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q12GoToQ14.4
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q12
+  Type: PDFCheckBox
+  Hidden: [false,false,false,false,false,false,false]
+  Value: Off
+  Options: ["Mar","Reg","Par","Sep","Div","Wid","NA"]
+
+Field: Q12GoToQ13.0
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q12GoToQ13.1
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q5DOB
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q13
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ14
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q14GoToQ16
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q14
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q15
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q16
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q16Details
+  Type: PDFCheckBox
+  Hidden: [true,true,true,true,true,true]
+  Value: Off
+  Options: ["Cadetship","VCES","YAAUSTUDY","NSA","LAHA","Other"]
+
+Field: DummyCalcQ16
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q16Details_Payment
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q17
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ17
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q17Details.0
+  Type: PDFCheckBox
+  Hidden: [true]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q17Details.1
+  Type: PDFCheckBox
+  Hidden: [true]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q17Details.2
+  Type: PDFCheckBox
+  Hidden: [true]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q17Details.3
+  Type: PDFCheckBox
+  Hidden: [true]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q17Details.4
+  Type: PDFCheckBox
+  Hidden: [true]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q17Details.Payment
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q17Details.Employer
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q19
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ20
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q20
+  Type: PDFCheckBox
+  Hidden: [false,false,false,false,false,false,false,false,false,false,false]
+  Value: Off
+  Options: ["1","2","3","6","7","8","9","10","Other","4","5"]
+
+Field: Q20Details.Other
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q21
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ21
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q22
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ22
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Sign
+  Type: PDFTextField
+  Hidden: [false,false]
+  Value: "On completion of this form,\rprint and sign by hand"
+  MaxLength: (none)
+  Combed: false
+
+Field: Print
+  Type: PDFButton
+  Hidden: [false]
+  Tooltip: "Print button"
+  Value: (none, push button)
+
+Field: Clear
+  Type: PDFButton
+  Hidden: [false]
+  Tooltip: "Clear button"
+  Value: (none, push button)
+
+Field: SignDate0
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: SignDate1
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Check.0
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.1
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.2
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.3
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.4
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.5
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.6
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.7
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.8
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.10
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.11
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.12
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.13
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.14
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.15
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.16
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.17
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.18
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.19
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.20
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.21
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.22
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.23
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.24
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.25
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.26
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.27
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.28
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.29
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.9
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.30
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Check.31
+  Type: PDFCheckBox
+  Hidden: [false]
+  Value: Off
+  Options: ["Yes"]
+
+Field: Q20GoToQ21
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q20GoToQ22
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: DummyCalcQ18
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q18GoToQ20
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q18
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q20GoToQ36.0
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q20GoToQ36.1
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q20GoToQ36.2
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q20GoToQ36.3
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q20GoToQ36.4
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q20GoToQ24
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q20GoToQ29
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q20GoToQ27
+  Type: PDFButton
+  Hidden: [true,true]
+  Value: (none, push button)
+
+Field: Q21GoToQ36
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q21GoToQ27
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q22GoToQ27
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q23
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ23
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q23GoToQ36
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q23GoToQ27
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q24
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ24
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q24GoToQ36
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q25
+  Type: PDFCheckBox
+  Hidden: [false,false,false]
+  Value: Off
+  Options: ["No","NotSure","Yes"]
+
+Field: DummyCalcQ25
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q25GoToQ27
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q26
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q26GoToQ36
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: DummyCalcQ26
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q27
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ27
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q27GoToQ29
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: 27.Name.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 27.Name.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 27.Name.2
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 27.Age.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: 27.Age.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: 27.Age.2
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 3
+  Combed: false
+
+Field: 27.MoveIn.0
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: 27.MoveIn.1
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: 27.MoveIn.2
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: 27.Relationship.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 27.Relationship.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 27.Relationship.2
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 27.TheyOwn.0
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: 27.TheyOwn.1
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: 27.TheyOwn.2
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: 27.Share.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 27.Share.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 27.Share.2
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 27.Per.0
+  Type: PDFDropdown
+  Hidden: [true]
+  Value: ["     "]
+  Options: ["     ","Day","Week","Fortnight","4 Weeks","Month"]
+
+Field: 27.Per.1
+  Type: PDFDropdown
+  Hidden: [true]
+  Value: ["     "]
+  Options: ["     ","Day","Week","Fortnight","4 Weeks","Month"]
+
+Field: 27.Per.2
+  Type: PDFDropdown
+  Hidden: [true]
+  Value: ["     "]
+  Options: ["     ","Day","Week","Fortnight","4 Weeks","Month"]
+
+Field: Q28
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q29
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ29
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q29GoToQ31
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q30
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ30
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q30_Details_No.Charged
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q30_Details_No.Per_1
+  Type: PDFDropdown
+  Hidden: [true]
+  Value: ["     "]
+  Options: ["     ","Day","Week","Fortnight","4 Weeks","Month"]
+
+Field: Q30GoToQ32.0
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q30GoToQ32.1
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q30_Details.PaidMeals
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q30_Details.Per_1
+  Type: PDFDropdown
+  Hidden: [true]
+  Value: ["     "]
+  Options: ["     ","Day","Week","Fortnight","4 weeks","Month"]
+
+Field: Q30_Details.PaidAccom
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q30_Details.Per_2
+  Type: PDFDropdown
+  Hidden: [true]
+  Value: ["     "]
+  Options: ["     ","Day","Week","Fortnight","4 Weeks","Month","     "]
+
+Field: Q31.YouPay
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q31.Per
+  Type: PDFDropdown
+  Hidden: [true]
+  Value: ["     "]
+  Options: ["     ","Day","Week","Fortnight","4 Weeks","Month"]
+
+Field: Q32
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q33
+  Type: PDFCheckBox
+  Hidden: [false,false,false,false,false,false,false,false]
+  Value: Off
+  Options: ["Boarding","Private","Community","Defence","Caravan","Boat","TertiaryResi","Other"]
+
+Field: DummyCalcQ33
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q33GoToQ35
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: 33.Other
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q34.TotalPay
+  Type: PDFTextField
+  Hidden: [false]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q34.Per
+  Type: PDFDropdown
+  Hidden: [false]
+  Value: ["     "]
+  Options: ["     ","Day","Week","Fortnight","4 Weeks","Month"]
+
+Field: Q35
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q36
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ36
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 36.BankName
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 36.BSB
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 6
+  Combed: true
+
+Field: 36.AccNumber
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 36.AccountNames
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q36GoToQ38
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q37
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q38
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ38
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 38.BankName.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 38.BankName.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 38.BSB.0
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 6
+  Combed: true
+
+Field: 38.BSB.1
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 6
+  Combed: true
+
+Field: 38.AccNumber.0
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 38.AccNumber.1
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 38.Balance.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 38.Balance.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 38.Currency.0
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 38.Currency.1
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 38.Share.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: 38.Share.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q39
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ39
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q39GoToQ43
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q40
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ40
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q40GoToQ43
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q41.WeekIncome
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q41.PeriodIncome
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q41.PeriodFrom
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q41.PeriodTo
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q41.HrsWork
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.0.EmployerName
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.0.Address.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.0.Address.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.0.Address.2
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.0.Address.3
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q42D.0.PhoneNo
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q42D.0.ABN.0
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q42D.0.ABN.1
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q42D.0.ABN.2
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q42D.0.ABN.3
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q42D.0.JobDescrip
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.0.WorkLocation
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.0.Apprentice
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q42D.0.WorkRegCas
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["Regular","Casual"]
+
+Field: Q42D.0.HoursPerWk
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.0.Earned
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.1.EmployerName
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.1.Address.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.1.Address.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.1.Address.2
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.1.Address.3
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q42D.1.PhoneNo
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Enter 10 digit number with no spaces. Include area code for a landline."
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r    app.alert(\"Enter 10 digit number with no spaces. Include area code for a landline number.\");\r    app.beep(0);\r    event.rc = false;\r}\r"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q42D.1.ABN.0
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 2
+  Combed: true
+
+Field: Q42D.1.ABN.1
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q42D.1.ABN.2
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q42D.1.ABN.3
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q42D.1.JobDescrip
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.1.WorkLocation
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.1.Apprentice
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q42D.1.WorkRegCas
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["Regular","Casual"]
+
+Field: Q42D.1.HoursPerWk
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q42D.1.Earned
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q43
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ43
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q43GoToQ55
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q44
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ44
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.Asset.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.Asset.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.Make.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.Make.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.Model.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.Model.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.Year.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: 44.Year.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: 44.CMV.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.CMV.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.AmtOwed.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.AmtOwed.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 44.Share.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: 44.Share.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q45
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ45
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.Asset.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.Asset.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.Make.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.Make.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.Model.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.Model.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.Year.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: 45.Year.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: 45.CMV.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.CMV.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.AmtOwed.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.AmtOwed.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 45.Share.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: 45.Share.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q46.CMV
+  Type: PDFTextField
+  Hidden: [false]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q46.AmtOwed
+  Type: PDFTextField
+  Hidden: [false]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q46.Share
+  Type: PDFTextField
+  Hidden: [false]
+  Format action: "AFNumber_Format(1, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(1, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q47
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q48
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q49
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q50
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q51
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ51
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q51GoToQ53
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q52
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q53
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q54
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ54
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 54.Payment.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 54.Payment.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 54.AmtPaid.0
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 54.AmtPaid.1
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 0, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 0, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 54.WhenPaid.0
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: 54.WhenPaid.1
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q55
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["Stud","AA"]
+
+Field: DummyCalcQ55
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q55GoToQ66
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q56.CourseTitle
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q56.CourseCode
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q56.Stage
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q56.InstitutionNameSuburb
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q56.StudentID
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q57.OtherInstitute
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q57.StudentID
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "event.change = util.printx(\">*\", event.change) ;"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q58
+  Type: PDFCheckBox
+  Hidden: [false,false,false,false,false]
+  Value: Off
+  Options: ["MoreThanOneYear","Year","Semester","Other","Term"]
+
+Field: DummyCalcQ58
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 58D.0.years
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 2
+  Combed: false
+
+Field: 58D.0.months
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 2
+  Combed: false
+
+Field: 58D.1
+  Type: PDFCheckBox
+  Hidden: [true,true,true]
+  Value: Off
+  Options: ["Sem1","Sem2","Sem3"]
+
+Field: 58D.2
+  Type: PDFCheckBox
+  Hidden: [true,true,true,true]
+  Value: Off
+  Options: ["T1","T2","T3","T4"]
+
+Field: 58D.3.From
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: 58D.3.To
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q59
+  Type: PDFTextField
+  Hidden: [false]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q60
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q61
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q62
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q85
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q103
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q101
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ101
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 101.TFN.0
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\r"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: 101.TFN.1
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\r"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: 101.TFN.2
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "if(event.change.match(/[A-Za-z]/g)) {\r\r    app.beep(0);\r    event.rc = false;\r}\r\r\r"
+  Value: null
+  MaxLength: 3
+  Combed: true
+
+Field: Q100
+  Type: PDFCheckBox
+  Hidden: [false,false,false]
+  Value: Off
+  Options: ["No","NotSure","Yes"]
+
+Field: DummyCalcQ100
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q100GoToQ102
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q99
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ99
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 99.ChildName.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 99.ChildName.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 99.ChildName.2
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 99.ChildName.3
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 99.ChildName.4
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 99.ChildDOB.0
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: 99.ChildDOB.1
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: 99.ChildDOB.2
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: 99.ChildDOB.3
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: 99.ChildDOB.4
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: Q98
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q97
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q96
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ96
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q96GoToQ99
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q95.Address.0
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q95.Address.1
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q95.Address.2
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q95.Address.3
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q94
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ94
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q94GoToQ98
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q93
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ93
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q93GoToQ99
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q92
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ92
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q92GoToQ99
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q91
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ91
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q91GoToQ99
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q90
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ90
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q90GoToQ99
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q89
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ89
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q89GoToQ99
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q88
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ88
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q88GoToQ99
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q87.Address.0
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q87.Address.1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q87.Address.2
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q87.Address.3
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Q87.GoToQ99
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: DummyCalcQ85
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q86
+  Type: PDFCheckBox
+  Hidden: [false,false,false]
+  Value: Off
+  Options: ["AA","SecondaryStudent","TertiaryStudent"]
+
+Field: DummyCalcQ86
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q86GoToQ99.0
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q86GoToQ99.1
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q85GoToQ88
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q84
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ84
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q84GoToQ86
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q83
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ83
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q83GoToQ86
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q82
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ82
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q82GoToQ86
+  Type: PDFButton
+  Hidden: [true,true]
+  Value: (none, push button)
+
+Field: Q81
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ81
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q81GoToQ86
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q80
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ80
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q80GoToQ86
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q79
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ79
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q79GoToQ86
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q78
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ78
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q78GoToQ86
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q77
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ77
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q77GoToQ99
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q76
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: 1
+  Combed: false
+
+Field: Q75
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ75
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 75.CRN
+  Type: PDFCheckBox
+  Hidden: [true]
+  Value: Off
+  Options: ["Yes"]
+
+Field: 75.DVARef
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 75.Payment
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: 75.StartDate
+  Type: PDFTextField
+  Hidden: [true]
+  Tooltip: "Select or enter the date in DD MM YYYY format"
+  Format action: "AFDate_FormatEx(\"dd mm yyyy\");"
+  Keystroke action: "AFDate_KeystrokeEx(\"dd mm yyyy\");"
+  Value: null
+  MaxLength: 10
+  Combed: true
+
+Field: DummyCalcQ74
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: D74.TravelTime
+  Type: PDFTextField
+  Hidden: [true]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: D74.SchoolsAttended
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q74
+  Type: PDFCheckBox
+  Hidden: [false,false,false,false,false,false,false,false,false,false,false,false,false]
+  Value: Off
+  Options: ["Yes0","Yes1","Yes2","Yes3","Yes4","Yes5","Yes6","Yes7","Yes8","Yes9","Yes10","Yes11","Yes12"]
+
+Field: Q73
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q72
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ72
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q72GoToQ74
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q71.Address.0
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q71.Address.1
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q71.Address.2
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q71.Address.3
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "var re = /^\\d$/\r\rif (event.willCommit == false && event.change != \"\") {\r    if (re.test(event.change) == false) {\r        app.beep();\r        event.rc = false;\r    }\r}"
+  Value: null
+  MaxLength: 4
+  Combed: false
+
+Field: Board.TitleOther
+  Type: PDFTextField
+  Hidden: [false]
+  Keystroke action: "Title = this.getField(\"Board.Title\");\r\rif (event.change != \"\" && Title.value != \"Off\") {\r    Title.value = \"Off\";\r}"
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Board.Title
+  Type: PDFCheckBox
+  Hidden: [false,false,false,false,false]
+  Value: Off
+  Options: ["Mr","Mrs","Miss","Ms","Mx"]
+
+Field: Q70.FamName
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q70.FirstGivenName
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q70.SecondGivenName
+  Type: PDFTextField
+  Hidden: [false]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q69
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: Q69GoToQ71
+  Type: PDFButton
+  Hidden: [true]
+  Tooltip: " "
+  Value: (none, push button)
+
+Field: Q68
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q67
+  Type: PDFCheckBox
+  Hidden: [false,false,false,false,false]
+  Value: Off
+  Options: ["TertiaryResi","Hostel","boardingSchool","boardingPrivate","Other"]
+
+Field: DummyCalcQ67
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q67GoToQ70
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: Q67GoToQ71
+  Type: PDFButton
+  Hidden: [true]
+  Value: (none, push button)
+
+Field: DummyCalcQ67_1
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ66
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.0.Year
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q66D.0.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.0.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.0.S1
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.0.S2
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.0.Stage
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.1.Year
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q66D.1.Stage
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.1.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.1.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.1.S1
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.1.S2
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.2.Year
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q66D.2.Stage
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.2.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.2.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.2.S1
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.2.S2
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.3.Year
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q66D.3.Stage
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.3.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.3.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.3.S1
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.3.S2
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.4.Year
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q66D.4.Stage
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.4.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.4.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.4.S1
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.4.S2
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.5.Year
+  Type: PDFTextField
+  Hidden: [true]
+  Format action: "AFNumber_Format(0, 1, 0, 0, \"\", true);"
+  Keystroke action: "AFNumber_Keystroke(0, 1, 0, 0, \"\", true);"
+  Value: null
+  MaxLength: 4
+  Combed: true
+
+Field: Q66D.5.Stage
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.5.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.5.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q66D.5.S1
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q66D.5.S2
+  Type: PDFCheckBox
+  Hidden: [true,true]
+  Tooltip: " "
+  Value: Off
+  Options: ["FT","PT"]
+
+Field: Q65
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]
+
+Field: DummyCalcQ65
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.0.Years
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.0.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.0.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.1.Years
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.1.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.1.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.2.Years
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.2.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.2.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.3.Years
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.3.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.3.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.4.Years
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.4.NameInstitute
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q65D.4.NameCourse
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q64.S1
+  Type: PDFCheckBox
+  Hidden: [false,false,false]
+  Value: Off
+  Options: ["FT","PT","NotSure"]
+
+Field: Q64.S2
+  Type: PDFCheckBox
+  Hidden: [false,false,false]
+  Value: Off
+  Options: ["FT","PT","NotSure"]
+
+Field: Q64.S1Details
+  Type: PDFCheckBox
+  Hidden: [true,true,true,true]
+  Value: Off
+  Options: ["74","65","49","24"]
+
+Field: Q64.S2Details
+  Type: PDFCheckBox
+  Hidden: [true,true,true,true]
+  Value: Off
+  Options: ["74","65","49","24"]
+
+Field: DummyCalcQ64
+  Type: PDFTextField
+  Hidden: [true]
+  Value: null
+  MaxLength: (none)
+  Combed: false
+
+Field: Q63
+  Type: PDFCheckBox
+  Hidden: [false,false]
+  Value: Off
+  Options: ["No","Yes"]

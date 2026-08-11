@@ -9,6 +9,8 @@ import {
   PDFName,
   PDFNumber,
   PDFDict,
+  PDFString,
+  PDFHexString,
 } from "pdf-lib";
 import { z } from "zod";
 
@@ -74,6 +76,76 @@ function hasCalculateAction(field: PDFField): boolean {
   return aa instanceof PDFDict && aa.has(PDFName.of("C"));
 }
 
+// /AA /F (Format) and /AA /K (Keystroke) are JavaScript actions Acrobat runs
+// as you type - never executed by pdf-lib or this project (we stay JS-free),
+// but the source string itself is readable, unexecuted, straight off the
+// field dict. Adobe's standard date/number widgets carry calls like
+// AFDate_FormatEx("dd mm yyyy") here - the exact format a calendar picker
+// enforces, available without opening the PDF in a viewer.
+export function getActionJS(field: PDFField, actionKey: "F" | "K"): string | undefined {
+  const aa = field.acroField.dict.lookup(PDFName.of("AA"));
+  if (!(aa instanceof PDFDict)) return undefined;
+  const action = aa.lookup(PDFName.of(actionKey));
+  if (!(action instanceof PDFDict)) return undefined;
+  const js = action.lookup(PDFName.of("JS"));
+  if (js instanceof PDFString || js instanceof PDFHexString) return js.decodeText();
+  return undefined;
+}
+
+const AF_DATE_FORMAT_RE = /AFDate_(?:FormatEx|Format)\s*\(\s*"([^"]+)"/;
+
+// Adobe's date format string (e.g. "dd mm yyyy") using the same
+// AFDate_FormatEx call for every date field a form has - not specific to any
+// one field's meaning, just a structural fact about how that field is typed.
+// Checked on both Format and Keystroke actions since either can carry it.
+function getDateFormat(field: PDFField): string | undefined {
+  for (const key of ["F", "K"] as const) {
+    const match = getActionJS(field, key)?.match(AF_DATE_FORMAT_RE);
+    if (match?.[1]) return match[1];
+  }
+  return undefined;
+}
+
+interface DatePattern {
+  regex: RegExp;
+  render: (date: Date) => string;
+}
+
+// Turns an Adobe date-format string into a regex (for validating a real
+// value against it) and a renderer (for synthesizing one) - runs of d/m/y
+// become zero-padded digit groups of that width, everything else is a
+// literal separator (space, slash, dash, dot - whatever the form uses).
+function buildDatePattern(format: string): DatePattern {
+  const tokens = format.match(/[dmy]+|[^dmy]+/gi) ?? [];
+  const regexParts: string[] = [];
+  const renderers: Array<(date: Date) => string> = [];
+  for (const token of tokens) {
+    if (/^d+$/i.test(token)) {
+      regexParts.push(`\\d{${token.length}}`);
+      renderers.push((date) => String(date.getDate()).padStart(token.length, "0"));
+    } else if (/^m+$/i.test(token)) {
+      regexParts.push(`\\d{${token.length}}`);
+      renderers.push((date) => String(date.getMonth() + 1).padStart(token.length, "0"));
+    } else if (/^y+$/i.test(token)) {
+      regexParts.push(`\\d{${token.length}}`);
+      renderers.push((date) => String(date.getFullYear()).padStart(token.length, "0").slice(-token.length));
+    } else {
+      regexParts.push(token.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+      renderers.push(() => token);
+    }
+  }
+  return {
+    regex: new RegExp(`^${regexParts.join("")}$`),
+    render: (date) => renderers.map((render) => render(date)).join(""),
+  };
+}
+
+// An obviously-fake but structurally valid placeholder, same spirit as the
+// "T-<name>" placeholder used for other text fields - not a real date, just
+// something that renders into every date field's own DD/MM/YYYY-shaped cells
+// instead of truncated field-name garbage.
+const PLACEHOLDER_DATE = new Date(2000, 0, 1);
+
 // Real export values for a field's options, regardless of whether it's a
 // checkbox with multiple widgets (hard rule 7), a radio group, a dropdown,
 // or an option list.
@@ -116,8 +188,13 @@ export function buildGenericSchema(form: PDFForm): z.ZodObject<Record<string, z.
     if (!isFillable(field)) continue;
     const name = field.getName();
     if (field instanceof PDFTextField) {
-      const maxLength = field.getMaxLength();
-      shape[name] = maxLength ? z.string().max(maxLength) : z.string();
+      const dateFormat = getDateFormat(field);
+      if (dateFormat) {
+        shape[name] = z.string().regex(buildDatePattern(dateFormat).regex, `expected format ${dateFormat}`);
+      } else {
+        const maxLength = field.getMaxLength();
+        shape[name] = maxLength ? z.string().max(maxLength) : z.string();
+      }
     } else {
       const options = realOptions(field);
       if (options.length === 0) continue;
@@ -181,9 +258,14 @@ export function synthesizeValidData(form: PDFForm): Record<string, string> {
     if (!isFillable(field)) continue;
     const name = field.getName();
     if (field instanceof PDFTextField) {
-      const maxLength = field.getMaxLength();
-      const placeholder = `T-${name}`;
-      data[name] = placeholder.slice(0, maxLength ?? placeholder.length) || "T";
+      const dateFormat = getDateFormat(field);
+      if (dateFormat) {
+        data[name] = buildDatePattern(dateFormat).render(PLACEHOLDER_DATE);
+      } else {
+        const maxLength = field.getMaxLength();
+        const placeholder = `T-${name}`;
+        data[name] = placeholder.slice(0, maxLength ?? placeholder.length) || "T";
+      }
     } else {
       const options = realOptions(field);
       if (options.length === 0) continue;

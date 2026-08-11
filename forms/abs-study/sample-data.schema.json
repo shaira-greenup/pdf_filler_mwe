@@ -1,0 +1,1934 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "citizenship": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+        }
+      },
+      "required": [
+        "country",
+        "date"
+      ],
+      "additionalProperties": false
+    },
+    "Q1": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Abo",
+        "TI"
+      ]
+    },
+    "CRN.0": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "CRN.1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "CRN.2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "CRN.3": {
+      "type": "string",
+      "maxLength": 1
+    },
+    "Title1": {
+      "type": "string",
+      "enum": [
+        "Mr",
+        "Mrs",
+        "Miss",
+        "Ms",
+        "Mx"
+      ]
+    },
+    "TitleOther1": {
+      "type": "string"
+    },
+    "Q4FamilyName": {
+      "type": "string"
+    },
+    "Q4FirstName": {
+      "type": "string"
+    },
+    "Q4SecondName": {
+      "type": "string"
+    },
+    "Q8_Address1": {
+      "type": "string"
+    },
+    "Q8_Address2": {
+      "type": "string"
+    },
+    "Q8_Address3": {
+      "type": "string"
+    },
+    "Q8_Postcode": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q9_Address1": {
+      "type": "string"
+    },
+    "Q9_Address2": {
+      "type": "string"
+    },
+    "Q9_Address3": {
+      "type": "string"
+    },
+    "Q9_Postcode": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q10_Address1": {
+      "type": "string"
+    },
+    "Q10_Address2": {
+      "type": "string"
+    },
+    "Q10_Address3": {
+      "type": "string"
+    },
+    "Q10_Postcode": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q11.Phone.2.Mobile": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q11.Phone.1.Home": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q11.Phone.3.Semester": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q11.Phone.4.Work": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q11.Phone.5.Alternative": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q11.Email_1": {
+      "type": "string"
+    },
+    "Q7": {
+      "type": "string",
+      "enum": [
+        "Male",
+        "Female",
+        "NB"
+      ]
+    },
+    "Q6": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q6Details.OtherName1": {
+      "type": "string"
+    },
+    "Q6Details.OtherNameType1": {
+      "type": "string"
+    },
+    "Q6Details.OtherName2": {
+      "type": "string"
+    },
+    "Q6Details.OtherNameType2": {
+      "type": "string"
+    },
+    "Q12_Date.0": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q12_Date.1": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q12_Date.2": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q12_Date.3": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q12_Date.4": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q12_Date.5": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q12": {
+      "type": "string",
+      "enum": [
+        "Mar",
+        "Reg",
+        "Par",
+        "Sep",
+        "Div",
+        "Wid",
+        "NA"
+      ]
+    },
+    "Q5DOB": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q13": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q14": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q15": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q16": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q16Details": {
+      "type": "string",
+      "enum": [
+        "Cadetship",
+        "VCES",
+        "YAAUSTUDY",
+        "NSA",
+        "LAHA",
+        "Other"
+      ]
+    },
+    "Q16Details_Payment": {
+      "type": "string"
+    },
+    "Q17": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q17Details.0": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q17Details.1": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q17Details.2": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q17Details.3": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q17Details.4": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q17Details.Payment": {
+      "type": "string"
+    },
+    "Q17Details.Employer": {
+      "type": "string"
+    },
+    "Q19": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q20": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "Other"
+      ]
+    },
+    "Q20Details.Other": {
+      "type": "string"
+    },
+    "Q21": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q22": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Sign": {
+      "type": "string"
+    },
+    "SignDate0": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "SignDate1": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Check.0": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.1": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.2": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.3": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.4": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.5": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.6": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.7": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.8": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.10": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.11": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.12": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.13": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.14": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.15": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.16": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.17": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.18": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.19": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.20": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.21": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.22": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.23": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.24": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.25": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.26": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.27": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.28": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.29": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.9": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.30": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Check.31": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "Q18": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q23": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q24": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q25": {
+      "type": "string",
+      "enum": [
+        "No",
+        "NotSure",
+        "Yes"
+      ]
+    },
+    "Q26": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q27": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "27.Name.0": {
+      "type": "string"
+    },
+    "27.Name.1": {
+      "type": "string"
+    },
+    "27.Name.2": {
+      "type": "string"
+    },
+    "27.Age.0": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "27.Age.1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "27.Age.2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "27.MoveIn.0": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "27.MoveIn.1": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "27.MoveIn.2": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "27.Relationship.0": {
+      "type": "string"
+    },
+    "27.Relationship.1": {
+      "type": "string"
+    },
+    "27.Relationship.2": {
+      "type": "string"
+    },
+    "27.TheyOwn.0": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "27.TheyOwn.1": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "27.TheyOwn.2": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "27.Share.0": {
+      "type": "string"
+    },
+    "27.Share.1": {
+      "type": "string"
+    },
+    "27.Share.2": {
+      "type": "string"
+    },
+    "27.Per.0": {
+      "type": "string",
+      "enum": [
+        "     ",
+        "Day",
+        "Week",
+        "Fortnight",
+        "4 Weeks",
+        "Month"
+      ]
+    },
+    "27.Per.1": {
+      "type": "string",
+      "enum": [
+        "     ",
+        "Day",
+        "Week",
+        "Fortnight",
+        "4 Weeks",
+        "Month"
+      ]
+    },
+    "27.Per.2": {
+      "type": "string",
+      "enum": [
+        "     ",
+        "Day",
+        "Week",
+        "Fortnight",
+        "4 Weeks",
+        "Month"
+      ]
+    },
+    "Q28": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q29": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q30": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q30_Details_No.Charged": {
+      "type": "string"
+    },
+    "Q30_Details_No.Per_1": {
+      "type": "string",
+      "enum": [
+        "     ",
+        "Day",
+        "Week",
+        "Fortnight",
+        "4 Weeks",
+        "Month"
+      ]
+    },
+    "Q30_Details.PaidMeals": {
+      "type": "string"
+    },
+    "Q30_Details.Per_1": {
+      "type": "string",
+      "enum": [
+        "     ",
+        "Day",
+        "Week",
+        "Fortnight",
+        "4 weeks",
+        "Month"
+      ]
+    },
+    "Q30_Details.PaidAccom": {
+      "type": "string"
+    },
+    "Q30_Details.Per_2": {
+      "type": "string",
+      "enum": [
+        "     ",
+        "Day",
+        "Week",
+        "Fortnight",
+        "4 Weeks",
+        "Month"
+      ]
+    },
+    "Q31.YouPay": {
+      "type": "string"
+    },
+    "Q31.Per": {
+      "type": "string",
+      "enum": [
+        "     ",
+        "Day",
+        "Week",
+        "Fortnight",
+        "4 Weeks",
+        "Month"
+      ]
+    },
+    "Q32": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q33": {
+      "type": "string",
+      "enum": [
+        "Boarding",
+        "Private",
+        "Community",
+        "Defence",
+        "Caravan",
+        "Boat",
+        "TertiaryResi",
+        "Other"
+      ]
+    },
+    "33.Other": {
+      "type": "string"
+    },
+    "Q34.TotalPay": {
+      "type": "string"
+    },
+    "Q34.Per": {
+      "type": "string",
+      "enum": [
+        "     ",
+        "Day",
+        "Week",
+        "Fortnight",
+        "4 Weeks",
+        "Month"
+      ]
+    },
+    "Q35": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q36": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "36.BankName": {
+      "type": "string"
+    },
+    "36.BSB": {
+      "type": "string",
+      "maxLength": 6
+    },
+    "36.AccNumber": {
+      "type": "string"
+    },
+    "36.AccountNames": {
+      "type": "string"
+    },
+    "Q37": {
+      "type": "string"
+    },
+    "Q38": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "38.BankName.0": {
+      "type": "string"
+    },
+    "38.BankName.1": {
+      "type": "string"
+    },
+    "38.BSB.0": {
+      "type": "string",
+      "maxLength": 6
+    },
+    "38.BSB.1": {
+      "type": "string",
+      "maxLength": 6
+    },
+    "38.AccNumber.0": {
+      "type": "string"
+    },
+    "38.AccNumber.1": {
+      "type": "string"
+    },
+    "38.Balance.0": {
+      "type": "string"
+    },
+    "38.Balance.1": {
+      "type": "string"
+    },
+    "38.Currency.0": {
+      "type": "string"
+    },
+    "38.Currency.1": {
+      "type": "string"
+    },
+    "38.Share.0": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "38.Share.1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q39": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q40": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q41.WeekIncome": {
+      "type": "string"
+    },
+    "Q41.PeriodIncome": {
+      "type": "string"
+    },
+    "Q41.PeriodFrom": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q41.PeriodTo": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q41.HrsWork": {
+      "type": "string"
+    },
+    "Q42D.0.EmployerName": {
+      "type": "string"
+    },
+    "Q42D.0.Address.0": {
+      "type": "string"
+    },
+    "Q42D.0.Address.1": {
+      "type": "string"
+    },
+    "Q42D.0.Address.2": {
+      "type": "string"
+    },
+    "Q42D.0.Address.3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q42D.0.PhoneNo": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q42D.0.ABN.0": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q42D.0.ABN.1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q42D.0.ABN.2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q42D.0.ABN.3": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q42D.0.JobDescrip": {
+      "type": "string"
+    },
+    "Q42D.0.WorkLocation": {
+      "type": "string"
+    },
+    "Q42D.0.Apprentice": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q42D.0.WorkRegCas": {
+      "type": "string",
+      "enum": [
+        "Regular",
+        "Casual"
+      ]
+    },
+    "Q42D.0.HoursPerWk": {
+      "type": "string"
+    },
+    "Q42D.0.Earned": {
+      "type": "string"
+    },
+    "Q42D.1.EmployerName": {
+      "type": "string"
+    },
+    "Q42D.1.Address.0": {
+      "type": "string"
+    },
+    "Q42D.1.Address.1": {
+      "type": "string"
+    },
+    "Q42D.1.Address.2": {
+      "type": "string"
+    },
+    "Q42D.1.Address.3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q42D.1.PhoneNo": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "Q42D.1.ABN.0": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "Q42D.1.ABN.1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q42D.1.ABN.2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q42D.1.ABN.3": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q42D.1.JobDescrip": {
+      "type": "string"
+    },
+    "Q42D.1.WorkLocation": {
+      "type": "string"
+    },
+    "Q42D.1.Apprentice": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q42D.1.WorkRegCas": {
+      "type": "string",
+      "enum": [
+        "Regular",
+        "Casual"
+      ]
+    },
+    "Q42D.1.HoursPerWk": {
+      "type": "string"
+    },
+    "Q42D.1.Earned": {
+      "type": "string"
+    },
+    "Q43": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q44": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "44.Asset.0": {
+      "type": "string"
+    },
+    "44.Asset.1": {
+      "type": "string"
+    },
+    "44.Make.0": {
+      "type": "string"
+    },
+    "44.Make.1": {
+      "type": "string"
+    },
+    "44.Model.0": {
+      "type": "string"
+    },
+    "44.Model.1": {
+      "type": "string"
+    },
+    "44.Year.0": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "44.Year.1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "44.CMV.0": {
+      "type": "string"
+    },
+    "44.CMV.1": {
+      "type": "string"
+    },
+    "44.AmtOwed.0": {
+      "type": "string"
+    },
+    "44.AmtOwed.1": {
+      "type": "string"
+    },
+    "44.Share.0": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "44.Share.1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q45": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "45.Asset.0": {
+      "type": "string"
+    },
+    "45.Asset.1": {
+      "type": "string"
+    },
+    "45.Make.0": {
+      "type": "string"
+    },
+    "45.Make.1": {
+      "type": "string"
+    },
+    "45.Model.0": {
+      "type": "string"
+    },
+    "45.Model.1": {
+      "type": "string"
+    },
+    "45.Year.0": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "45.Year.1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "45.CMV.0": {
+      "type": "string"
+    },
+    "45.CMV.1": {
+      "type": "string"
+    },
+    "45.AmtOwed.0": {
+      "type": "string"
+    },
+    "45.AmtOwed.1": {
+      "type": "string"
+    },
+    "45.Share.0": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "45.Share.1": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q46.CMV": {
+      "type": "string"
+    },
+    "Q46.AmtOwed": {
+      "type": "string"
+    },
+    "Q46.Share": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q47": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q48": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q49": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q50": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q51": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q52": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q53": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q54": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "54.Payment.0": {
+      "type": "string"
+    },
+    "54.Payment.1": {
+      "type": "string"
+    },
+    "54.AmtPaid.0": {
+      "type": "string"
+    },
+    "54.AmtPaid.1": {
+      "type": "string"
+    },
+    "54.WhenPaid.0": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "54.WhenPaid.1": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q55": {
+      "type": "string",
+      "enum": [
+        "Stud",
+        "AA"
+      ]
+    },
+    "Q56.CourseTitle": {
+      "type": "string"
+    },
+    "Q56.CourseCode": {
+      "type": "string"
+    },
+    "Q56.Stage": {
+      "type": "string"
+    },
+    "Q56.InstitutionNameSuburb": {
+      "type": "string"
+    },
+    "Q56.StudentID": {
+      "type": "string"
+    },
+    "Q57.OtherInstitute": {
+      "type": "string"
+    },
+    "Q57.StudentID": {
+      "type": "string"
+    },
+    "Q58": {
+      "type": "string",
+      "enum": [
+        "MoreThanOneYear",
+        "Year",
+        "Semester",
+        "Other",
+        "Term"
+      ]
+    },
+    "58D.0.years": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "58D.0.months": {
+      "type": "string",
+      "maxLength": 2
+    },
+    "58D.1": {
+      "type": "string",
+      "enum": [
+        "Sem1",
+        "Sem2",
+        "Sem3"
+      ]
+    },
+    "58D.2": {
+      "type": "string",
+      "enum": [
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ]
+    },
+    "58D.3.From": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "58D.3.To": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q59": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q60": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q61": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q62": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q85": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q103": {
+      "type": "string"
+    },
+    "Q101": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "101.TFN.0": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "101.TFN.1": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "101.TFN.2": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "Q100": {
+      "type": "string",
+      "enum": [
+        "No",
+        "NotSure",
+        "Yes"
+      ]
+    },
+    "Q99": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "99.ChildName.0": {
+      "type": "string"
+    },
+    "99.ChildName.1": {
+      "type": "string"
+    },
+    "99.ChildName.2": {
+      "type": "string"
+    },
+    "99.ChildName.3": {
+      "type": "string"
+    },
+    "99.ChildName.4": {
+      "type": "string"
+    },
+    "99.ChildDOB.0": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "99.ChildDOB.1": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "99.ChildDOB.2": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "99.ChildDOB.3": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "99.ChildDOB.4": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "Q98": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q97": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q96": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q95.Address.0": {
+      "type": "string"
+    },
+    "Q95.Address.1": {
+      "type": "string"
+    },
+    "Q95.Address.2": {
+      "type": "string"
+    },
+    "Q95.Address.3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q94": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q93": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q92": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q91": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q90": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q89": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q88": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q87.Address.0": {
+      "type": "string"
+    },
+    "Q87.Address.1": {
+      "type": "string"
+    },
+    "Q87.Address.2": {
+      "type": "string"
+    },
+    "Q87.Address.3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q86": {
+      "type": "string",
+      "enum": [
+        "AA",
+        "SecondaryStudent",
+        "TertiaryStudent"
+      ]
+    },
+    "Q84": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q83": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q82": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q81": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q80": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q79": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q78": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q77": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q76": {
+      "type": "string",
+      "maxLength": 1
+    },
+    "Q75": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "75.CRN": {
+      "type": "string",
+      "enum": [
+        "Yes"
+      ]
+    },
+    "75.DVARef": {
+      "type": "string"
+    },
+    "75.Payment": {
+      "type": "string"
+    },
+    "75.StartDate": {
+      "type": "string",
+      "pattern": "^\\d{2} \\d{2} \\d{4}$"
+    },
+    "D74.TravelTime": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "D74.SchoolsAttended": {
+      "type": "string"
+    },
+    "Q74": {
+      "type": "string",
+      "enum": [
+        "Yes0",
+        "Yes1",
+        "Yes2",
+        "Yes3",
+        "Yes4",
+        "Yes5",
+        "Yes6",
+        "Yes7",
+        "Yes8",
+        "Yes9",
+        "Yes10",
+        "Yes11",
+        "Yes12"
+      ]
+    },
+    "Q73": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q72": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q71.Address.0": {
+      "type": "string"
+    },
+    "Q71.Address.1": {
+      "type": "string"
+    },
+    "Q71.Address.2": {
+      "type": "string"
+    },
+    "Q71.Address.3": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Board.TitleOther": {
+      "type": "string"
+    },
+    "Board.Title": {
+      "type": "string",
+      "enum": [
+        "Mr",
+        "Mrs",
+        "Miss",
+        "Ms",
+        "Mx"
+      ]
+    },
+    "Q70.FamName": {
+      "type": "string"
+    },
+    "Q70.FirstGivenName": {
+      "type": "string"
+    },
+    "Q70.SecondGivenName": {
+      "type": "string"
+    },
+    "Q69": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q68": {
+      "type": "string"
+    },
+    "Q67": {
+      "type": "string",
+      "enum": [
+        "TertiaryResi",
+        "Hostel",
+        "boardingSchool",
+        "boardingPrivate",
+        "Other"
+      ]
+    },
+    "Q66": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q66D.0.Year": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q66D.0.NameInstitute": {
+      "type": "string"
+    },
+    "Q66D.0.NameCourse": {
+      "type": "string"
+    },
+    "Q66D.0.S1": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.0.S2": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.0.Stage": {
+      "type": "string"
+    },
+    "Q66D.1.Year": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q66D.1.Stage": {
+      "type": "string"
+    },
+    "Q66D.1.NameInstitute": {
+      "type": "string"
+    },
+    "Q66D.1.NameCourse": {
+      "type": "string"
+    },
+    "Q66D.1.S1": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.1.S2": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.2.Year": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q66D.2.Stage": {
+      "type": "string"
+    },
+    "Q66D.2.NameInstitute": {
+      "type": "string"
+    },
+    "Q66D.2.NameCourse": {
+      "type": "string"
+    },
+    "Q66D.2.S1": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.2.S2": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.3.Year": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q66D.3.Stage": {
+      "type": "string"
+    },
+    "Q66D.3.NameInstitute": {
+      "type": "string"
+    },
+    "Q66D.3.NameCourse": {
+      "type": "string"
+    },
+    "Q66D.3.S1": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.3.S2": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.4.Year": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q66D.4.Stage": {
+      "type": "string"
+    },
+    "Q66D.4.NameInstitute": {
+      "type": "string"
+    },
+    "Q66D.4.NameCourse": {
+      "type": "string"
+    },
+    "Q66D.4.S1": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.4.S2": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.5.Year": {
+      "type": "string",
+      "maxLength": 4
+    },
+    "Q66D.5.Stage": {
+      "type": "string"
+    },
+    "Q66D.5.NameInstitute": {
+      "type": "string"
+    },
+    "Q66D.5.NameCourse": {
+      "type": "string"
+    },
+    "Q66D.5.S1": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q66D.5.S2": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT"
+      ]
+    },
+    "Q65": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    },
+    "Q65D.0.Years": {
+      "type": "string"
+    },
+    "Q65D.0.NameInstitute": {
+      "type": "string"
+    },
+    "Q65D.0.NameCourse": {
+      "type": "string"
+    },
+    "Q65D.1.Years": {
+      "type": "string"
+    },
+    "Q65D.1.NameInstitute": {
+      "type": "string"
+    },
+    "Q65D.1.NameCourse": {
+      "type": "string"
+    },
+    "Q65D.2.Years": {
+      "type": "string"
+    },
+    "Q65D.2.NameInstitute": {
+      "type": "string"
+    },
+    "Q65D.2.NameCourse": {
+      "type": "string"
+    },
+    "Q65D.3.Years": {
+      "type": "string"
+    },
+    "Q65D.3.NameInstitute": {
+      "type": "string"
+    },
+    "Q65D.3.NameCourse": {
+      "type": "string"
+    },
+    "Q65D.4.Years": {
+      "type": "string"
+    },
+    "Q65D.4.NameInstitute": {
+      "type": "string"
+    },
+    "Q65D.4.NameCourse": {
+      "type": "string"
+    },
+    "Q64.S1": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT",
+        "NotSure"
+      ]
+    },
+    "Q64.S2": {
+      "type": "string",
+      "enum": [
+        "FT",
+        "PT",
+        "NotSure"
+      ]
+    },
+    "Q64.S1Details": {
+      "type": "string",
+      "enum": [
+        "24",
+        "49",
+        "65",
+        "74"
+      ]
+    },
+    "Q64.S2Details": {
+      "type": "string",
+      "enum": [
+        "24",
+        "49",
+        "65",
+        "74"
+      ]
+    },
+    "Q63": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Yes"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
