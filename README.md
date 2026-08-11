@@ -15,12 +15,28 @@ This repo is both a working example (one real form, fully wired up) and the refe
 bun install
 ```
 
-## Scripts
+## CLI
 
-- `bun run scripts/inspect.ts` — dumps every field in `fixtures/blank-form.pdf` (name, type, current value, Hidden state per widget, and every checkbox/radio group's real export values) to `fixtures/fields.txt`. Run this first for any new form; never guess field names or export values instead.
-- `bun run scripts/fill.ts` — validates `fixtures/sample-data.json` against the schema in `scripts/schema.ts`, maps it onto the PDF via `scripts/mapping.ts`, writes `out/filled.pdf`, then reloads the saved file and confirms every field landed as intended.
-- `bun test` — hostile-input and structural regression suite (`scripts/fill.test.ts`).
+```bash
+bun run scripts/cli.ts <command> [args]
+```
+
+- `init <id> <pdf-path>` — scaffold a new form: copies the PDF into `forms/<id>/blank-form.pdf`, checks for a real (undecryptable) cipher first, dumps every field to `fields.txt`, scaffolds an empty schema/mapping pair, and seeds `sample-data.json`. Immediately usable — no business mapping required yet.
+- `inspect <id>` — regenerate `forms/<id>/fields.txt` (name, type, current value, Hidden state per widget, every checkbox/radio group's real export values). Never guess field names or export values instead of running this.
+- `smoke-test <id-or-path>` — mechanically fill every fillable field with a synthesized valid value and verify the round-trip, using only the generic layer. Works against any PDF, hand-mapped or not.
+- `schema <id>` — export `forms/<id>/sample-data.schema.json`, a JSON Schema document describing exactly what a valid data file for this form looks like.
+- `fill <id> [--data path] [--out path]` — validate `forms/<id>/sample-data.json` (business keys via that form's hand-authored schema, everything else via the PDF's own derived structure), apply it, write the PDF, and read the saved file back to confirm every field landed as intended.
+
+Registered forms currently: `income-and-assets`.
+
+## Tests
+
+```bash
+bun test
+```
+
+Runs each form's business-specific tests (e.g. `forms/income-and-assets/fill.test.ts`) plus the generic smoke test (`scripts/smokeTest.test.ts`, exercised against every form under `forms/`) and the encryption detector's own tests.
 
 ## Output
 
-`out/filled.pdf` is gitignored. A clean script run only proves the data model is internally consistent — open the result in both Acrobat and Chrome after any change that could affect it, since neither `bun run` nor `bun test` can see whether the PDF actually renders correctly.
+`out/<id>/filled.pdf` is gitignored. A clean CLI run only proves the data model is internally consistent — open the result in both Acrobat and Chrome after any change that could affect it, since nothing here can see whether the PDF actually renders correctly.

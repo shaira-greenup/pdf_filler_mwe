@@ -1,10 +1,12 @@
 import { describe, test, expect, beforeAll } from "bun:test";
-import { PDFDocument, PDFCheckBox, PDFName, PDFDict, PDFNumber } from "pdf-lib";
+import { PDFDocument, PDFCheckBox, PDFName, PDFDict } from "pdf-lib";
 import { FormDataSchema, type FormData } from "./schema";
-import { applyFormData, readFormData, selectCheckboxOption } from "./mapping";
-import { assertTemplateHash } from "./template";
+import { applyFormData, readFormData } from "./mapping";
+import { selectCheckboxOption, isHidden } from "../../scripts/genericFields";
+import { assertTemplateHash } from "../../scripts/lib/hash";
 
-const FORM_PATH = "fixtures/blank-form.pdf";
+const FORM_PATH = "forms/income-and-assets/blank-form.pdf";
+const FIELDS_TXT_PATH = "forms/income-and-assets/fields.txt";
 
 let blankBytes: Uint8Array;
 
@@ -25,14 +27,6 @@ async function fillAndReload(data: FormData) {
   const outBytes = await pdf.save();
   const verifyPdf = await PDFDocument.load(outBytes, { ignoreEncryption: true });
   return { verifyForm: verifyPdf.getForm() };
-}
-
-function isHidden(field: PDFCheckBox): boolean {
-  return field.acroField.getWidgets().some((widget) => {
-    const flags = widget.dict.lookup(PDFName.of("F"));
-    const flagsNum = flags instanceof PDFNumber ? flags.asNumber() : 0;
-    return (flagsNum & 2) !== 0;
-  });
 }
 
 const BASE_DATA = {
@@ -168,7 +162,7 @@ describe("employment gating and the Hidden annotation flag", () => {
     for (const name of ["Q8.PersonWorking1", "Q8.WorkIs1", "Q8.UsualWage1"]) {
       const field = verifyForm.getField(name);
       expect(field).toBeInstanceOf(PDFCheckBox);
-      expect(isHidden(field as PDFCheckBox)).toBe(false);
+      expect(isHidden(field)).toBe(false);
     }
     expect(readFormData(verifyForm).employment).toEqual(data.employment!);
   });
@@ -210,14 +204,14 @@ describe("multi-widget checkbox guards reject invalid export values", () => {
 });
 
 describe("structural regression guards", () => {
-  test("assertTemplateHash throws when the template bytes change", () => {
+  test("assertTemplateHash throws when the template bytes change", async () => {
     const mutated = new Uint8Array(blankBytes);
     mutated[0] = (mutated[0] ?? 0) ^ 0xff;
-    expect(() => assertTemplateHash(mutated, FORM_PATH)).toThrow();
+    await expect(assertTemplateHash(mutated, FIELDS_TXT_PATH)).rejects.toThrow();
   });
 
-  test("assertTemplateHash does not throw for the real, unmodified template", () => {
-    expect(() => assertTemplateHash(blankBytes, FORM_PATH)).not.toThrow();
+  test("assertTemplateHash does not throw for the real, unmodified template", async () => {
+    await assertTemplateHash(blankBytes, FIELDS_TXT_PATH);
   });
 
   test("filling the form does not flatten it", async () => {

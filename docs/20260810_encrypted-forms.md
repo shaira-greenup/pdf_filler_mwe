@@ -105,5 +105,6 @@ section — it is the canonical "real form", already decrypted.
 ## Files
 
 - `fixtures/blank-form.pdf` — decrypted, canonical, committed.
-- `form.pdf` (project root) — original encrypted source. Kept/removed at
-  maintainer discretion; no longer read by any script.
+- `fixtures/encrypted-source.pdf` (moved from the project root, formerly
+  `form.pdf`) — the original encrypted source. Now used as the positive-case
+  fixture for `scripts/lib/encryption.test.ts`'s detector.
