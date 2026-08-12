@@ -1,5 +1,5 @@
 import { PDFDocument } from "pdf-lib";
-import { applyGenericData, readGenericData, synthesizeValidData, isHidden } from "../genericFields";
+import { applyGenericData, readGenericData, synthesizeValidData, isHidden, finalizeAppearances } from "../genericFields";
 
 export interface SmokeTestResult {
   totalFieldCount: number;
@@ -21,7 +21,7 @@ export async function runSmokeTest(bytes: Uint8Array): Promise<SmokeTestResult> 
   const data = synthesizeValidData(form);
 
   applyGenericData(form, data);
-  form.updateFieldAppearances();
+  finalizeAppearances(form);
   const outBytes = await pdf.save();
 
   const verifyPdf = await PDFDocument.load(outBytes, { ignoreEncryption: true });

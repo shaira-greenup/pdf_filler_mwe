@@ -11,6 +11,9 @@ import {
   PDFDict,
   PDFString,
   PDFHexString,
+  PDFRawStream,
+  PDFContentStream,
+  decodePDFRawStream,
 } from "pdf-lib";
 import { z } from "zod";
 
@@ -146,6 +149,22 @@ function buildDatePattern(format: string): DatePattern {
 // instead of truncated field-name garbage.
 const PLACEHOLDER_DATE = new Date(2000, 0, 1);
 
+// pdf-lib's multiline auto-size (font size 0) picks a font size by assuming
+// any run of text can be wrapped onto further lines to fit the field's
+// height (computeFontSize in pdf-lib's layout code) - but its actual layout
+// only ever breaks lines on whitespace. A field name like "Q16Details_Payment"
+// has none, so the size it picks assumes wrapping that never happens, and the
+// real render overflows the box as one long line. Field names are
+// dot/underscore/dash/camelCase-joined identifiers, not prose - putting real
+// word boundaries back in keeps pdf-lib's estimate and its actual layout in
+// agreement for every multiline field, not just this one.
+function humanize(name: string): string {
+  return name
+    .replace(/[._-]+/g, " ")
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .trim();
+}
+
 // Real export values for a field's options, regardless of whether it's a
 // checkbox with multiple widgets (hard rule 7), a radio group, a dropdown,
 // or an option list.
@@ -248,6 +267,82 @@ export function readGenericData(form: PDFForm, names: string[]): Record<string, 
   return data;
 }
 
+const AUTO_FONT_SIZE_RE = /(?:^|\s)0\s+Tf\b/;
+const APPEARANCE_TF_SIZE_RE = /\/\S+\s+([\d.]+)\s+Tf\b/;
+
+// Right after form.updateFieldAppearances(), a widget's /AP /N is still an
+// in-memory PDFContentStream (pdf-lib's own builder, uncompressed) - it only
+// becomes a PDFRawStream needing decodePDFRawStream once the document has
+// gone through save()+reload. finalizeAppearances always calls this between
+// the two updateFieldAppearances() passes, before any save, so the
+// PDFContentStream case is the one that actually gets hit - the raw-stream
+// path is kept only for robustness against a differently-timed caller.
+function extractAppearanceFontSize(field: PDFTextField): number | undefined {
+  for (const widget of field.acroField.getWidgets()) {
+    const ap = widget.dict.lookup(PDFName.of("AP"));
+    if (!(ap instanceof PDFDict)) continue;
+    const n = ap.lookup(PDFName.of("N"));
+    let content: string | undefined;
+    if (n instanceof PDFContentStream) {
+      content = n.getContentsString();
+    } else if (n instanceof PDFRawStream) {
+      content = new TextDecoder().decode(decodePDFRawStream(n).decode());
+    }
+    const size = Number(content?.match(APPEARANCE_TF_SIZE_RE)?.[1]);
+    if (size > 0) return size;
+  }
+  return undefined;
+}
+
+// A field's /DA can specify font size 0 ("auto"). form.updateFieldAppearances()
+// resolves this to a real size and writes it straight back into /DA (already
+// true of pdf-lib on its own - confirmed directly, not assumed). But the size
+// it picks is whatever just barely fits pdf-lib's own width/height math - for
+// Q16Details_Payment that's a ~2.7% margin (225.9pt of text in a 232pt box).
+// A viewer that live-renders an *interactive* (non-flattened) text field
+// straight from /DA - which Chrome's own form-field widgets do, confirmed
+// against this exact field - lays that same explicit size out using its own
+// metrics and padding conventions, not pdf-lib's. A margin that thin has
+// nothing left to absorb the difference, so the same field and value can
+// look fine in one renderer and wrap/scroll in another for reasons that have
+// nothing to do with the value. Shaving a safety margin off pdf-lib's own
+// tightest-fit choice - never below what it originally picked when that was
+// already small - buys the headroom every other renderer needs to agree.
+const FONT_SIZE_SAFETY_MARGIN = 0.85;
+const MIN_SAFE_FONT_SIZE = 8;
+
+// Scoped to fields that were auto-sized ("0 Tf") *before* the first
+// updateFieldAppearances() call - by the time this runs, pdf-lib has already
+// resolved and overwritten /DA with a real number, so "was this field auto"
+// has to be captured up front. A field whose original template author chose
+// a fixed size deliberately is left untouched.
+function pinAutoFontSizes(form: PDFForm, autoSizedFieldNames: ReadonlySet<string>): void {
+  for (const field of form.getFields()) {
+    if (!(field instanceof PDFTextField) || !autoSizedFieldNames.has(field.getName())) continue;
+    const size = extractAppearanceFontSize(field);
+    if (!size) continue;
+    const safeSize = Math.min(size, Math.max(MIN_SAFE_FONT_SIZE, Math.floor(size * FONT_SIZE_SAFETY_MARGIN)));
+    field.setFontSize(safeSize);
+  }
+}
+
+// The one place every fill path should finalize appearances instead of
+// calling form.updateFieldAppearances() directly (hard rule 2) - it still
+// does that, but also closes the safety-margin gap above for whichever
+// fields were actually auto-sized.
+export function finalizeAppearances(form: PDFForm): void {
+  const autoSizedFieldNames = new Set(
+    form
+      .getFields()
+      .filter((field): field is PDFTextField => field instanceof PDFTextField)
+      .filter((field) => AUTO_FONT_SIZE_RE.test(field.acroField.getDefaultAppearance() ?? ""))
+      .map((field) => field.getName()),
+  );
+  form.updateFieldAppearances();
+  pinAutoFontSizes(form, autoSizedFieldNames);
+  form.updateFieldAppearances();
+}
+
 // One valid, in-bounds placeholder value per fillable field - proves the
 // pattern holds across the whole form without asserting what any field
 // actually means. Deliberately not testing hostile input here (Milestone 4
@@ -263,7 +358,7 @@ export function synthesizeValidData(form: PDFForm): Record<string, string> {
         data[name] = buildDatePattern(dateFormat).render(PLACEHOLDER_DATE);
       } else {
         const maxLength = field.getMaxLength();
-        const placeholder = `T-${name}`;
+        const placeholder = field.isMultiline() ? `T ${humanize(name)}` : `T-${name}`;
         data[name] = placeholder.slice(0, maxLength ?? placeholder.length) || "T";
       }
     } else {

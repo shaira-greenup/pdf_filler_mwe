@@ -5,7 +5,7 @@ import type { z } from "zod";
 import type { FormPaths } from "./formPaths";
 import { loadForm } from "./loadForm";
 import { assertTemplateHash } from "./hash";
-import { buildGenericSchema, applyGenericData, readGenericData } from "../genericFields";
+import { buildGenericSchema, applyGenericData, readGenericData, finalizeAppearances } from "../genericFields";
 
 // Every form's schema.ts/mapping.ts is expected to export this shape by
 // convention (see forms/income-and-assets/ for the reference example).
@@ -72,7 +72,7 @@ export async function fillForm(
     applyGenericData(form, genericData);
   }
 
-  form.updateFieldAppearances();
+  finalizeAppearances(form);
   const outBytes = await pdf.save();
   await Bun.write(outPath, outBytes);
 
