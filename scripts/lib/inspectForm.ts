@@ -16,6 +16,7 @@ import type { FormPaths } from "./formPaths";
 import { loadForm } from "./loadForm";
 import { sha256Hex } from "./hash";
 import { ANNOTATION_FLAG_HIDDEN, getActionJS } from "../genericFields";
+import { extractGateGraph, type GateRule } from "./gateGraph";
 
 // /TU is the field's tooltip/alternate name - the human-readable label
 // Acrobat shows, which often carries a format hint (e.g. "(DD MM YYYY)")
@@ -31,6 +32,13 @@ export async function writeFieldsTxt(paths: FormPaths): Promise<{ fieldCount: nu
   const sha256 = sha256Hex(bytes);
   const hasXFA = form.hasXFA();
   const fields = form.getFields();
+
+  const gateRulesBySource = new Map<string, GateRule[]>();
+  for (const rule of extractGateGraph(form)) {
+    const existing = gateRulesBySource.get(rule.sourceField);
+    if (existing) existing.push(rule);
+    else gateRulesBySource.set(rule.sourceField, [rule]);
+  }
 
   const lines: string[] = [];
   lines.push(`SHA-256: ${sha256}`);
@@ -59,6 +67,11 @@ export async function writeFieldsTxt(paths: FormPaths): Promise<{ fieldCount: nu
     if (formatJS !== undefined) lines.push(`  Format action: ${JSON.stringify(formatJS)}`);
     const keystrokeJS = getActionJS(field, "K");
     if (keystrokeJS !== undefined) lines.push(`  Keystroke action: ${JSON.stringify(keystrokeJS)}`);
+    for (const rule of gateRulesBySource.get(name) ?? []) {
+      lines.push(
+        `  Gate logic: if ${rule.gateField} = ${JSON.stringify(rule.triggerValue)} -> affects [${rule.affectedFields.join(", ")}]`,
+      );
+    }
 
     if (field instanceof PDFTextField) {
       const value = field.getText();

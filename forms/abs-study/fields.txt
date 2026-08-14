@@ -22,6 +22,7 @@ Field: Q2
 Field: DummyCalcQ2
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q2 = "Yes" -> affects [Q2Details.Country, Q2Details.Date]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -264,6 +265,7 @@ Field: Q6
 Field: DummyCalcQ6
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q6 = "Yes" -> affects [Q6Details.OtherName1, Q6Details.OtherName2, Q6Details.OtherNameType1, Q6Details.OtherNameType2]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -423,6 +425,8 @@ Field: Q13
 Field: DummyCalcQ14
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q14 = "No" -> affects [Q14GoToQ16]
+  Gate logic: if Q14 = "Yes" -> affects [Q15]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -463,6 +467,8 @@ Field: Q16Details
 Field: DummyCalcQ16
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q16 = "Yes" -> affects [Q16Details]
+  Gate logic: if Q16Details = "Other" -> affects [Q16Details_Payment]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -483,6 +489,7 @@ Field: Q17
 Field: DummyCalcQ17
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q17 = "Yes" -> affects [Q17Details.0, Q17Details.1, Q17Details.2, Q17Details.3, Q17Details.4, Q17Details.Employer, Q17Details.Payment]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -566,6 +573,8 @@ Field: Q21
 Field: DummyCalcQ21
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q21 = "No" -> affects [Q21GoToQ36]
+  Gate logic: if Q21 = "Yes" -> affects [Q21GoToQ27]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -579,6 +588,7 @@ Field: Q22
 Field: DummyCalcQ22
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q22 = "Yes" -> affects [Q22GoToQ27]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -827,6 +837,7 @@ Field: Q20GoToQ22
 Field: DummyCalcQ18
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q18 = "No" -> affects [Q18GoToQ20]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -906,6 +917,8 @@ Field: Q23
 Field: DummyCalcQ23
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q23 = "No" -> affects [Q23GoToQ36]
+  Gate logic: if Q23 = "Yes" -> affects [Q23GoToQ27]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -929,6 +942,7 @@ Field: Q24
 Field: DummyCalcQ24
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q24 = "Yes" -> affects [Q24GoToQ36]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -947,6 +961,7 @@ Field: Q25
 Field: DummyCalcQ25
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q25 = "Yes" -> affects [Q25GoToQ27]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -970,6 +985,7 @@ Field: Q26GoToQ36
 Field: DummyCalcQ26
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q26 = "No" -> affects [Q26GoToQ36]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -983,6 +999,8 @@ Field: Q27
 Field: DummyCalcQ27
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q27 = "No" -> affects [Q27GoToQ29]
+  Gate logic: if Q27 = "Yes" -> affects [27.Age.0, 27.Age.1, 27.Age.2, 27.MoveIn.0, 27.MoveIn.1, 27.MoveIn.2, 27.Name.0, 27.Name.1, 27.Name.2, 27.Per.0, 27.Per.1, 27.Per.2, 27.Relationship.0, 27.Relationship.1, 27.Relationship.2, 27.Share.0, 27.Share.1, 27.Share.2, 27.TheyOwn.0, 27.TheyOwn.1, 27.TheyOwn.2]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1169,6 +1187,7 @@ Field: Q29
 Field: DummyCalcQ29
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q29 = "No" -> affects [Q29GoToQ31, Q31.Per, Q31.YouPay]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1187,6 +1206,8 @@ Field: Q30
 Field: DummyCalcQ30
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q30 = "No" -> affects [Q30GoToQ32.0, Q30_Details_No.Charged, Q30_Details_No.Per_1]
+  Gate logic: if Q30 = "Yes" -> affects [Q30GoToQ32.1, Q30_Details.PaidAccom, Q30_Details.PaidMeals, Q30_Details.Per_1, Q30_Details.Per_2]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1280,6 +1301,8 @@ Field: Q33
 Field: DummyCalcQ33
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q33 = "Boarding" -> affects [Q33GoToQ35]
+  Gate logic: if Q33 = "Other" -> affects [33.Other]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1326,6 +1349,7 @@ Field: Q36
 Field: DummyCalcQ36
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q36 = "Yes" -> affects [36.AccNumber, 36.AccountNames, 36.BSB, 36.BankName, Q36GoToQ38]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1381,6 +1405,7 @@ Field: Q38
 Field: DummyCalcQ38
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q38 = "Yes" -> affects [38.AccNumber.0, 38.AccNumber.1, 38.BSB.0, 38.BSB.1, 38.Balance.0, 38.Balance.1, 38.BankName.0, 38.BankName.1, 38.Currency.0, 38.Currency.1, 38.Share.0, 38.Share.1]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1492,6 +1517,7 @@ Field: Q39
 Field: DummyCalcQ39
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q39 = "No" -> affects [Q39GoToQ43]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1510,6 +1536,8 @@ Field: Q40
 Field: DummyCalcQ40
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q40 = "No" -> affects [Q40GoToQ43]
+  Gate logic: if Q40 = "Yes" -> affects [Q41.HrsWork, Q41.PeriodFrom, Q41.PeriodIncome, Q41.PeriodTo, Q41.WeekIncome, Q42D.0.ABN.0, Q42D.0.ABN.1, Q42D.0.ABN.2, Q42D.0.ABN.3, Q42D.0.Address.0, Q42D.0.Address.1, Q42D.0.Address.2, Q42D.0.Address.3, Q42D.0.Apprentice, Q42D.0.Earned, Q42D.0.EmployerName, Q42D.0.HoursPerWk, Q42D.0.JobDescrip, Q42D.0.PhoneNo, Q42D.0.WorkLocation, Q42D.0.WorkRegCas, Q42D.1.ABN.0, Q42D.1.ABN.1, Q42D.1.ABN.2, Q42D.1.ABN.3, Q42D.1.Address.0, Q42D.1.Address.1, Q42D.1.Address.2, Q42D.1.Address.3, Q42D.1.Apprentice, Q42D.1.Earned, Q42D.1.EmployerName, Q42D.1.HoursPerWk, Q42D.1.JobDescrip, Q42D.1.PhoneNo, Q42D.1.WorkLocation, Q42D.1.WorkRegCas]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1817,6 +1845,7 @@ Field: Q43
 Field: DummyCalcQ43
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q43 = "No" -> affects [Q43GoToQ55]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1835,6 +1864,7 @@ Field: Q44
 Field: DummyCalcQ44
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q44 = "Yes" -> affects [44.AmtOwed.0, 44.AmtOwed.1, 44.Asset.0, 44.Asset.1, 44.CMV.0, 44.CMV.1, 44.Make.0, 44.Make.1, 44.Model.0, 44.Model.1, 44.Share.0, 44.Share.1, 44.Year.0, 44.Year.1]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -1962,6 +1992,7 @@ Field: Q45
 Field: DummyCalcQ45
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q45 = "Yes" -> affects [45.AmtOwed.0, 45.AmtOwed.1, 45.Asset.0, 45.Asset.1, 45.CMV.0, 45.CMV.1, 45.Make.0, 45.Make.1, 45.Model.0, 45.Model.1, 45.Share.0, 45.Share.1, 45.Year.0, 45.Year.1]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2140,6 +2171,8 @@ Field: Q51
 Field: DummyCalcQ51
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q51 = "No" -> affects [Q51GoToQ53]
+  Gate logic: if Q51 = "Yes" -> affects [Q52]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2170,6 +2203,7 @@ Field: Q54
 Field: DummyCalcQ54
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q54 = "Yes" -> affects [54.AmtPaid.0, 54.AmtPaid.1, 54.Payment.0, 54.Payment.1, 54.WhenPaid.0, 54.WhenPaid.1]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2235,6 +2269,7 @@ Field: Q55
 Field: DummyCalcQ55
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q55 = "AA" -> affects [Q55GoToQ66]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2304,6 +2339,10 @@ Field: Q58
 Field: DummyCalcQ58
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q58 = "MoreThanOneYear" -> affects [58D.0.months, 58D.0.years]
+  Gate logic: if Q58 = "Semester" -> affects [58D.1]
+  Gate logic: if Q58 = "Term" -> affects [58D.2]
+  Gate logic: if Q58 = "Other" -> affects [58D.3.From, 58D.3.To]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2406,6 +2445,7 @@ Field: Q101
 Field: DummyCalcQ101
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q101 = "Yes" -> affects [101.TFN.0, 101.TFN.1, 101.TFN.2]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2443,6 +2483,7 @@ Field: Q100
 Field: DummyCalcQ100
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q100 = "Yes" -> affects [Q100GoToQ102]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2461,6 +2502,7 @@ Field: Q99
 Field: DummyCalcQ99
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q99 = "Yes" -> affects [99.ChildDOB.0, 99.ChildDOB.1, 99.ChildDOB.2, 99.ChildDOB.3, 99.ChildDOB.4, 99.ChildName.0, 99.ChildName.1, 99.ChildName.2, 99.ChildName.3, 99.ChildName.4]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2571,6 +2613,7 @@ Field: Q96
 Field: DummyCalcQ96
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q96 = "Yes" -> affects [Q96GoToQ99]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2618,6 +2661,7 @@ Field: Q94
 Field: DummyCalcQ94
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q94 = "No" -> affects [Q94GoToQ98]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2636,6 +2680,7 @@ Field: Q93
 Field: DummyCalcQ93
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q93 = "Yes" -> affects [Q93GoToQ99]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2654,6 +2699,7 @@ Field: Q92
 Field: DummyCalcQ92
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q92 = "Yes" -> affects [Q92GoToQ99]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2672,6 +2718,7 @@ Field: Q91
 Field: DummyCalcQ91
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q91 = "Yes" -> affects [Q91GoToQ99]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2690,6 +2737,7 @@ Field: Q90
 Field: DummyCalcQ90
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q90 = "Yes" -> affects [Q90GoToQ99]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2708,6 +2756,7 @@ Field: Q89
 Field: DummyCalcQ89
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q89 = "Yes" -> affects [Q89GoToQ99]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2726,6 +2775,7 @@ Field: Q88
 Field: DummyCalcQ88
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q88 = "Yes" -> affects [Q88GoToQ99]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2772,6 +2822,7 @@ Field: Q87.GoToQ99
 Field: DummyCalcQ85
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q85 = "No" -> affects [Q85GoToQ88]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2785,6 +2836,9 @@ Field: Q86
 Field: DummyCalcQ86
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q86 = "AA" -> affects [Q86GoToQ99.0]
+  Gate logic: if Q86 = "SecondaryStudent" -> affects [Q86GoToQ99.1]
+  Gate logic: if Q86 = "TertiaryStudent" -> affects [Q87.Address.0, Q87.Address.1, Q87.Address.2, Q87.Address.3, Q87.GoToQ99]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2813,6 +2867,7 @@ Field: Q84
 Field: DummyCalcQ84
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q84 = "Yes" -> affects [Q84GoToQ86]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2831,6 +2886,7 @@ Field: Q83
 Field: DummyCalcQ83
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q83 = "Yes" -> affects [Q83GoToQ86]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2849,6 +2905,7 @@ Field: Q82
 Field: DummyCalcQ82
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q82 = "Yes" -> affects [Q82GoToQ86]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2867,6 +2924,7 @@ Field: Q81
 Field: DummyCalcQ81
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q81 = "Yes" -> affects [Q81GoToQ86]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2885,6 +2943,7 @@ Field: Q80
 Field: DummyCalcQ80
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q80 = "Yes" -> affects [Q80GoToQ86]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2903,6 +2962,7 @@ Field: Q79
 Field: DummyCalcQ79
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q79 = "Yes" -> affects [Q79GoToQ86]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2921,6 +2981,7 @@ Field: Q78
 Field: DummyCalcQ78
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q78 = "Yes" -> affects [Q78GoToQ86]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2939,6 +3000,7 @@ Field: Q77
 Field: DummyCalcQ77
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q77 = "Yes" -> affects [Q77GoToQ99]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -2964,6 +3026,7 @@ Field: Q75
 Field: DummyCalcQ75
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q75 = "Yes" -> affects [75.CRN, 75.DVARef, 75.Payment, 75.StartDate]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3001,6 +3064,8 @@ Field: 75.StartDate
 Field: DummyCalcQ74
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q74 = "Yes0" -> affects [D74.TravelTime]
+  Gate logic: if Q74 = "Yes4" -> affects [D74.SchoolsAttended]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3041,6 +3106,7 @@ Field: Q72
 Field: DummyCalcQ72
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q72 = "No" -> affects [Q72GoToQ74]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3142,6 +3208,8 @@ Field: Q67
 Field: DummyCalcQ67
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q67 = "boardingPrivate" -> affects [Q67GoToQ70]
+  Gate logic: if Q67 = "Other" -> affects [Q67GoToQ71]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3172,6 +3240,7 @@ Field: Q66
 Field: DummyCalcQ66
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q66 = "Yes" -> affects [Q66D.0.NameCourse, Q66D.0.NameInstitute, Q66D.0.S1, Q66D.0.S2, Q66D.0.Stage, Q66D.0.Year, Q66D.1.NameCourse, Q66D.1.NameInstitute, Q66D.1.S1, Q66D.1.S2, Q66D.1.Stage, Q66D.1.Year, Q66D.2.NameCourse, Q66D.2.NameInstitute, Q66D.2.S1, Q66D.2.S2, Q66D.2.Stage, Q66D.2.Year, Q66D.3.NameCourse, Q66D.3.NameInstitute, Q66D.3.S1, Q66D.3.S2, Q66D.3.Stage, Q66D.3.Year, Q66D.4.NameCourse, Q66D.4.NameInstitute, Q66D.4.S1, Q66D.4.S2, Q66D.4.Stage, Q66D.4.Year, Q66D.5.NameCourse, Q66D.5.NameInstitute, Q66D.5.S1, Q66D.5.S2, Q66D.5.Stage, Q66D.5.Year]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3438,6 +3507,7 @@ Field: Q65
 Field: DummyCalcQ65
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q65 = "Yes" -> affects [Q65D.0.NameCourse, Q65D.0.NameInstitute, Q65D.0.Years, Q65D.1.NameCourse, Q65D.1.NameInstitute, Q65D.1.Years, Q65D.2.NameCourse, Q65D.2.NameInstitute, Q65D.2.Years, Q65D.3.NameCourse, Q65D.3.NameInstitute, Q65D.3.Years, Q65D.4.NameCourse, Q65D.4.NameInstitute, Q65D.4.Years]
   Value: null
   MaxLength: (none)
   Combed: false
@@ -3574,6 +3644,8 @@ Field: Q64.S2Details
 Field: DummyCalcQ64
   Type: PDFTextField
   Hidden: [true]
+  Gate logic: if Q64.S1 = "PT" -> affects [Q64.S1Details]
+  Gate logic: if Q64.S2 = "PT" -> affects [Q64.S2Details]
   Value: null
   MaxLength: (none)
   Combed: false

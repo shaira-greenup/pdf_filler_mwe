@@ -6,6 +6,7 @@ import type { FormPaths } from "./formPaths";
 import { loadForm } from "./loadForm";
 import { assertTemplateHash } from "./hash";
 import { buildGenericSchema, applyGenericData, readGenericData, finalizeAppearances } from "../genericFields";
+import { findGateViolations } from "./gateGraph";
 
 // Every form's schema.ts/mapping.ts is expected to export this shape by
 // convention (see forms/income-and-assets/ for the reference example).
@@ -87,6 +88,15 @@ export async function fillForm(
     for (const name of names) {
       assertDeepEqual(name, genericData[name], genericReadBack[name]);
     }
+  }
+
+  // Not a hard failure: only a fraction of this form's gates (if any) have
+  // been hand-verified against its own gating logic (see gateGraph.ts). A
+  // warning surfaces the same class of bug hard rule 9 already guards
+  // against - a value that shouldn't be there per the form's own rules -
+  // without blocking output on gates nobody has cleaned up yet.
+  for (const violation of findGateViolations(verifyForm)) {
+    console.warn(`Gate warning: ${violation}`);
   }
 
   return { outPath };

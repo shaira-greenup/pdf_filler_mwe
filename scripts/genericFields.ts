@@ -79,13 +79,15 @@ function hasCalculateAction(field: PDFField): boolean {
   return aa instanceof PDFDict && aa.has(PDFName.of("C"));
 }
 
-// /AA /F (Format) and /AA /K (Keystroke) are JavaScript actions Acrobat runs
-// as you type - never executed by pdf-lib or this project (we stay JS-free),
-// but the source string itself is readable, unexecuted, straight off the
-// field dict. Adobe's standard date/number widgets carry calls like
+// /AA /F (Format), /AA /K (Keystroke), and /AA /C (Calculate) are JavaScript
+// actions Acrobat runs - never executed by pdf-lib or this project (we stay
+// JS-free), but the source string itself is readable, unexecuted, straight
+// off the field dict. Adobe's standard date/number widgets carry calls like
 // AFDate_FormatEx("dd mm yyyy") here - the exact format a calendar picker
-// enforces, available without opening the PDF in a viewer.
-export function getActionJS(field: PDFField, actionKey: "F" | "K"): string | undefined {
+// enforces, available without opening the PDF in a viewer. Calculate actions
+// on hidden helper fields can carry a form's own gating logic (see
+// scripts/lib/gateGraph.ts) - readable for the same reason, never executed.
+export function getActionJS(field: PDFField, actionKey: "F" | "K" | "C"): string | undefined {
   const aa = field.acroField.dict.lookup(PDFName.of("AA"));
   if (!(aa instanceof PDFDict)) return undefined;
   const action = aa.lookup(PDFName.of(actionKey));

@@ -28,7 +28,7 @@ export const MAPPED_FIELD_NAMES: readonly string[] = ["Q2", "Q2Details.Country",
 
 export function applyFormData(form: PDFForm, data: FormData): void {
   if (data.citizenship) {
-    selectCheckboxOption(form, "Q2", "No");
+    selectCheckboxOption(form, "Q2", "Yes");
     const countryField = form.getTextField("Q2Details.Country");
     const dateField = form.getTextField("Q2Details.Date");
     countryField.setText(data.citizenship.country);
@@ -36,14 +36,14 @@ export function applyFormData(form: PDFForm, data: FormData): void {
     unhide(countryField);
     unhide(dateField);
   } else {
-    selectCheckboxOption(form, "Q2", "Yes");
+    selectCheckboxOption(form, "Q2", "No");
   }
 }
 
 export function readFormData(form: PDFForm): FormData {
   const data: FormData = {};
 
-  if (readCheckboxValue(form, "Q2") === "No") {
+  if (readCheckboxValue(form, "Q2") === "Yes") {
     data.citizenship = {
       country: form.getTextField("Q2Details.Country").getText() ?? "",
       date: fromDdMmYyyy("Q2Details.Date", form.getTextField("Q2Details.Date").getText() ?? ""),
