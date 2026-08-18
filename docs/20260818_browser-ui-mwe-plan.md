@@ -25,6 +25,16 @@ Bun CLI, its "no build step" rule, or any hard rule — it's a second,
 separate consumer of the same reusable modules, which is exactly the
 architecture CLAUDE.md already describes.
 
+**Repo structure, explicitly decided:** considered and rejected moving
+`scripts/`/`forms/`/`fixtures/` into a `cli/` folder (symmetric with `ui/`).
+Rejected because `forms/` is genuinely shared data — both the CLI and the
+browser UI read the same `schema.ts`/`mapping.ts`/`blank-form.pdf` unmodified
+— so relocating it under a folder named for one consumer would be backwards,
+and the separation this plan actually needs (`ui/` has its own
+package.json/build step, root doesn't) is already achieved without moving
+anything. `scripts/`, `forms/`, `fixtures/`, root `package.json`/`tsconfig.json`
+all stay exactly where they are; `ui/` is added as a new sibling.
+
 ## What gets reused verbatim vs. reimplemented
 
 Read in full to produce this plan: `scripts/genericFields.ts`,
