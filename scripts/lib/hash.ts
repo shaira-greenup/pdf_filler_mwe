@@ -1,25 +1,11 @@
+import { parseExpectedHash } from "./hashParse";
+
+export { parseExpectedHash } from "./hashParse";
+
 export function sha256Hex(bytes: Uint8Array): string {
   const hasher = new Bun.CryptoHasher("sha256");
   hasher.update(bytes);
   return hasher.digest("hex");
-}
-
-const HASH_LINE = /^SHA-256:\s*([0-9a-f]{64})\s*$/im;
-
-// Pure text -> hash parsing, split out from readExpectedHash so a
-// non-Bun caller (the browser UI, which fetches fields.txt instead of
-// reading it off disk) can reuse the exact same parsing/error behavior
-// instead of re-implementing this regex.
-export function parseExpectedHash(text: string, sourceLabel: string): string {
-  const normalized = text.replace(/\r\n/g, "\n");
-  const match = HASH_LINE.exec(normalized);
-  const hex = match?.[1];
-  if (!hex) {
-    throw new Error(
-      `${sourceLabel} does not start with a "SHA-256: <hex>" line. Re-run inspect for this form.`,
-    );
-  }
-  return hex;
 }
 
 // The expected hash lives in the form's own fields.txt (its first line,

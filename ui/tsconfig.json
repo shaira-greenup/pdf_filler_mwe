@@ -10,6 +10,7 @@
 
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
 
@@ -33,6 +34,7 @@
     "src",
     "../scripts/genericFields.ts",
     "../scripts/lib/gateGraph.ts",
+    "../scripts/lib/hashParse.ts",
     "../forms/*/schema.ts",
     "../forms/*/mapping.ts"
   ]
