@@ -26,5 +26,10 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  }
+  },
+  // ui/ is a separate sub-package with its own tsconfig.json (Solid's jsx:
+  // "preserve"/jsxImportSource, not this config's jsx: "react-jsx") - without
+  // this, root's own tsc run would pick up ui/'s .tsx files too and check
+  // them against the wrong JSX settings.
+  "exclude": ["node_modules", "ui"]
 }
