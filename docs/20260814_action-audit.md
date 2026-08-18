@@ -92,26 +92,76 @@ the problem to a known, finite set.
    debugging the `LockUnlock` script (`fileName:"Document-Level:LockUnlock",
    lineNum:20`) - tooling metadata, not business logic. No action needed.
 
-## Fix planned
+## Fix applied
 
 Three generalized changes, all reusable by any form, none of them a
 per-field patch:
 
-1. `scripts/genericFields.ts`: `getActionJS` reads `/JS` from a
+1. `scripts/genericFields.ts`: `getActionJS` now delegates to a new
+   `getDictActionJS(dict, actionKey)`, which reads `/JS` from a
    `PDFRawStream` (decoded the same way `extractAppearanceFontSize` already
    decodes other raw streams in this file) in addition to
-   `PDFString`/`PDFHexString`.
-2. `scripts/lib/gateGraph.ts`: a second extractor for the Blur-based
-   clear-sibling-field pattern, producing the same kind of rule shape so it
-   feeds into `findGateViolations` alongside `lockUnlockNoYes` rules.
-3. `scripts/lib/gateGraph.ts` / `inspectForm.ts`: any Calculate action that
-   matches neither known pattern is now reported explicitly (`fields.txt`
-   and/or a return value from the extractor) rather than silently producing
-   zero rules.
+   `PDFString`/`PDFHexString`, and works against *any* dict - not just a
+   field's own - so widget-level actions (`/Bl` on one option of a
+   multi-widget checkbox) are readable too, not just field-level ones.
+2. `scripts/lib/gateGraph.ts`: a second extractor, `extractBlurPairRules`,
+   for the Blur-based clear-sibling-field pattern. It produces the same
+   `GateRule` shape as `lockUnlockNoYes` rules (using the checkbox's literal
+   `"Off"` state as the trigger value), so it feeds into the same
+   `findGateViolations` logic rather than a parallel check.
+3. `scripts/lib/gateGraph.ts` (`findUnclassifiedActions`) / `inspectForm.ts`:
+   any Calculate or Blur action that matches neither known pattern is now
+   reported explicitly - a new `Unclassified action:` line in `fields.txt` -
+   rather than silently producing zero rules and looking identical to a
+   field with no gating logic at all.
+
+Verified: `bunx tsc --noEmit` clean, `bun test` → 43 pass / 0 fail (up from
+37), including new coverage for the stream-backed `DummyCalcQ12`/`DummyCalcQ20`
+rules, both Blur-pair rules, and `findUnclassifiedActions`' exhaustive-
+partition check (no field reported by `extractGateGraph` is *also* reported
+as unclassified, and vice versa).
+
+Confirmed counts, reconciling exactly with the predictions above:
+
+| | before | after |
+|---|---|---|
+| `abs-study` unique gate-carrying fields | 55 | 59 (+`DummyCalcQ12`, `DummyCalcQ20`, `Title1`, `Board.Title`) |
+| `abs-study` total rules | 72 | 92 |
+| `abs-study` unclassified actions | (invisible) | 1 (`DummyCalcQ67_1`) |
+| `income-and-assets` unique gate-carrying fields | 39 | 39 (unaffected - no stream-backed `/JS`, no Blur-pair convention) |
+| `income-and-assets` total rules | 48 | 48 |
+| `income-and-assets` unclassified actions | (invisible) | 0 |
 
 ## Day-to-day implications
 
-(To be filled in after implementation and verification.)
+This audit sharpens the trust model behind [[20260814_gate-logic]]'s
+extractor into three distinct categories, not two:
+
+1. **Encoded and understood** (`lockUnlockNoYes` calls, Blur-pairs) -
+   `extractGateGraph`/`findGateViolations` cover these fully and
+   automatically, for any form, with no per-field work. This is the
+   generator's genuine "second line of defense": it catches inconsistencies
+   *within* whatever the PDF's own JS actually encodes.
+2. **Encoded, but not auto-parseable** (`DummyCalcQ67_1` - hand-written
+   conditionals, `resetForm` calls, anything not matching a known call
+   shape) - `findUnclassifiedActions` makes these visible in `fields.txt`
+   rather than silently indistinguishable from "no gating here", but does
+   not check them. A human has to read the flagged snippet and decide what
+   it means, per field, per form.
+3. **Not encoded in the PDF at all** (`Q1`'s "not eligible" hard stop - pure
+   printed instruction text, zero Calculate action, zero JS) - fully
+   invisible to any extractor, no matter how complete. Only the person
+   authoring or reviewing that form's `sample-data.json`/`schema.ts` can
+   catch this class, by actually reading the form.
+
+Categories 2 and 3 are why `findGateViolations` staying a warning (not a
+hard fail - see [[20260814_gate-logic]]'s "Options considered") is a
+structural necessity, not just caution about pre-existing bad sample data:
+no matter how many conventions get added to the extractor, categories 2 and
+3 mean it can never be a complete, closed-world check on its own. The
+generation/review step (the "first line of defense") is load-bearing for
+every form, permanently - not a gap this tooling is expected to eventually
+close to zero.
 
 ## Files
 
