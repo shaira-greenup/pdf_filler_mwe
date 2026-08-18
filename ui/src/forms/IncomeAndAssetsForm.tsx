@@ -1,4 +1,4 @@
-import { Show } from "solid-js";
+import { For, Show } from "solid-js";
 
 // Flat UI state, one field per control - deliberately not the nested
 // FormData shape forms/income-and-assets/schema.ts expects (that type's own
@@ -50,13 +50,36 @@ export function toIncomeAndAssetsBusinessInput(value: IncomeAndAssetsFormValue):
   };
 }
 
+// Human-readable labels for the review-summary banner - keyed the same as
+// deriveIncomeAndAssets.ts's uncertainFields, so a field flagged there reads
+// the same wherever it's mentioned.
+const FIELD_LABELS: Record<keyof IncomeAndAssetsFormValue, string> = {
+  familyName: "Family name",
+  firstName: "First name",
+  secondName: "Second name",
+  clientReferenceNumber: "Client Reference Number",
+  question4: "Question 4",
+  employed: "Employment status",
+  personWorking: "Who is working",
+  workType: "Work type",
+  usualWage: "Usual wage",
+};
+
 const inputClass =
   "mt-1 w-full rounded-md border border-slate-300 px-3 py-1.5 text-sm focus:border-indigo-500 focus:outline-none";
 const labelClass = "text-sm font-medium text-slate-700";
+const flaggedInputClass = "border-amber-400 ring-1 ring-amber-300";
+
+const EMPTY_UNCERTAIN: ReadonlySet<keyof IncomeAndAssetsFormValue> = new Set();
 
 export interface IncomeAndAssetsFormProps {
   value: IncomeAndAssetsFormValue;
   onChange: (value: IncomeAndAssetsFormValue) => void;
+  // Field keys the "AI"/collation step (deriveIncomeAndAssets.ts) couldn't
+  // confidently derive from the client record - flagged inline rather than
+  // mixed in silently with real data (see docs/20260818_browser-ui-mwe-
+  // plan.md's "AI drafts, human reviews").
+  uncertainFields?: ReadonlySet<keyof IncomeAndAssetsFormValue>;
 }
 
 export default function IncomeAndAssetsForm(props: IncomeAndAssetsFormProps) {
@@ -64,47 +87,84 @@ export default function IncomeAndAssetsForm(props: IncomeAndAssetsFormProps) {
     props.onChange({ ...props.value, [key]: val });
   }
 
+  function isUncertain(key: keyof IncomeAndAssetsFormValue): boolean {
+    return (props.uncertainFields ?? EMPTY_UNCERTAIN).has(key);
+  }
+
+  function fieldClass(key: keyof IncomeAndAssetsFormValue): string {
+    return isUncertain(key) ? `${inputClass} ${flaggedInputClass}` : inputClass;
+  }
+
+  function ReviewBadge(key: keyof IncomeAndAssetsFormValue) {
+    return (
+      <Show when={isUncertain(key)}>
+        <span class="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-700">Review</span>
+      </Show>
+    );
+  }
+
   return (
     <div class="space-y-4">
+      <Show when={(props.uncertainFields?.size ?? 0) > 0}>
+        <div class="rounded-md border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
+          <p class="font-medium">Please confirm - couldn't be derived from the client record:</p>
+          <ul class="mt-1 list-disc pl-5">
+            <For each={[...(props.uncertainFields ?? EMPTY_UNCERTAIN)]}>{(key) => <li>{FIELD_LABELS[key]}</li>}</For>
+          </ul>
+        </div>
+      </Show>
+
       <div class="grid grid-cols-2 gap-3">
         <label class="block">
-          <span class={labelClass}>Family name</span>
+          <span class={labelClass}>
+            Family name
+            {ReviewBadge("familyName")}
+          </span>
           <input
             type="text"
             value={props.value.familyName}
             onInput={(e) => set("familyName", e.currentTarget.value)}
-            class={inputClass}
+            class={fieldClass("familyName")}
           />
         </label>
         <label class="block">
-          <span class={labelClass}>First name</span>
+          <span class={labelClass}>
+            First name
+            {ReviewBadge("firstName")}
+          </span>
           <input
             type="text"
             value={props.value.firstName}
             onInput={(e) => set("firstName", e.currentTarget.value)}
-            class={inputClass}
+            class={fieldClass("firstName")}
           />
         </label>
       </div>
 
       <label class="block">
-        <span class={labelClass}>Second name (optional)</span>
+        <span class={labelClass}>
+          Second name (optional)
+          {ReviewBadge("secondName")}
+        </span>
         <input
           type="text"
           value={props.value.secondName}
           onInput={(e) => set("secondName", e.currentTarget.value)}
-          class={inputClass}
+          class={fieldClass("secondName")}
         />
       </label>
 
       <label class="block">
-        <span class={labelClass}>Client Reference Number (10 digits)</span>
+        <span class={labelClass}>
+          Client Reference Number (10 digits)
+          {ReviewBadge("clientReferenceNumber")}
+        </span>
         <input
           type="text"
           inputmode="numeric"
           value={props.value.clientReferenceNumber}
           onInput={(e) => set("clientReferenceNumber", e.currentTarget.value)}
-          class={`${inputClass} font-mono`}
+          class={`${fieldClass("clientReferenceNumber")} font-mono`}
         />
       </label>
 
@@ -115,7 +175,10 @@ export default function IncomeAndAssetsForm(props: IncomeAndAssetsFormProps) {
           onChange={(e) => set("question4", e.currentTarget.checked)}
           class="rounded border-slate-300"
         />
-        <span class={labelClass}>Question 4 (placeholder Yes/No question)</span>
+        <span class={labelClass}>
+          Question 4 (placeholder Yes/No question)
+          {ReviewBadge("question4")}
+        </span>
       </label>
 
       <label class="flex items-center gap-2 border-t border-slate-200 pt-4">
@@ -125,17 +188,23 @@ export default function IncomeAndAssetsForm(props: IncomeAndAssetsFormProps) {
           onChange={(e) => set("employed", e.currentTarget.checked)}
           class="rounded border-slate-300"
         />
-        <span class={labelClass}>Is anyone employed?</span>
+        <span class={labelClass}>
+          Is anyone employed?
+          {ReviewBadge("employed")}
+        </span>
       </label>
 
       <Show when={props.value.employed}>
         <div class="space-y-3 rounded-md bg-slate-50 p-3">
           <label class="block">
-            <span class={labelClass}>Who is working?</span>
+            <span class={labelClass}>
+              Who is working?
+              {ReviewBadge("personWorking")}
+            </span>
             <select
               value={props.value.personWorking}
               onChange={(e) => set("personWorking", e.currentTarget.value as IncomeAndAssetsFormValue["personWorking"])}
-              class={inputClass}
+              class={fieldClass("personWorking")}
             >
               <option value="You">You</option>
               <option value="Partner">Partner</option>
@@ -143,11 +212,14 @@ export default function IncomeAndAssetsForm(props: IncomeAndAssetsFormProps) {
           </label>
 
           <label class="block">
-            <span class={labelClass}>Work type</span>
+            <span class={labelClass}>
+              Work type
+              {ReviewBadge("workType")}
+            </span>
             <select
               value={props.value.workType}
               onChange={(e) => set("workType", e.currentTarget.value as IncomeAndAssetsFormValue["workType"])}
-              class={inputClass}
+              class={fieldClass("workType")}
             >
               <option value="FT">Full time</option>
               <option value="PT">Part time</option>
@@ -163,7 +235,10 @@ export default function IncomeAndAssetsForm(props: IncomeAndAssetsFormProps) {
               onChange={(e) => set("usualWage", e.currentTarget.checked)}
               class="rounded border-slate-300"
             />
-            <span class={labelClass}>Usual wage?</span>
+            <span class={labelClass}>
+              Usual wage?
+              {ReviewBadge("usualWage")}
+            </span>
           </label>
         </div>
       </Show>

@@ -1,4 +1,4 @@
-import { Show } from "solid-js";
+import { For, Show } from "solid-js";
 
 // Flat UI state - see IncomeAndAssetsForm.tsx for why this stays separate
 // from forms/abs-study/schema.ts's own "FormData" type (name collision with
@@ -32,13 +32,28 @@ export function toAbsStudyBusinessInput(value: AbsStudyFormValue): unknown {
   };
 }
 
+// See IncomeAndAssetsForm.tsx's FIELD_LABELS for why this exists - keeps
+// the review-summary banner's wording in sync with whatever key
+// deriveAbsStudy.ts flags.
+const FIELD_LABELS: Record<keyof AbsStudyFormValue, string> = {
+  hasCitizenshipDetails: "Citizenship / residency details",
+  country: "Country",
+  date: "Date",
+};
+
 const inputClass =
   "mt-1 w-full rounded-md border border-slate-300 px-3 py-1.5 text-sm focus:border-indigo-500 focus:outline-none";
 const labelClass = "text-sm font-medium text-slate-700";
+const flaggedInputClass = "border-amber-400 ring-1 ring-amber-300";
+
+const EMPTY_UNCERTAIN: ReadonlySet<keyof AbsStudyFormValue> = new Set();
 
 export interface AbsStudyFormProps {
   value: AbsStudyFormValue;
   onChange: (value: AbsStudyFormValue) => void;
+  // Field keys the "AI"/collation step (deriveAbsStudy.ts) couldn't
+  // confidently derive from the client record - see IncomeAndAssetsForm.tsx.
+  uncertainFields?: ReadonlySet<keyof AbsStudyFormValue>;
 }
 
 export default function AbsStudyForm(props: AbsStudyFormProps) {
@@ -46,8 +61,33 @@ export default function AbsStudyForm(props: AbsStudyFormProps) {
     props.onChange({ ...props.value, [key]: val });
   }
 
+  function isUncertain(key: keyof AbsStudyFormValue): boolean {
+    return (props.uncertainFields ?? EMPTY_UNCERTAIN).has(key);
+  }
+
+  function fieldClass(key: keyof AbsStudyFormValue): string {
+    return isUncertain(key) ? `${inputClass} ${flaggedInputClass}` : inputClass;
+  }
+
+  function ReviewBadge(key: keyof AbsStudyFormValue) {
+    return (
+      <Show when={isUncertain(key)}>
+        <span class="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-700">Review</span>
+      </Show>
+    );
+  }
+
   return (
     <div class="space-y-4">
+      <Show when={(props.uncertainFields?.size ?? 0) > 0}>
+        <div class="rounded-md border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
+          <p class="font-medium">Please confirm - couldn't be derived from the client record:</p>
+          <ul class="mt-1 list-disc pl-5">
+            <For each={[...(props.uncertainFields ?? EMPTY_UNCERTAIN)]}>{(key) => <li>{FIELD_LABELS[key]}</li>}</For>
+          </ul>
+        </div>
+      </Show>
+
       <label class="flex items-center gap-2">
         <input
           type="checkbox"
@@ -55,28 +95,37 @@ export default function AbsStudyForm(props: AbsStudyFormProps) {
           onChange={(e) => set("hasCitizenshipDetails", e.currentTarget.checked)}
           class="rounded border-slate-300"
         />
-        <span class={labelClass}>Citizenship / residency details apply (Q2)</span>
+        <span class={labelClass}>
+          Citizenship / residency details apply (Q2)
+          {ReviewBadge("hasCitizenshipDetails")}
+        </span>
       </label>
 
       <Show when={props.value.hasCitizenshipDetails}>
         <div class="space-y-3 rounded-md bg-slate-50 p-3">
           <label class="block">
-            <span class={labelClass}>Country</span>
+            <span class={labelClass}>
+              Country
+              {ReviewBadge("country")}
+            </span>
             <input
               type="text"
               value={props.value.country}
               onInput={(e) => set("country", e.currentTarget.value)}
-              class={inputClass}
+              class={fieldClass("country")}
             />
           </label>
 
           <label class="block">
-            <span class={labelClass}>Date</span>
+            <span class={labelClass}>
+              Date
+              {ReviewBadge("date")}
+            </span>
             <input
               type="date"
               value={props.value.date}
               onInput={(e) => set("date", e.currentTarget.value)}
-              class={inputClass}
+              class={fieldClass("date")}
             />
           </label>
         </div>
