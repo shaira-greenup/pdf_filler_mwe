@@ -5,6 +5,7 @@
   "clientReferenceNumber": "1234567890",
   "question4": false,
   "employment": {
+    "isEmployed": true,
     "personWorking": "You",
     "workType": "Casual",
     "usualWage": true

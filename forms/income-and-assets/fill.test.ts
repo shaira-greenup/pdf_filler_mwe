@@ -60,7 +60,7 @@ describe("FormDataSchema validates shape before anything touches the PDF", () =>
     expect(() =>
       FormDataSchema.parse({
         ...BASE_DATA,
-        employment: { personWorking: "You", workType: "Retired", usualWage: true },
+        employment: { isEmployed: true, personWorking: "You", workType: "Retired", usualWage: true },
       }),
     ).toThrow();
   });
@@ -121,7 +121,7 @@ describe("checkbox values - every real option exercised individually", () => {
     test(`employment.workType = ${workType}`, async () => {
       const data = FormDataSchema.parse({
         ...BASE_DATA,
-        employment: { personWorking: "You", workType, usualWage: true },
+        employment: { isEmployed: true, personWorking: "You", workType, usualWage: true },
       });
       const { verifyForm } = await fillAndReload(data);
       expect(readFormData(verifyForm).employment?.workType).toBe(workType);
@@ -132,7 +132,7 @@ describe("checkbox values - every real option exercised individually", () => {
     test(`employment.personWorking = ${personWorking}`, async () => {
       const data = FormDataSchema.parse({
         ...BASE_DATA,
-        employment: { personWorking, workType: "FT", usualWage: true },
+        employment: { isEmployed: true, personWorking, workType: "FT", usualWage: true },
       });
       const { verifyForm } = await fillAndReload(data);
       expect(readFormData(verifyForm).employment?.personWorking).toBe(personWorking);
@@ -143,7 +143,7 @@ describe("checkbox values - every real option exercised individually", () => {
     test(`employment.usualWage = ${usualWage}`, async () => {
       const data = FormDataSchema.parse({
         ...BASE_DATA,
-        employment: { personWorking: "You", workType: "FT", usualWage },
+        employment: { isEmployed: true, personWorking: "You", workType: "FT", usualWage },
       });
       const { verifyForm } = await fillAndReload(data);
       expect(readFormData(verifyForm).employment?.usualWage).toBe(usualWage);
@@ -155,7 +155,7 @@ describe("employment gating and the Hidden annotation flag", () => {
   test("employment present unhides the Q8 widgets it fills", async () => {
     const data = FormDataSchema.parse({
       ...BASE_DATA,
-      employment: { personWorking: "You", workType: "FT", usualWage: true },
+      employment: { isEmployed: true, personWorking: "You", workType: "FT", usualWage: true },
     });
     const { verifyForm } = await fillAndReload(data);
 
@@ -167,16 +167,53 @@ describe("employment gating and the Hidden annotation flag", () => {
     expect(readFormData(verifyForm).employment).toEqual(data.employment!);
   });
 
-  test("employment absent sets Q8Q to 'No' and leaves the section hidden", async () => {
+  test("employment absent means UNKNOWN - Q8Q is left blank, not answered 'No'", async () => {
+    // Absent must not be written as a negative answer: nothing in the input
+    // said this person is unemployed, only that we have no information. See
+    // schema.ts on the three states.
     const data = FormDataSchema.parse(BASE_DATA);
     const { verifyForm } = await fillAndReload(data);
 
     const q8q = verifyForm.getCheckBox("Q8Q");
-    expect(q8q.acroField.getValue().decodeText()).toBe("No");
+    expect(q8q.acroField.getValue().decodeText()).toBe("Off");
 
     const workIs1 = verifyForm.getCheckBox("Q8.WorkIs1");
     expect(isHidden(workIs1)).toBe(true);
     expect(readFormData(verifyForm).employment).toBeUndefined();
+  });
+
+  test("isEmployed false is a real answer - Q8Q = 'No', section stays hidden", async () => {
+    const data = FormDataSchema.parse({ ...BASE_DATA, employment: { isEmployed: false } });
+    const { verifyForm } = await fillAndReload(data);
+
+    expect(verifyForm.getCheckBox("Q8Q").acroField.getValue().decodeText()).toBe("No");
+    expect(isHidden(verifyForm.getCheckBox("Q8.WorkIs1"))).toBe(true);
+    expect(readFormData(verifyForm).employment).toEqual({ isEmployed: false });
+  });
+
+  test("employed with unknown details reveals the section but leaves those fields blank", async () => {
+    // The point of the whole pipeline: a known "yes" must not drag defaulted
+    // sub-answers along with it, but the fields still have to be visible for
+    // a human to complete in a PDF reader.
+    const data = FormDataSchema.parse({ ...BASE_DATA, employment: { isEmployed: true } });
+    const { verifyForm } = await fillAndReload(data);
+
+    expect(verifyForm.getCheckBox("Q8Q").acroField.getValue().decodeText()).toBe("Yes");
+    for (const name of ["Q8.PersonWorking1", "Q8.WorkIs1", "Q8.UsualWage1"]) {
+      const field = verifyForm.getCheckBox(name);
+      expect(field.acroField.getValue().decodeText()).toBe("Off");
+      expect(isHidden(field)).toBe(false);
+    }
+    expect(readFormData(verifyForm).employment).toEqual({ isEmployed: true });
+  });
+
+  test("question4 omitted leaves Q4 blank rather than answering 'No'", async () => {
+    const { question4, ...withoutQuestion4 } = BASE_DATA;
+    const data = FormDataSchema.parse(withoutQuestion4);
+    const { verifyForm } = await fillAndReload(data);
+
+    expect(verifyForm.getCheckBox("Q4").acroField.getValue().decodeText()).toBe("Off");
+    expect(readFormData(verifyForm).question4).toBeUndefined();
   });
 });
 

@@ -24,19 +24,27 @@ function assertDeepEqual(label: string, expected: unknown, actual: unknown): voi
 // Browser port of scripts/lib/fillForm.ts's sequence. Differences are only
 // in *where the input comes from*, not in what happens to it:
 //  - business data comes from the Solid form's state, not sample-data.json
-//  - generic-layer data comes from the registry's bundled sample-data.json
-//    (everything not covered by the business schema), not a --data file
+//  - generic-layer data is whatever the caller explicitly passes (default
+//    none) - deliberately NOT the registry's bundled sample-data.json.
+//    That file's placeholder junk ("T-Q8.EmployerName1" etc.) was fine for
+//    the earlier CLI-parity smoke test, but is wrong for the real pipeline:
+//    a field nothing could confidently derive should stay blank on the
+//    actual PDF, not get filled with leftover test scaffolding.
 //  - the result is bytes to hand to download.ts, not a path Bun.write()s to
 // Every step below - schema parse, applyFormData, buildGenericSchema,
 // applyGenericData, finalizeAppearances, the read-back deep-equal check
 // (hard rule 9), findGateViolations - calls straight into the same modules
 // the CLI uses, unmodified.
-export async function fillFormInBrowser(entry: FormRegistryEntry, businessInput: unknown): Promise<FillResult> {
+export async function fillFormInBrowser(
+  entry: FormRegistryEntry,
+  businessInput: unknown,
+  genericInput: Record<string, unknown> = {},
+): Promise<FillResult> {
   const { pdf, form } = await loadFormInBrowser(entry);
 
   const knownKeys = new Set(Object.keys(entry.FormDataSchema.shape));
   const genericRaw: Record<string, unknown> = {};
-  for (const [key, value] of Object.entries(entry.sampleData)) {
+  for (const [key, value] of Object.entries(genericInput)) {
     if (!knownKeys.has(key)) genericRaw[key] = value;
   }
 

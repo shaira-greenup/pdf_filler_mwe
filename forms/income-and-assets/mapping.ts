@@ -31,6 +31,13 @@ export const MAPPED_FIELD_NAMES: readonly string[] = [
   "Q8.UsualWage1",
 ];
 
+// The Q8 detail fields, unhidden together whenever employment is confirmed.
+// All three are revealed even if only some have known values: Q8Q = "Yes"
+// is what makes this section apply at all, and a field left blank for the
+// human to complete is useless to them if it is still invisible (hard rule
+// 8 - pdf-lib never runs the form's own JS, so nothing else reveals them).
+const Q8_DETAIL_FIELDS = ["Q8.PersonWorking1", "Q8.WorkIs1", "Q8.UsualWage1"];
+
 export function applyFormData(form: PDFForm, data: FormData): void {
   form.getTextField("Q2.FamilyName").setText(data.familyName);
   form.getTextField("Q2.FirstName").setText(data.firstName);
@@ -42,18 +49,23 @@ export function applyFormData(form: PDFForm, data: FormData): void {
     form.getTextField(field).setText(data.clientReferenceNumber.slice(start, end));
   }
 
-  selectCheckboxOption(form, "Q4", data.question4 ? "Yes" : "No");
+  // An undefined answer is left untouched, not written as "No" - see
+  // schema.ts on why absent means "unknown" rather than false.
+  if (data.question4 !== undefined) {
+    selectCheckboxOption(form, "Q4", data.question4 ? "Yes" : "No");
+  }
 
   if (data.employment) {
-    selectCheckboxOption(form, "Q8Q", "Yes");
-    selectCheckboxOption(form, "Q8.PersonWorking1", data.employment.personWorking);
-    selectCheckboxOption(form, "Q8.WorkIs1", data.employment.workType);
-    selectCheckboxOption(form, "Q8.UsualWage1", data.employment.usualWage ? "Yes" : "No");
-    for (const name of ["Q8.PersonWorking1", "Q8.WorkIs1", "Q8.UsualWage1"]) {
-      unhide(form.getCheckBox(name));
+    const { isEmployed, personWorking, workType, usualWage } = data.employment;
+    selectCheckboxOption(form, "Q8Q", isEmployed ? "Yes" : "No");
+    if (isEmployed) {
+      if (personWorking !== undefined) selectCheckboxOption(form, "Q8.PersonWorking1", personWorking);
+      if (workType !== undefined) selectCheckboxOption(form, "Q8.WorkIs1", workType);
+      if (usualWage !== undefined) selectCheckboxOption(form, "Q8.UsualWage1", usualWage ? "Yes" : "No");
+      for (const name of Q8_DETAIL_FIELDS) {
+        unhide(form.getCheckBox(name));
+      }
     }
-  } else {
-    selectCheckboxOption(form, "Q8Q", "No");
   }
 }
 
@@ -63,20 +75,32 @@ export function readFormData(form: PDFForm): FormData {
     ({ field }) => form.getTextField(field).getText() ?? "",
   ).join("");
 
+  // "Off" is the checkbox's literal unanswered state - mapped back to
+  // undefined so a blank field round-trips as "unknown", matching what
+  // applyFormData refused to write in the first place.
+  const question4 = readCheckboxValue(form, "Q4");
+
   const data: FormData = {
     familyName: form.getTextField("Q2.FamilyName").getText() ?? "",
     firstName: form.getTextField("Q2.FirstName").getText() ?? "",
     secondName: secondNameRaw === undefined ? undefined : secondNameRaw,
     clientReferenceNumber,
-    question4: readCheckboxValue(form, "Q4") === "Yes",
+    question4: question4 === "Off" ? undefined : question4 === "Yes",
   };
 
-  if (readCheckboxValue(form, "Q8Q") === "Yes") {
+  const q8q = readCheckboxValue(form, "Q8Q");
+  if (q8q === "Yes") {
+    const personWorking = readCheckboxValue(form, "Q8.PersonWorking1");
+    const workType = readCheckboxValue(form, "Q8.WorkIs1");
+    const usualWage = readCheckboxValue(form, "Q8.UsualWage1");
     data.employment = {
-      personWorking: readCheckboxValue(form, "Q8.PersonWorking1") as "You" | "Partner",
-      workType: readCheckboxValue(form, "Q8.WorkIs1") as "FT" | "PT" | "Seasonal" | "Casual",
-      usualWage: readCheckboxValue(form, "Q8.UsualWage1") === "Yes",
+      isEmployed: true,
+      personWorking: personWorking === "Off" ? undefined : (personWorking as "You" | "Partner"),
+      workType: workType === "Off" ? undefined : (workType as "FT" | "PT" | "Seasonal" | "Casual"),
+      usualWage: usualWage === "Off" ? undefined : usualWage === "Yes",
     };
+  } else if (q8q === "No") {
+    data.employment = { isEmployed: false };
   }
 
   return data;

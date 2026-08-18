@@ -27,26 +27,33 @@ function fromDdMmYyyy(fieldName: string, value: string): string {
 export const MAPPED_FIELD_NAMES: readonly string[] = ["Q2", "Q2Details.Country", "Q2Details.Date"];
 
 export function applyFormData(form: PDFForm, data: FormData): void {
-  if (data.citizenship) {
-    selectCheckboxOption(form, "Q2", "Yes");
-    const countryField = form.getTextField("Q2Details.Country");
-    const dateField = form.getTextField("Q2Details.Date");
-    countryField.setText(data.citizenship.country);
+  // No else-branch writing "No": citizenship being absent means unknown,
+  // and nothing here may answer a question on the client's behalf (see
+  // schema.ts). Q2 simply stays blank for the human to answer.
+  if (!data.citizenship) return;
+
+  selectCheckboxOption(form, "Q2", "Yes");
+  const countryField = form.getTextField("Q2Details.Country");
+  const dateField = form.getTextField("Q2Details.Date");
+  countryField.setText(data.citizenship.country);
+  if (data.citizenship.date !== undefined) {
     dateField.setText(toDdMmYyyy(data.citizenship.date));
-    unhide(countryField);
-    unhide(dateField);
-  } else {
-    selectCheckboxOption(form, "Q2", "No");
   }
+  // Both are unhidden even when the date is unknown - Q2 = "Yes" is what
+  // makes this section apply, and a field left blank for the human to
+  // complete is useless if it stays invisible (hard rule 8).
+  unhide(countryField);
+  unhide(dateField);
 }
 
 export function readFormData(form: PDFForm): FormData {
   const data: FormData = {};
 
   if (readCheckboxValue(form, "Q2") === "Yes") {
+    const rawDate = form.getTextField("Q2Details.Date").getText() ?? "";
     data.citizenship = {
       country: form.getTextField("Q2Details.Country").getText() ?? "",
-      date: fromDdMmYyyy("Q2Details.Date", form.getTextField("Q2Details.Date").getText() ?? ""),
+      date: rawDate.trim() === "" ? undefined : fromDdMmYyyy("Q2Details.Date", rawDate),
     };
   }
 

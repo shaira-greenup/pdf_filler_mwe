@@ -16,8 +16,7 @@
         }
       },
       "required": [
-        "country",
-        "date"
+        "country"
       ],
       "additionalProperties": false
     },

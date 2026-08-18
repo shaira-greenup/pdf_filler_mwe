@@ -3,11 +3,9 @@ import type { z } from "zod";
 
 import * as incomeAndAssetsSchema from "../../../forms/income-and-assets/schema";
 import * as incomeAndAssetsMapping from "../../../forms/income-and-assets/mapping";
-import incomeAndAssetsSampleData from "../../../forms/income-and-assets/sample-data.json";
 
 import * as absStudySchema from "../../../forms/abs-study/schema";
 import * as absStudyMapping from "../../../forms/abs-study/mapping";
-import absStudySampleData from "../../../forms/abs-study/sample-data.json";
 
 // Mirrors scripts/lib/fillForm.ts's own SchemaModule/MappingModule shape -
 // every form's schema.ts/mapping.ts is expected to export this shape by
@@ -24,10 +22,6 @@ interface MappingModule {
 export interface FormRegistryEntry extends SchemaModule, MappingModule {
   id: string;
   label: string;
-  // Everything in sample-data.json not covered by FormDataSchema - the
-  // generic-layer fallback so the demo doesn't require re-typing all the
-  // non-business fields by hand (see docs/20260818_browser-ui-mwe-plan.md).
-  sampleData: Record<string, unknown>;
   pdfUrl: string;
   fieldsTxtUrl: string;
 }
@@ -37,7 +31,6 @@ function buildEntry(
   label: string,
   schema: SchemaModule,
   mapping: MappingModule,
-  sampleData: Record<string, unknown>,
   pdfUrl: URL,
   fieldsTxtUrl: URL,
 ): FormRegistryEntry {
@@ -48,7 +41,6 @@ function buildEntry(
     MAPPED_FIELD_NAMES: mapping.MAPPED_FIELD_NAMES,
     applyFormData: mapping.applyFormData,
     readFormData: mapping.readFormData,
-    sampleData,
     pdfUrl: pdfUrl.href,
     fieldsTxtUrl: fieldsTxtUrl.href,
   };
@@ -66,7 +58,6 @@ export const FORM_REGISTRY: Record<string, FormRegistryEntry> = {
     "Income and Assets",
     incomeAndAssetsSchema,
     incomeAndAssetsMapping,
-    incomeAndAssetsSampleData,
     new URL("../../../forms/income-and-assets/blank-form.pdf", import.meta.url),
     new URL("../../../forms/income-and-assets/fields.txt", import.meta.url),
   ),
@@ -75,7 +66,6 @@ export const FORM_REGISTRY: Record<string, FormRegistryEntry> = {
     "ABSTUDY",
     absStudySchema,
     absStudyMapping,
-    absStudySampleData,
     new URL("../../../forms/abs-study/blank-form.pdf", import.meta.url),
     new URL("../../../forms/abs-study/fields.txt", import.meta.url),
   ),

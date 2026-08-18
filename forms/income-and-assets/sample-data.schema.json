@@ -23,6 +23,9 @@
     "employment": {
       "type": "object",
       "properties": {
+        "isEmployed": {
+          "type": "boolean"
+        },
         "personWorking": {
           "type": "string",
           "enum": [
@@ -44,9 +47,7 @@
         }
       },
       "required": [
-        "personWorking",
-        "workType",
-        "usualWage"
+        "isEmployed"
       ],
       "additionalProperties": false
     },
@@ -2078,8 +2079,7 @@
   "required": [
     "familyName",
     "firstName",
-    "clientReferenceNumber",
-    "question4"
+    "clientReferenceNumber"
   ],
   "additionalProperties": false
 }
