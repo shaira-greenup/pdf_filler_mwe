@@ -16,7 +16,7 @@ import type { FormPaths } from "./formPaths";
 import { loadForm } from "./loadForm";
 import { sha256Hex } from "./hash";
 import { ANNOTATION_FLAG_HIDDEN, getActionJS } from "../genericFields";
-import { extractGateGraph, type GateRule } from "./gateGraph";
+import { extractGateGraph, findUnclassifiedActions, type GateRule } from "./gateGraph";
 
 // /TU is the field's tooltip/alternate name - the human-readable label
 // Acrobat shows, which often carries a format hint (e.g. "(DD MM YYYY)")
@@ -38,6 +38,14 @@ export async function writeFieldsTxt(paths: FormPaths): Promise<{ fieldCount: nu
     const existing = gateRulesBySource.get(rule.sourceField);
     if (existing) existing.push(rule);
     else gateRulesBySource.set(rule.sourceField, [rule]);
+  }
+
+  const unclassifiedBySource = new Map<string, string[]>();
+  for (const action of findUnclassifiedActions(form)) {
+    const existing = unclassifiedBySource.get(action.sourceField);
+    const entry = `(${action.actionKey}) ${action.snippet}`;
+    if (existing) existing.push(entry);
+    else unclassifiedBySource.set(action.sourceField, [entry]);
   }
 
   const lines: string[] = [];
@@ -71,6 +79,9 @@ export async function writeFieldsTxt(paths: FormPaths): Promise<{ fieldCount: nu
       lines.push(
         `  Gate logic: if ${rule.gateField} = ${JSON.stringify(rule.triggerValue)} -> affects [${rule.affectedFields.join(", ")}]`,
       );
+    }
+    for (const entry of unclassifiedBySource.get(name) ?? []) {
+      lines.push(`  Unclassified action: ${JSON.stringify(entry)}`);
     }
 
     if (field instanceof PDFTextField) {

@@ -88,12 +88,28 @@ function hasCalculateAction(field: PDFField): boolean {
 // on hidden helper fields can carry a form's own gating logic (see
 // scripts/lib/gateGraph.ts) - readable for the same reason, never executed.
 export function getActionJS(field: PDFField, actionKey: "F" | "K" | "C"): string | undefined {
-  const aa = field.acroField.dict.lookup(PDFName.of("AA"));
+  return getDictActionJS(field.acroField.dict, actionKey);
+}
+
+// Same as getActionJS, but against an arbitrary dict rather than a field's
+// own - needed for widget-level actions (e.g. /Bl on one option of a
+// multi-widget checkbox), which live in a separate /AA from the field's own
+// and are invisible to getActionJS entirely (confirmed: PDFAcroField's own
+// dict and a widget's annotation dict are only the same object when a field
+// has exactly one, merged widget). Also handles /JS stored as a stream
+// rather than an inline string - legal per spec for longer scripts, and a
+// real, confirmed gap in the original field-only, string-only version of
+// this function (see docs/20260814_action-audit.md): cross-checking against
+// the AcroForm's own /CO array found Calculate actions on fields whose /JS
+// was silently unreadable this way.
+export function getDictActionJS(dict: PDFDict, actionKey: string): string | undefined {
+  const aa = dict.lookup(PDFName.of("AA"));
   if (!(aa instanceof PDFDict)) return undefined;
   const action = aa.lookup(PDFName.of(actionKey));
   if (!(action instanceof PDFDict)) return undefined;
   const js = action.lookup(PDFName.of("JS"));
   if (js instanceof PDFString || js instanceof PDFHexString) return js.decodeText();
+  if (js instanceof PDFRawStream) return new TextDecoder().decode(decodePDFRawStream(js).decode());
   return undefined;
 }
 
